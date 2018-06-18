@@ -1,0 +1,36 @@
+//
+//  PhotoDetailsRouter.swift
+//  Youth
+//
+//  Created by Lupu Cristian on 10/06/2018.
+//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//
+
+import UIKit
+
+public final class PhotoDetailsRouter {
+	
+	public weak var viewController: UIViewController?
+
+}
+
+extension PhotoDetailsRouter: PhotoDetailsRouterInput {
+	
+	public func closeModule() {
+		viewController?.dismiss(animated: true)
+	}
+
+    public func showUserProfile(withUser user: UnsplashUser) {
+        guard let navigationController = viewController?.navigationController else {
+            return
+        }
+
+        let userProfileAssembly = UserProfileAssembly()
+        let userProfileModule = userProfileAssembly.assemblyUserProfileModule()
+
+        userProfileModule.moduleInput.configure(withUser: user)
+
+        navigationController.pushViewController(userProfileModule.viewController, animated: true)
+    }
+
+}

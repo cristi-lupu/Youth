@@ -1,0 +1,9 @@
+{% include 'header' %}
+
+import Foundation
+
+public protocol {{ module_info.name }}ModuleInput: class {
+
+    func set(moduleOutput: {{ module_info.name }}ModuleOutput)
+	
+}

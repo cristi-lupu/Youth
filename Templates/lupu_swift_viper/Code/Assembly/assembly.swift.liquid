@@ -1,0 +1,25 @@
+{% include 'header' %}
+
+import UIKit
+
+public final class {{ module_info.name }}Assembly {
+
+	public func assembly{{ module_info.name }}Module() -> {{ module_info.name }}Module {
+		let view = {{ module_info.name }}ViewController()
+		let presenter = {{ module_info.name }}Presenter()
+		let router = {{ module_info.name }}Router()
+		let state = {{ module_info.name }}State()
+		let interactor = {{ module_info.name }}Interactor()
+
+		view.output = presenter
+		presenter.view = view
+		presenter.interactor = interactor
+		presenter.router = router
+		presenter.state = state
+		interactor.output = presenter
+		router.viewController = view
+
+		return {{ module_info.name }}Module(viewController: view, moduleInput: presenter)
+	}
+
+}

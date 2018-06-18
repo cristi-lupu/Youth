@@ -1,0 +1,17 @@
+{% include 'header' %}
+
+import UIKit
+
+public final class {{ module_info.name }}Router {
+	
+	public weak var viewController: UIViewController?
+
+}
+
+extension {{ module_info.name }}Router: {{ module_info.name }}RouterInput {
+	
+	public func closeModule() {
+		viewController?.dismiss(animated: true)
+	}
+
+}
