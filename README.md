@@ -72,3 +72,9 @@ Cristian Lupu
 Email: lupucristiancptc@gmail.com
 
 Twitter: [@LupuCrist](https://twitter.com/LupuCrist)
+
+## 📚 License
+
+Youth is available under the GPLv2 (or later) and the MPLv2 license.
+
+See [COPYING](COPYING) for more license info.
