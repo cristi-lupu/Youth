@@ -1,0 +1,62 @@
+PODS:
+  - Alamofire (4.7.2)
+  - AlamofireImage (3.3.1):
+    - Alamofire (~> 4.5)
+  - Crashlytics (3.10.2):
+    - Fabric (~> 1.7.7)
+  - DownloadButton (0.1.0)
+  - Fabric (1.7.7)
+  - Permission/Core (2.0.4)
+  - Permission/Photos (2.0.4):
+    - Permission/Core
+  - PinterestSegment (1.2.0)
+  - R.swift (4.0.0):
+    - R.swift.Library (~> 4.0.0)
+  - R.swift.Library (4.0.0)
+  - SnapKit (4.0.0)
+  - SwiftMessages (4.1.4):
+    - SwiftMessages/App (= 4.1.4)
+  - SwiftMessages/App (4.1.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - Crashlytics
+  - DownloadButton
+  - Fabric
+  - Permission/Photos
+  - PinterestSegment
+  - R.swift
+  - SnapKit
+  - SwiftMessages
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - Crashlytics
+    - DownloadButton
+    - Fabric
+    - Permission
+    - PinterestSegment
+    - R.swift
+    - R.swift.Library
+    - SnapKit
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
+  DownloadButton: 49a21a89e0d7d1b42d9134f79aaa40e727cd57c3
+  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
+  Permission: 6853b9694e66a6c9197468c66d1935c3629cbf9c
+  PinterestSegment: d589fce6c62141466b9f36ea8ab0a16fde9ac8f4
+  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
+  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftMessages: 2c33fdee8b8f38dfc7e1036684456b505891da8c
+
+PODFILE CHECKSUM: 25c23d82453897e2eb9fc8cfe3c09e901a259551
+
+COCOAPODS: 1.5.3

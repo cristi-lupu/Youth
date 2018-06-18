@@ -1,0 +1,11 @@
+{
+    "self": "https://api.unsplash.com/users/alex19perz",
+    "html": "https://unsplash.com/@alex19perz",
+    "photos": "https://api.unsplash.com/users/alex19perz/photos",
+    "likes": "https://api.unsplash.com/users/alex19perz/likes",
+    "portfolio": "https://api.unsplash.com/users/alex19perz/portfolio",
+    "following": "https://api.unsplash.com/users/alex19perz/following",
+    "followers": "https://api.unsplash.com/users/alex19perz/followers",
+    "download": "https://unsplash.com/photos/5zFxCK_p6So/download",
+    "download_location": "https://api.unsplash.com/photos/5zFxCK_p6So/download"
+}

@@ -1,0 +1,23 @@
+{% include 'header' %}
+
+import UIKit
+
+public final class {{ module_info.name }}ViewController: UIViewController {
+
+    // MARK: Output
+
+    public var output: {{ module_info.name }}ViewOutput?
+
+    // MARK: View Controller Life Cycle
+
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+        output?.viewIsReady()
+    }
+
+}
+
+extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewInput {
+	
+	
+}

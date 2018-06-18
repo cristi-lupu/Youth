@@ -1,0 +1,20 @@
+### Headers settings
+company: Lupu Cristian
+
+### Xcode project settings
+project_name: Youth
+xcodeproj_path: Youth.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: Youth
+
+# The file path for new modules
+project_file_path: Youth/Classes/Presentation Layer/Modules/
+
+# The Xcode group path to new modules
+project_group_path: Youth/Classes/Presentation Layer/Modules/
+
+### Templates
+templates:
+- {name: lupu_swift_viper}

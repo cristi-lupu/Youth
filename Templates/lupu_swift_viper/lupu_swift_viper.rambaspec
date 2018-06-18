@@ -1,0 +1,35 @@
+# Template information section
+name: "lupu_viper"
+summary: "Swift VIPER module template with UIViewController playing as a View."
+author: "Lupu Cristian"
+version: "0.1.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+# Module Layer
+- {name: Module/Module Input/ModuleInput.swift, path: Code/Module/Module Input/module_input.swift.liquid}
+- {name: Module/Module Output/ModuleOutput.swift, path: Code/Module/Module Output/module_output.swift.liquid}
+- {name: Module/Module.swift, path: Code/Module/module.swift.liquid}
+
+# Assembly Layer
+- {name: Assembly/Assembly.swift, path: Code/Assembly/assembly.swift.liquid}
+
+# View Layer
+- {name: View/View Input/ViewInput.swift, path: Code/View/View Input/view_input.swift.liquid}
+- {name: View/View Output/ViewOutput.swift, path: Code/View/View Output/view_output.swift.liquid}
+- {name: View/ViewController.swift, path: Code/View/view.swift.liquid}
+
+# Presenter Layer
+- {name: Presenter/State/State.swift, path: Code/Presenter/State/state.swift.liquid}
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
+
+# Interactor Layer
+- {name: Interactor/Interactor Input/InteractorInput.swift, path: Code/Interactor/Interactor Input/interactor_input.swift.liquid}
+- {name: Interactor/Interactor Output/InteractorOutput.swift, path: Code/Interactor/Interactor Output/interactor_output.swift.liquid}
+- {name: Interactor/Interactor.swift, path: Code/Interactor/interactor.swift.liquid}
+
+# Router Layer
+- {name: Router/Router Input/RouterInput.swift, path: Code/Router/Router Input/router_input.swift.liquid}
+- {name: Router/Router.swift, path: Code/Router/router.swift.liquid}
