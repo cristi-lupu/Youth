@@ -18,7 +18,7 @@ public final class YouthLocationView: UIView {
 
     private var configuredLocationImageView: UIImageView {
         let imageView = UIImageView()
-        imageView.image = R.image.icons.location()
+        imageView.image = UIImage(named: "Icons/location")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }

@@ -149,9 +149,7 @@
 		BB9C56F8209738E40051FF53 /* UnsplashExif.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9C56EE209738E30051FF53 /* UnsplashExif.swift */; };
 		BB9C56F9209738E40051FF53 /* UnsplashBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9C56EF209738E30051FF53 /* UnsplashBadge.swift */; };
 		BBA4247320A303F2009D3603 /* UnsplashPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA4247220A303F2009D3603 /* UnsplashPosition.swift */; };
-		BBA4247920A3494E009D3603 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA4247820A3494E009D3603 /* R.generated.swift */; };
 		BBA4247C20A34F6E009D3603 /* LaunchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA4247B20A34F6E009D3603 /* LaunchCoordinator.swift */; };
-		BBA4247F20A35B33009D3603 /* ResourcesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA4247E20A35B33009D3603 /* ResourcesTests.swift */; };
 		BBABC8CD20A6EAA300D008CF /* PhotosCategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABC8CC20A6EAA300D008CF /* PhotosCategoryType.swift */; };
 		BBB557B320B1601B00F2ED02 /* PhotosCollectionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB557B220B1601B00F2ED02 /* PhotosCollectionCellDelegate.swift */; };
 		BBB557B520B172C300F2ED02 /* PhotosCollectionListCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB557B420B172C300F2ED02 /* PhotosCollectionListCellDelegate.swift */; };
@@ -395,9 +393,7 @@
 		BB9C56EE209738E30051FF53 /* UnsplashExif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashExif.swift; sourceTree = "<group>"; };
 		BB9C56EF209738E30051FF53 /* UnsplashBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashBadge.swift; sourceTree = "<group>"; };
 		BBA4247220A303F2009D3603 /* UnsplashPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPosition.swift; sourceTree = "<group>"; };
-		BBA4247820A3494E009D3603 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		BBA4247B20A34F6E009D3603 /* LaunchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCoordinator.swift; sourceTree = "<group>"; };
-		BBA4247E20A35B33009D3603 /* ResourcesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesTests.swift; sourceTree = "<group>"; };
 		BBABC8CC20A6EAA300D008CF /* PhotosCategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCategoryType.swift; sourceTree = "<group>"; };
 		BBB557B220B1601B00F2ED02 /* PhotosCollectionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionCellDelegate.swift; sourceTree = "<group>"; };
 		BBB557B420B172C300F2ED02 /* PhotosCollectionListCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionListCellDelegate.swift; sourceTree = "<group>"; };
@@ -1480,7 +1476,6 @@
 			children = (
 				BB61B12D20D7E674001D682C /* Business Layer Tests */,
 				BB3001F820B0A8DC009C3E1E /* Presentation Layer Tests */,
-				BBA4247D20A35B1F009D3603 /* Resources Tests */,
 				BBBA0D71208C6FAE00F236B5 /* Core Layer Tests */,
 				BB7CB1B1208BAA5C009BA0F1 /* Info.plist */,
 			);
@@ -1502,7 +1497,6 @@
 		BB7CB1C9208BADB5009BA0F1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BBA4247820A3494E009D3603 /* R.generated.swift */,
 				BB38E07120CD93DA00BE57C6 /* YouthFonts.swift */,
 				BB7CB1A1208BAA5C009BA0F1 /* Assets.xcassets */,
 			);
@@ -1661,14 +1655,6 @@
 				BBA4247B20A34F6E009D3603 /* LaunchCoordinator.swift */,
 			);
 			path = "Launch Coordinator";
-			sourceTree = "<group>";
-		};
-		BBA4247D20A35B1F009D3603 /* Resources Tests */ = {
-			isa = PBXGroup;
-			children = (
-				BBA4247E20A35B33009D3603 /* ResourcesTests.swift */,
-			);
-			path = "Resources Tests";
 			sourceTree = "<group>";
 		};
 		BBABC8C720A6CE3C00D008CF /* Submodules */ = {
@@ -2260,7 +2246,6 @@
 			buildConfigurationList = BB7CB1BF208BAA5C009BA0F1 /* Build configuration list for PBXNativeTarget "Youth" */;
 			buildPhases = (
 				A31C6F7720A873F279552DBF /* [CP] Check Pods Manifest.lock */,
-				BBA4247720A34913009D3603 /* R.swift */,
 				BB7CB190208BAA53009BA0F1 /* Sources */,
 				BB7CB191208BAA53009BA0F1 /* Frameworks */,
 				BB7CB192208BAA53009BA0F1 /* Resources */,
@@ -2409,7 +2394,6 @@
 				"${BUILT_PRODUCTS_DIR}/DownloadButton/DownloadButton.framework",
 				"${BUILT_PRODUCTS_DIR}/Permission/Permission.framework",
 				"${BUILT_PRODUCTS_DIR}/PinterestSegment/PinterestSegment.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 			);
@@ -2420,7 +2404,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DownloadButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Permission.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinterestSegment.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 			);
@@ -2461,20 +2444,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 288db1c9e108ea38e1c1722765d41e887db6947d 75b93b93d8027ba1a4b5fe13ca16f726a5a87710f9950d6c8473437418a15c3a";
 		};
-		BBA4247720A34913009D3603 /* R.swift */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = R.swift;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2513,7 +2482,6 @@
 				BB1BDBBF20A4BA36009097D5 /* YouthTabBarController.swift in Sources */,
 				BB9C56F8209738E40051FF53 /* UnsplashExif.swift in Sources */,
 				BB4CA60F20D030DB00DD1FF2 /* YouthNavigationStandartTitleView.swift in Sources */,
-				BBA4247920A3494E009D3603 /* R.generated.swift in Sources */,
 				BBC2FB9220C168C2009389A6 /* CollectionLoadingView.swift in Sources */,
 				BBA4247C20A34F6E009D3603 /* LaunchCoordinator.swift in Sources */,
 				BB9C56A72097326A0051FF53 /* UnsplashResult.swift in Sources */,
@@ -2689,7 +2657,6 @@
 				BB6287DC20B49AE700C57238 /* UsernameFormatterTests.swift in Sources */,
 				BB6287E220B4A02E00C57238 /* UnsplashNetworkClient+UserPublicProfileRequestTests.swift in Sources */,
 				BBF0DE0A20910EC200E50115 /* UnsplashLinksTests.swift in Sources */,
-				BBA4247F20A35B33009D3603 /* ResourcesTests.swift in Sources */,
 				BBF0DE16209117BE00E50115 /* UnsplashBadgeTests.swift in Sources */,
 				BB2983BC2094C2D90057C422 /* UnsplashNetworkClient+PhotosRequestTests.swift in Sources */,
 			);

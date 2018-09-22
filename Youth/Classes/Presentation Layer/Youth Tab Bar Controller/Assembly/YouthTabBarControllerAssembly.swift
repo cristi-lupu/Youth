@@ -15,8 +15,8 @@ public final class YouthTabControllerAssembly {
         let tabBarController = YouthTabBarController()
 
         let photosViewController = self.photosViewController()
-        photosViewController.tabBarItem.image = R.image.tabBar.photos.photosInactive()
-        photosViewController.tabBarItem.selectedImage = R.image.tabBar.photos.photosActive()
+        photosViewController.tabBarItem.image = UIImage(named: "Tab Bar/Photos/photos-inactive")
+        photosViewController.tabBarItem.selectedImage = UIImage(named: "Tab Bar/Photos/photos-active")
 
         tabBarController.viewControllers = [photosViewController]
 

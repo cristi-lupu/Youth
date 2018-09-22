@@ -188,32 +188,32 @@ extension UnsplashAPI {
     public var stubData: Data? {
         switch self {
         case .photos:
-            if let url = R.file.unsplashPhotosStubResponseJson(),
+            if let url = Bundle.main.url(forResource: "UnsplashPhotosStubResponse", withExtension: "json"),
                 let data = try? Data(contentsOf: url) {
                 return data
             }
         case .photo:
-            if let url = R.file.unsplashPhotoStubResponseJson(),
+            if let url = Bundle.main.url(forResource: "UnsplashPhotoStubResponse", withExtension: "json"),
                 let data = try? Data(contentsOf: url) {
                 return data
             }
         case .userPublicProfile:
-            if let url = R.file.unsplashUserPublicProfileStubResponseJson(),
+            if let url = Bundle.main.url(forResource: "UnsplashUserPublicProfileStubResponse", withExtension: "json"),
                 let data = try? Data(contentsOf: url) {
                 return data
             }
         case .userPhotos:
-            if let url = R.file.unsplashUserPhotosStubResponseJson(),
+            if let url = Bundle.main.url(forResource: "UnsplashUserPhotosStubResponse", withExtension: "json"),
                 let data = try? Data(contentsOf: url) {
                 return data
             }
         case .userLikedPhotos:
-            if let url = R.file.unsplashUserLikedPhotosStubResponseJson(),
+            if let url = Bundle.main.url(forResource: "UnsplashUserLikedPhotosStubResponse", withExtension: "json"),
                 let data = try? Data(contentsOf: url) {
                 return data
             }
         case .searchPhotos:
-            if let url = R.file.unsplashSearchPhotosStubResponseJson(),
+            if let url = Bundle.main.url(forResource: "UnsplashSearchPhotosStubResponse", withExtension: "json"),
                 let data = try? Data(contentsOf: url) {
                 return data
             }
