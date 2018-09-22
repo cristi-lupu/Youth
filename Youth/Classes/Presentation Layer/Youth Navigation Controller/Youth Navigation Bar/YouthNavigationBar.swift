@@ -13,7 +13,7 @@ public final class YouthNavigationBar: UINavigationBar {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        let backImage = R.image.actions.navigationArrow()
+        let backImage = UIImage(named: "Actions/navigation-arrow")
         backIndicatorImage = backImage
         backIndicatorTransitionMaskImage = backImage
     }

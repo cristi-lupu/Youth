@@ -10,9 +10,6 @@ PODS:
   - Permission/Photos (2.0.4):
     - Permission/Core
   - PinterestSegment (1.2.0)
-  - R.swift (5.0.0.alpha.2):
-    - R.swift.Library (~> 5.0.0.alpha.2)
-  - R.swift.Library (5.0.0.alpha.2)
   - SnapKit (4.0.1)
   - SwiftMessages (6.0.0):
     - SwiftMessages/App (= 6.0.0)
@@ -26,7 +23,6 @@ DEPENDENCIES:
   - Fabric (= 1.7.11)
   - Permission/Photos (= 2.0.4)
   - PinterestSegment (= 1.2)
-  - R.swift (= 5.0.0.alpha.2)
   - SnapKit (= 4.0.1)
   - SwiftMessages (= 6.0.0)
 
@@ -39,8 +35,6 @@ SPEC REPOS:
     - Fabric
     - Permission
     - PinterestSegment
-    - R.swift
-    - R.swift.Library
     - SnapKit
     - SwiftMessages
 
@@ -52,11 +46,9 @@ SPEC CHECKSUMS:
   Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
   Permission: 6853b9694e66a6c9197468c66d1935c3629cbf9c
   PinterestSegment: d589fce6c62141466b9f36ea8ab0a16fde9ac8f4
-  R.swift: 31fa1bd537fa81307815cc622122f33331f32174
-  R.swift.Library: 3c21b823839bf5a6769dc7f96cb44479dab51b1b
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftMessages: da7c981256a65b3e58022d9027a36584cf4eccf5
 
-PODFILE CHECKSUM: 1cbc8b957ca6f3f42e975869220c827feb682796
+PODFILE CHECKSUM: 43dbacdf89b9d407bfb521a379beee1508287dc1
 
 COCOAPODS: 1.5.3
