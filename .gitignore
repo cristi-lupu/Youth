@@ -4,7 +4,7 @@
 build/
 DerivedData/
 
-## Various settings
+# Various settings
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -15,13 +15,13 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
-## Other
-*.xccheckout
+# Other
 *.moved-aside
+*.xccheckout
 *.xcscmblueprint
 *.orig
 
-## Obj-C/Swift specific
+# Obj-C/Swift specific
 *.hmap
 *.ipa
 *.dSYM.zip
@@ -30,19 +30,28 @@ xcuserdata/
 # macOS specific
 .DS_Store
 
-# Fastlane
-.fastlane/report.xml
-.fastlane/resources/
-.fastlane/test_output/
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+Packages/
+Package.pins
+Package.resolved
+.build/
 
 # CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
-#
 Pods/
 
-# Backup Info.plist files, created when applying the build number script
-*.plist.bk
-.temp-build-number
+# Carthage
+Carthage/Checkouts
+Carthage/Build
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Code Injection
+iOSInjectionProject/

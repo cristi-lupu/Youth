@@ -137,9 +137,9 @@ extension PhotosCollectionGridDataDisplayManager: PhotosCollectionViewGridLayout
                                insetForSection section: Int) -> UIEdgeInsets {
         switch section {
         case 0:
-            return UIEdgeInsetsMake(10, 18, 10, 18)
+            return UIEdgeInsets(top: 10, left: 18, bottom: 10, right: 18)
         default:
-            return UIEdgeInsets.zero
+            return .zero
         }
     }
 
