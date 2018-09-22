@@ -41,7 +41,7 @@ Package.resolved
 .build/
 
 # CocoaPods
-# Pods/
+Pods/
 
 # Carthage
 Carthage/Checkouts
