@@ -1,7 +1,8 @@
 rvm: 2.5.1
 before_install:
   - gem install cocoapods
-
+  - pod repo update
+  - pod install
 language: swift
 xcode_project: Youth.xcodeproj
 xcode_scheme: Youth
