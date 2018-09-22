@@ -28,8 +28,8 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     }
 }
 
-public let PhotosCollectionViewGridElementKindSectionHeader = UICollectionElementKindSectionHeader
-public let PhotosCollectionViewGridElementKindSectionFooter = UICollectionElementKindSectionFooter
+public let PhotosCollectionViewGridElementKindSectionHeader = UICollectionView.elementKindSectionHeader
+public let PhotosCollectionViewGridElementKindSectionFooter = UICollectionView.elementKindSectionFooter
 
 @objc public protocol PhotosCollectionViewGridLayoutDelegate: UICollectionViewDelegate {
 

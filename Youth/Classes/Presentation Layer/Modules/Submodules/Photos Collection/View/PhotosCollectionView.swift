@@ -57,7 +57,7 @@ extension PhotosCollectionView: PhotosCollectionViewInput {
         collectionViewLayout = collectionViewLayout(forCollectionLayout: layout)
 
         register(supplementaryViewType: CollectionLoadingView.self,
-                 ofKind: UICollectionElementKindSectionHeader)
+                 ofKind: UICollectionView.elementKindSectionHeader)
 
         addContentSizeObserver()
 
