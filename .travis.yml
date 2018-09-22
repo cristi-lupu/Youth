@@ -5,7 +5,7 @@ before_install:
   - pod install
 
 language: swift
-xcode_project: Youth.xcodeproj
+xcode_workspace: Youth.xcworkspace
 xcode_scheme: Youth
 osx_image: xcode10
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X
