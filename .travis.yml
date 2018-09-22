@@ -1,5 +1,5 @@
-rvm: 2.5.1
 before_install:
+  - gem install xcpretty
   - gem install cocoapods
   - pod repo update
   - pod install
