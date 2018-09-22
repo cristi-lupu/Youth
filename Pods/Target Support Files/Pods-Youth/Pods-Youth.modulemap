@@ -1,6 +1,0 @@
-framework module Pods_Youth {
-  umbrella header "Pods-Youth-umbrella.h"
-
-  export *
-  module * { export * }
-}
