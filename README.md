@@ -4,10 +4,12 @@
 
 <h1 align="center">Youth</h1>
 
-
 <p align="center">
-<a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat" alt="Swift"/></a>
+<a href="https://developer.apple.com/swift/">
+  <img src="https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat" alt="Swift"/>
+</a>
 <img src="https://img.shields.io/badge/Platform-iOS%2012.0+-black.svg" alt="Platform: iOS">
+<img src="https://travis-ci.org/cristi-lupu/Youth.svg?branch=master" alt="CI Build State">
 </p>
 
 ## About
