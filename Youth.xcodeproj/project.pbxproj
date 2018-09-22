@@ -13,7 +13,6 @@
 		004D2DE720B804AC00A485BB /* UnsplashUserPhotosStubResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 004D2DE620B804AC00A485BB /* UnsplashUserPhotosStubResponse.json */; };
 		004D2DE920B8057100A485BB /* UnsplashNetworkClient+UserPhotosRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D2DE820B8057100A485BB /* UnsplashNetworkClient+UserPhotosRequestTests.swift */; };
 		004D2DEE20B81B0500A485BB /* UserProfileSectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D2DED20B81B0500A485BB /* UserProfileSectionInfo.swift */; };
-		010FB187CCCDA094C14CFAF0 /* Pods_YouthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0098674A821C37D8C24F745D /* Pods_YouthUITests.framework */; };
 		02BCF3A14AC3B2B8D1E0DA5D /* PhotoViewerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70812B581E42875B1CF8809E /* PhotoViewerState.swift */; };
 		04BBB97363F0042A0AFB1824 /* SearchPhotosInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05055347DA28BD2892ECB6DC /* SearchPhotosInteractorInput.swift */; };
 		07C1E6A03818FDEED406C3C8 /* PhotoViewerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF739BA8ACC2990B50315D26 /* PhotoViewerAssembly.swift */; };
@@ -121,7 +120,6 @@
 		BB7CB1A0208BAA53009BA0F1 /* Youth.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB7CB19E208BAA53009BA0F1 /* Youth.xcdatamodeld */; };
 		BB7CB1A2208BAA5C009BA0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7CB1A1208BAA5C009BA0F1 /* Assets.xcassets */; };
 		BB7CB1A5208BAA5C009BA0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB7CB1A3208BAA5C009BA0F1 /* LaunchScreen.storyboard */; };
-		BB7CB1BB208BAA5C009BA0F1 /* YouthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7CB1BA208BAA5C009BA0F1 /* YouthUITests.swift */; };
 		BB7CB1D3208BB2B9009BA0F1 /* UnsplashNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7CB1D2208BB2B9009BA0F1 /* UnsplashNetworkClient.swift */; };
 		BB908D4020A8221900D45F3D /* PhotosCollectionGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB908D3E20A8221900D45F3D /* PhotosCollectionGridCell.swift */; };
 		BB908D4120A8221900D45F3D /* PhotosCollectionGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB908D3F20A8221900D45F3D /* PhotosCollectionGridCell.xib */; };
@@ -249,13 +247,6 @@
 			remoteGlobalIDString = BB7CB193208BAA53009BA0F1;
 			remoteInfo = Youth;
 		};
-		BB7CB1B7208BAA5C009BA0F1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB7CB18C208BAA53009BA0F1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB7CB193208BAA53009BA0F1;
-			remoteInfo = Youth;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -375,9 +366,6 @@
 		BB7CB1A6208BAA5C009BA0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Youth/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		BB7CB1AB208BAA5C009BA0F1 /* YouthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YouthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7CB1B1208BAA5C009BA0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB7CB1B6208BAA5C009BA0F1 /* YouthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YouthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB7CB1BA208BAA5C009BA0F1 /* YouthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouthUITests.swift; sourceTree = "<group>"; };
-		BB7CB1BC208BAA5C009BA0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB7CB1D2208BB2B9009BA0F1 /* UnsplashNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashNetworkClient.swift; sourceTree = "<group>"; };
 		BB908D3E20A8221900D45F3D /* PhotosCollectionGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionGridCell.swift; sourceTree = "<group>"; };
 		BB908D3F20A8221900D45F3D /* PhotosCollectionGridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosCollectionGridCell.xib; sourceTree = "<group>"; };
@@ -521,14 +509,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				819140652E6F871ABF325A10 /* Pods_YouthTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BB7CB1B3208BAA5C009BA0F1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				010FB187CCCDA094C14CFAF0 /* Pods_YouthUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1470,7 +1450,6 @@
 			children = (
 				BB7CB196208BAA53009BA0F1 /* Youth */,
 				BB7CB1AE208BAA5C009BA0F1 /* YouthTests */,
-				BB7CB1B9208BAA5C009BA0F1 /* YouthUITests */,
 				BB7CB195208BAA53009BA0F1 /* Products */,
 				1E165CBFF832869063CD6053 /* Pods */,
 				B1D8AE81ED4F13FBC5801D81 /* Frameworks */,
@@ -1482,7 +1461,6 @@
 			children = (
 				BB7CB194208BAA53009BA0F1 /* Youth.app */,
 				BB7CB1AB208BAA5C009BA0F1 /* YouthTests.xctest */,
-				BB7CB1B6208BAA5C009BA0F1 /* YouthUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1507,15 +1485,6 @@
 				BB7CB1B1208BAA5C009BA0F1 /* Info.plist */,
 			);
 			path = YouthTests;
-			sourceTree = "<group>";
-		};
-		BB7CB1B9208BAA5C009BA0F1 /* YouthUITests */ = {
-			isa = PBXGroup;
-			children = (
-				BB7CB1BA208BAA5C009BA0F1 /* YouthUITests.swift */,
-				BB7CB1BC208BAA5C009BA0F1 /* Info.plist */,
-			);
-			path = YouthUITests;
 			sourceTree = "<group>";
 		};
 		BB7CB1C8208BADB0009BA0F1 /* Classes */ = {
@@ -2326,25 +2295,6 @@
 			productReference = BB7CB1AB208BAA5C009BA0F1 /* YouthTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BB7CB1B5208BAA5C009BA0F1 /* YouthUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BB7CB1C5208BAA5C009BA0F1 /* Build configuration list for PBXNativeTarget "YouthUITests" */;
-			buildPhases = (
-				7F31AD7B9734EC7FC88A01C7 /* [CP] Check Pods Manifest.lock */,
-				BB7CB1B2208BAA5C009BA0F1 /* Sources */,
-				BB7CB1B3208BAA5C009BA0F1 /* Frameworks */,
-				BB7CB1B4208BAA5C009BA0F1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BB7CB1B8208BAA5C009BA0F1 /* PBXTargetDependency */,
-			);
-			name = YouthUITests;
-			productName = YouthUITests;
-			productReference = BB7CB1B6208BAA5C009BA0F1 /* YouthUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2365,11 +2315,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = BB7CB193208BAA53009BA0F1;
 					};
-					BB7CB1B5208BAA5C009BA0F1 = {
-						CreatedOnToolsVersion = 9.3;
-						ProvisioningStyle = Automatic;
-						TestTargetID = BB7CB193208BAA53009BA0F1;
-					};
 				};
 			};
 			buildConfigurationList = BB7CB18F208BAA53009BA0F1 /* Build configuration list for PBXProject "Youth" */;
@@ -2387,7 +2332,6 @@
 			targets = (
 				BB7CB193208BAA53009BA0F1 /* Youth */,
 				BB7CB1AA208BAA5C009BA0F1 /* YouthTests */,
-				BB7CB1B5208BAA5C009BA0F1 /* YouthUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -2432,34 +2376,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB7CB1B4208BAA5C009BA0F1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7F31AD7B9734EC7FC88A01C7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YouthUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A31C6F7720A873F279552DBF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2554,7 +2473,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2776,14 +2695,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB7CB1B2208BAA5C009BA0F1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BB7CB1BB208BAA5C009BA0F1 /* YouthUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -2791,11 +2702,6 @@
 			isa = PBXTargetDependency;
 			target = BB7CB193208BAA53009BA0F1 /* Youth */;
 			targetProxy = BB7CB1AC208BAA5C009BA0F1 /* PBXContainerItemProxy */;
-		};
-		BB7CB1B8208BAA5C009BA0F1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB7CB193208BAA53009BA0F1 /* Youth */;
-			targetProxy = BB7CB1B7208BAA5C009BA0F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3009,40 +2915,6 @@
 			};
 			name = Release;
 		};
-		BB7CB1C6208BAA5C009BA0F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCB96865CB438C2D72AD9E2E /* Pods-YouthUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AT3P3UCMEJ;
-				INFOPLIST_FILE = YouthUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lupu.youth.YouthUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Youth;
-			};
-			name = Debug;
-		};
-		BB7CB1C7208BAA5C009BA0F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 332C382B52679C6CC7A01A69 /* Pods-YouthUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AT3P3UCMEJ;
-				INFOPLIST_FILE = YouthUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lupu.youth.YouthUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Youth;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3069,15 +2941,6 @@
 			buildConfigurations = (
 				BB7CB1C3208BAA5C009BA0F1 /* Debug */,
 				BB7CB1C4208BAA5C009BA0F1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BB7CB1C5208BAA5C009BA0F1 /* Build configuration list for PBXNativeTarget "YouthUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BB7CB1C6208BAA5C009BA0F1 /* Debug */,
-				BB7CB1C7208BAA5C009BA0F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
