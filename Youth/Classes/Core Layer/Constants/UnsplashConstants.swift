@@ -11,9 +11,9 @@ import Foundation
 /// Unsplash Constants
 public enum UnsplashConstants {
 
-    public static let clientID = "49ce2998df9a41a575245703a535acded19b2744467f2af4bd0aa2a4e838c972"
+    public static let clientID = "41631beca0d6dc96cef9209ee82f09d81d558f381b64f602e579b04f50e23eca"
 
-    public static let clientSecret = "bb50655856da28b4cde239ebae1af0919e6f7ab9f270f0f8d4ed51fafe81f6b8"
+    public static let clientSecret = "be7ad1c651fd17d5d7c4bc2d58ee94fb2acd4178d09714494cff74b913aa8abb"
 
     public static let redirectURI = "youth://unsplash"
 
