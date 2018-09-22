@@ -15,7 +15,7 @@ public final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     public var window: UIWindow?
 
-    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Initialize Fabric with Crashlytics
         Fabric.with([Crashlytics.self])
 
