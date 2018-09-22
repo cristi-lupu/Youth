@@ -16,15 +16,15 @@ PODS:
   - SwiftMessages/App (6.0.0)
 
 DEPENDENCIES:
-  - Alamofire (= 4.7.3)
-  - AlamofireImage (= 3.4.1)
-  - Crashlytics (= 3.10.7)
-  - DownloadButton (= 0.1)
-  - Fabric (= 1.7.11)
-  - Permission/Photos (= 2.0.4)
-  - PinterestSegment (= 1.2)
-  - SnapKit (= 4.0.1)
-  - SwiftMessages (= 6.0.0)
+  - Alamofire (~> 4.7.3)
+  - AlamofireImage (~> 3.4.1)
+  - Crashlytics (~> 3.10.7)
+  - DownloadButton (~> 0.1)
+  - Fabric (~> 1.7.11)
+  - Permission/Photos (~> 2.0.4)
+  - PinterestSegment (~> 1.2)
+  - SnapKit (~> 4.0.1)
+  - SwiftMessages (~> 6.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -49,6 +49,6 @@ SPEC CHECKSUMS:
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftMessages: da7c981256a65b3e58022d9027a36584cf4eccf5
 
-PODFILE CHECKSUM: 43dbacdf89b9d407bfb521a379beee1508287dc1
+PODFILE CHECKSUM: 0cba6cf05f2e130763b68810e967e98829c45157
 
 COCOAPODS: 1.5.3

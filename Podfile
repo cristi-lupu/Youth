@@ -8,29 +8,29 @@ target 'Youth' do
   # Pods for Youth
 
   # Networking
-  pod 'Alamofire', '4.7.3'
+  pod 'Alamofire', '~> 4.7.3'
 
   # Image Plugin
-  pod 'AlamofireImage', '3.4.1'
+  pod 'AlamofireImage', '~> 3.4.1'
 
   # Layout
-  pod 'SnapKit', '4.0.1'
+  pod 'SnapKit', '~> 4.0.1'
 
   # Custom Segmented Control
-  pod 'PinterestSegment', '1.2'
+  pod 'PinterestSegment', '~> 1.2'
 
   # Custom Downloading Button
-  pod 'DownloadButton', '0.1'
+  pod 'DownloadButton', '~> 0.1'
 
   # Permissions
-  pod 'Permission/Photos', '2.0.4'
+  pod 'Permission/Photos', '~> 2.0.4'
  
   # Custom Notifications
-  pod 'SwiftMessages', '6.0.0'
+  pod 'SwiftMessages', '~> 6.0'
 
   # Crash Logs
-  pod 'Fabric', '1.7.11'
-  pod 'Crashlytics', '3.10.7' 
+  pod 'Fabric', '~> 1.7.11'
+  pod 'Crashlytics', '~> 3.10.7' 
 
   target 'YouthTests' do
     inherit! :search_paths
