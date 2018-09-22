@@ -52,7 +52,7 @@ It's developed in free time.
 #### ! Please, don't use my Unsplash Client ID and Client Secret, cause requests is limited ! Create yours.
 
 ## 👨🏻‍💻 To Do
-- [ ] Add CI
+- [x] Add CI
 - [ ] Change icons (i think, can be better 😊)
 - [ ] Apply for production Unsplash Developers. Will increase number of requests to 5000 per hour. Now is 50 per hour.  
 - [ ] Add persistance layer
