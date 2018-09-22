@@ -55,3 +55,6 @@ fastlane/test_output
 
 # Code Injection
 iOSInjectionProject/
+
+# R.swift generation
+R.generated.swift
