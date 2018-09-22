@@ -52,7 +52,7 @@ public final class PhotosCollectionListCell: UICollectionViewCell, NibReusable {
         downloadButton.delegate = self
 
         downloadButton.startDownloadButton.cleanDefaultAppearance()
-        downloadButton.startDownloadButton.setImage(R.image.actions.download(), for: .normal)
+        downloadButton.startDownloadButton.setImage(UIImage(named: "Actions/download"), for: .normal)
 
         downloadButton.stopDownloadButton.tintColor = .black
         downloadButton.stopDownloadButton.filledLineWidth = 1.0
@@ -118,9 +118,9 @@ extension PhotosCollectionListCell {
         let likeImage: UIImage?
 
         if likedByUser {
-            likeImage = R.image.actions.like.likeSelected()
+            likeImage = UIImage(named: "Actions/Like/like-selected")
         } else {
-            likeImage = R.image.actions.like.likeNonSelected()
+            likeImage = UIImage(named: "Actions/Like/like-nonSelected")
         }
 
         likeButton.setImage(likeImage, for: .normal)

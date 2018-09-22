@@ -13,9 +13,6 @@ target 'Youth' do
   # Image Plugin
   pod 'AlamofireImage', '3.4.1'
 
-  # Resources code generation
-  pod 'R.swift', '5.0.0.alpha.2'
-
   # Layout
   pod 'SnapKit', '4.0.1'
 
@@ -40,12 +37,6 @@ target 'Youth' do
     # Pods for testing
 
   end
-
-  target 'YouthUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
 
 # Workaround for Cocoapods issue #7606  https://github.com/CocoaPods/CocoaPods/issues/7606

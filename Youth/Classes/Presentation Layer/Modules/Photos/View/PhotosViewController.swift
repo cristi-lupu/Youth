@@ -53,7 +53,7 @@ extension PhotosViewController: PhotosViewInput {
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.shadowImage = UIImage()
 
-        let searchBarButton = UIBarButtonItem(image: R.image.actions.search(),
+        let searchBarButton = UIBarButtonItem(image: UIImage(named: "Actions/search"),
                                               style: .plain,
                                               target: self,
                                               action: #selector(didTapSearchButton(_:)))
@@ -62,12 +62,12 @@ extension PhotosViewController: PhotosViewInput {
 
         switch collectionLayout {
         case .grid:
-            layoutBarButton = UIBarButtonItem(image: R.image.actions.layout.layoutGrid(),
+            layoutBarButton = UIBarButtonItem(image: UIImage(named: "Actions/Layout/layout-grid"),
                                               style: .plain,
                                               target: self,
                                               action: #selector(didTapLayoutButton(_:)))
         case .list:
-            layoutBarButton = UIBarButtonItem(image: R.image.actions.layout.layoutList(),
+            layoutBarButton = UIBarButtonItem(image: UIImage(named: "Actions/Layout/layout-list"),
                                               style: .plain,
                                               target: self,
                                               action: #selector(didTapLayoutButton(_:)))
@@ -107,9 +107,9 @@ extension PhotosViewController: PhotosViewInput {
     public func updateState(for collectionLayout: YouthCollectionLayout) {
         switch collectionLayout {
         case .grid:
-            layoutBarButtonItem?.image = R.image.actions.layout.layoutGrid()
+            layoutBarButtonItem?.image = UIImage(named: "Actions/Layout/layout-grid")
         case .list:
-            layoutBarButtonItem?.image = R.image.actions.layout.layoutList()
+            layoutBarButtonItem?.image = UIImage(named: "Actions/Layout/layout-list")
         }
     }
 
