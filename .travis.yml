@@ -1,0 +1,11 @@
+before_install:
+  - gem install xcpretty
+  - gem install cocoapods
+  - pod repo update
+  - pod install
+
+language: swift
+xcode_workspace: Youth.xcworkspace
+xcode_scheme: Youth
+osx_image: xcode10
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X
