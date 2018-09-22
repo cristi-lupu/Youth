@@ -1,6 +1,0 @@
-framework module Pods_YouthTests {
-  umbrella header "Pods-YouthTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
