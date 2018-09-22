@@ -6,8 +6,8 @@
 
 
 <p align="center">
-<a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat" alt="Swift"/></a>
-<img src="https://img.shields.io/badge/Platform-iOS%2011.0+-lightgrey.svg" alt="Platform: iOS">
+<a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat" alt="Swift"/></a>
+<img src="https://img.shields.io/badge/Platform-iOS%2012.0+-black.svg" alt="Platform: iOS">
 </p>
 
 ## About
@@ -69,7 +69,7 @@ I am very open for feedback and contribution. 🤙
 
 Cristian Lupu
 
-Email: lupucristiancptc@gmail.com
+Email: cristian.lupu@ellation.com, lupucristiancptc@gmail.com
 
 Twitter: [@LupuCrist](https://twitter.com/LupuCrist)
 
