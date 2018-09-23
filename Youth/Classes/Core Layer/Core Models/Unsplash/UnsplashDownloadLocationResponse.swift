@@ -12,23 +12,23 @@ import Foundation
 // And then extract download url from response.
 
 /// Dowload location response
-public struct UnsplashDownloadLocationResponse {
-
-    public let url: URL?
-
+struct UnsplashDownloadLocationResponse {
+    
+    let url: URL?
+    
 }
 
 // MARK: Decodable
 
 extension UnsplashDownloadLocationResponse: Decodable {
-
+    
     private enum CodingKeys: String, CodingKey {
         case url
     }
-
-    public init(from decoder: Decoder) throws {
+    
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.url = try container.decodeIfPresent(URL.self, forKey: .url)
     }
-
+    
 }

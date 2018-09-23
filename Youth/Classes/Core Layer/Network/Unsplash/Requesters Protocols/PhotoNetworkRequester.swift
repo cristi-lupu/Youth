@@ -8,20 +8,20 @@
 
 import Foundation
 
-public typealias PhotoResponse = ((UnsplashResult<UnsplashPhoto, NetworkError>) -> ())
+typealias PhotoResponse = ((UnsplashResult<UnsplashPhoto, NetworkError>) -> ())
 
 /// Responsible to obtain photo from network
-public protocol PhotoNetworkRequester: class {
-
+protocol PhotoNetworkRequester: class {
+    
     /**
      Get photo
-
+     
      - parameter id: Photo id
      - parameter completion: Completion closure
-
+     
      - returns: NetworkRequestCancelable
-    */
+     */
     @discardableResult
     func photo(id: String, completion: @escaping PhotoResponse) -> NetworkRequestCancelable
-
+    
 }

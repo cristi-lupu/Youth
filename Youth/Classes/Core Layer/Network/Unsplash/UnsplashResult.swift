@@ -9,11 +9,11 @@
 import Foundation
 
 /// Result used as network response in Youth App.
-public enum UnsplashResult<Model, Failure> where Failure: Error {
-
+enum UnsplashResult<Model, Failure> where Failure: Error {
+    
     /// Success case. Contains payload and `optional` rate limit from using Unsplash API
     case success(payload: Model, rateLimit: UnsplashRateLimit?)
-
+    
     /// Failure case
     case failure(Failure)
 }

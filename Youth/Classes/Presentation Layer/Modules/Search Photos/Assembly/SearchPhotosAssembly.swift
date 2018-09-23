@@ -8,24 +8,24 @@
 
 import UIKit
 
-public final class SearchPhotosAssembly {
-
-	public func assemblySearchPhotosModule() -> UIViewController {
-		let view = SearchPhotosViewController()
-		let presenter = SearchPhotosPresenter()
-		let router = SearchPhotosRouter()
-		let state = SearchPhotosState()
-		let interactor = SearchPhotosInteractor()
-
-		view.output = presenter
-		presenter.view = view
-		presenter.interactor = interactor
-		presenter.router = router
-		presenter.state = state
-		interactor.output = presenter
-		router.viewController = view
-
-		return view
-	}
-
+final class SearchPhotosAssembly {
+    
+    func assemblySearchPhotosModule() -> UIViewController {
+        let view = SearchPhotosViewController()
+        let presenter = SearchPhotosPresenter()
+        let router = SearchPhotosRouter()
+        let state = SearchPhotosState()
+        let interactor = SearchPhotosInteractor()
+        
+        view.output = presenter
+        presenter.view = view
+        presenter.interactor = interactor
+        presenter.router = router
+        presenter.state = state
+        interactor.output = presenter
+        router.viewController = view
+        
+        return view
+    }
+    
 }

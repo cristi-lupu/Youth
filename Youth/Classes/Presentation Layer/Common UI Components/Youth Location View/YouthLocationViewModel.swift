@@ -9,9 +9,9 @@
 import Foundation
 
 /// Youth Location View Model
-public struct YouthLocationViewModel {
-
+struct YouthLocationViewModel {
+    
     /// Location
-    public let location: String
-
+    let location: String
+    
 }

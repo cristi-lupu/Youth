@@ -8,13 +8,13 @@
 
 import Foundation
 
-public extension UserDefaults {
-
+extension UserDefaults {
+    
     private var photosCategoryTypeKey: String {
         return "CurrentPhotosCategoryType"
     }
-
-    public var photosCategoryType: PhotosCategoryType {
+    
+    var photosCategoryType: PhotosCategoryType {
         get {
             return PhotosCategoryType(rawValue: integer(forKey: photosCategoryTypeKey)) ?? .latest
         }
@@ -22,5 +22,5 @@ public extension UserDefaults {
             set(newValue.rawValue, forKey: photosCategoryTypeKey)
         }
     }
-
+    
 }

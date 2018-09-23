@@ -9,25 +9,25 @@
 import Foundation
 
 /// Responsible to modify username to conformance with Youth style
-public class UsernameFormatter {
-
+class UsernameFormatter {
+    
     /**
      Modify username in conformance with Youth style.
-
+     
      - parameter text: Any text. Preferably an username.
-
+     
      - returns: Formatted username.
      */
-    public func formattedUsername(_ text: String?) -> String {
+    func formattedUsername(_ text: String?) -> String {
         guard let username = text else {
             return ""
         }
-
+        
         if username.hasPrefix("@") {
             return username
         } else {
             return "@" + username
         }
     }
-
+    
 }

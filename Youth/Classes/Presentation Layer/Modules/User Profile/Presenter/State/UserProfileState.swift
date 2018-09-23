@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct UserProfileState {
-
+struct UserProfileState {
+    
     /// User
-    public var user: UnsplashUser?
+    var user: UnsplashUser?
     
 }

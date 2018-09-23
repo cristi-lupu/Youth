@@ -8,21 +8,21 @@
 
 import UIKit
 
-public protocol SearchPhotosRouterInput: class {
-
+protocol SearchPhotosRouterInput: class {
+    
     var photosCollectionSubModuleOnParentModuleReady: (() -> ())? { get set }
     var photosCollectionSubModuleOnLayoutChange: ((YouthCollectionLayout) -> ())? { get set }
     var photosCollectionSubModuleOnUsageChange: ((PhotosCollectionUsage) -> ())? { get set }
-	
-	func closeModule()
-
+    
+    func closeModule()
+    
     func addPhotosCollectionSubmodule(on canvasView: UIView,
                                       layout: YouthCollectionLayout,
                                       usage: PhotosCollectionUsage,
                                       subModuleOutput: PhotosCollectionModuleOutput)
-
+    
     func showUserProfile(withUser user: UnsplashUser)
-
+    
     func showPhotoDetails(withPhoto photo: UnsplashPhoto)
-
+    
 }

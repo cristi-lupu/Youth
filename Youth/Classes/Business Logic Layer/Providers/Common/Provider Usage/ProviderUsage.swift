@@ -9,11 +9,11 @@
 import Foundation
 
 /// Provider Usage
-public enum ProviderUsage {
-
+enum ProviderUsage {
+    
     /// From network
     case network
-
+    
     /// From persistance
     case persistance
 }

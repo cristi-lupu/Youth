@@ -8,10 +8,10 @@
 
 import Foundation
 
-public protocol PhotoDetailsRouterInput: class {
-	
-	func closeModule()
-
+protocol PhotoDetailsRouterInput: class {
+    
+    func closeModule()
+    
     func showUserProfile(withUser user: UnsplashUser)
-
+    
 }

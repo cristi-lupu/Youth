@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum PhotosCollectionUsage {
+enum PhotosCollectionUsage {
     case photos(orderBy: UnsplashPhotosOrderBy)
     case userPhotos(username: String, orderBy: UnsplashPhotosOrderBy)
     case searchPhotos(query: String)

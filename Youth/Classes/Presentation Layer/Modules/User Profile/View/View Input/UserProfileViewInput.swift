@@ -8,14 +8,14 @@
 
 import UIKit
 
-public protocol UserProfileViewInput: class {
-
+protocol UserProfileViewInput: class {
+    
     func setUpInitialState(withViewModel viewModel: UserProfileViewModel)
-
+    
     func photosCollectionCanvasView() -> UIView
-
+    
     func photosCollectionScrollOwner() -> PhotosCollectionScrollOwner?
-
+    
     func updatePhotosCollectionCanvasViewHeight(_ height: CGFloat)
     
 }

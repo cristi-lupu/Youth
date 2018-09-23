@@ -11,67 +11,67 @@ import Foundation
 /**
  Unsplash Photo Object
  */
-public struct UnsplashPhoto {
+struct UnsplashPhoto {
     /// Identifier
-    public let id: String?
-
+    let id: String?
+    
     /// Create at (date)
-    public let createdAt: Date?
-
+    let createdAt: Date?
+    
     /// Updated at (date)
-    public let updatedAt: Date?
-
+    let updatedAt: Date?
+    
     /// Width size
-    public let width: Int?
-
+    let width: Int?
+    
     /// Height size
-    public let height: Int?
-
+    let height: Int?
+    
     /// Hex Color
-    public let hexColor: String?
-
+    let hexColor: String?
+    
     /// Total likes
-    public let likes: Int64?
-
+    let likes: Int64?
+    
     /// Is liked by user
-    public let likedByUser: Bool?
-
+    let likedByUser: Bool?
+    
     /// About
-    public let description: String?
-
+    let description: String?
+    
     /// Collections It Belongs
-    public let relatedCollections: [UnsplashPhotoCollection]?
-
+    let relatedCollections: [UnsplashPhotoCollection]?
+    
     /// User
-    public let user: UnsplashUser?
-
+    let user: UnsplashUser?
+    
     /// Image URLs
-    public let imageURLs: UnsplashImageURLs?
-
+    let imageURLs: UnsplashImageURLs?
+    
     /// Links
-    public let links: UnsplashLinks?
-
+    let links: UnsplashLinks?
+    
     /// Is sponsored
-    public let isSponsored: Bool?
-
+    let isSponsored: Bool?
+    
     /// Categories
-    public let categories: [UnsplashCategory]?
-
+    let categories: [UnsplashCategory]?
+    
     /// Exif. Photo Metadata
-    public let exif: UnsplashExif?
-
+    let exif: UnsplashExif?
+    
     /// Location
-    public let location: UnsplashLocation?
-
+    let location: UnsplashLocation?
+    
     /// Downloads Count
-    public let downloads: Int64?
-
+    let downloads: Int64?
+    
 }
 
 // MARK: Decodable
 
 extension UnsplashPhoto: Decodable {
-
+    
     private enum CodingKeys: String, CodingKey {
         case id
         case createdAt = "created_at"
@@ -92,17 +92,17 @@ extension UnsplashPhoto: Decodable {
         case location
         case downloads
     }
-
-    public init(from decoder: Decoder) throws {
+    
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decodeIfPresent(String.self, forKey: .id)
-
+        
         let createdAtString = try container.decodeIfPresent(String.self, forKey: .createdAt)
         self.createdAt = UnsplashDateConverter.date(from: createdAtString)
-
+        
         let updatedAtString = try container.decodeIfPresent(String.self, forKey: .updatedAt)
         self.updatedAt = UnsplashDateConverter.date(from: updatedAtString)
-
+        
         self.width = try container.decodeIfPresent(Int.self, forKey: .width)
         self.height = try container.decodeIfPresent(Int.self, forKey: .height)
         self.hexColor = try container.decodeIfPresent(String.self, forKey: .hexColor)
@@ -119,5 +119,5 @@ extension UnsplashPhoto: Decodable {
         self.location = try container.decodeIfPresent(UnsplashLocation.self, forKey: .location)
         self.downloads = try container.decodeIfPresent(Int64.self, forKey: .downloads)
     }
-
+    
 }

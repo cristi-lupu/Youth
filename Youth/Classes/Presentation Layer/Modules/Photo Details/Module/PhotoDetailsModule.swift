@@ -8,19 +8,19 @@
 
 import UIKit
 
-public final class PhotoDetailsModule {
-	
-	// MARK: View Controller
+final class PhotoDetailsModule {
 
-	public let viewController: UIViewController
+    // MARK: View Controller
 
-	// MARK: Module Input
-	
-	public let moduleInput: PhotoDetailsModuleInput
+    let viewController: UIViewController
 
-	public required init(viewController: UIViewController, moduleInput: PhotoDetailsModuleInput) {
-		self.viewController = viewController
-		self.moduleInput = moduleInput
-	}
+    // MARK: Module Input
+
+    let moduleInput: PhotoDetailsModuleInput
+
+    required init(viewController: UIViewController, moduleInput: PhotoDetailsModuleInput) {
+        self.viewController = viewController
+        self.moduleInput = moduleInput
+    }
 
 }

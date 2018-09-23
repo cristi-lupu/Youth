@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol UserProfileInteractorOutput: class {
-
+protocol UserProfileInteractorOutput: class {
+    
 }

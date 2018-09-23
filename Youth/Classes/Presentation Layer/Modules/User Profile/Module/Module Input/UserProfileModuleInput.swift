@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol UserProfileModuleInput: class {
-
+protocol UserProfileModuleInput: class {
+    
     func configure(withUser user: UnsplashUser)
-
+    
 }

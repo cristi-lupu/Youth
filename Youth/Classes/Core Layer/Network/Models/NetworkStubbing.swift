@@ -9,17 +9,17 @@
 import Foundation
 
 /// Network Stubbing. Used only for testing purpose
-public enum NetworkStubbing {
-
-    public enum StubbingError: Error {
+enum NetworkStubbing {
+    
+    enum StubbingError: Error {
         case noData
         case decodingError
         case stubbingIsNever
     }
-
+    
     /// Stubbing Never
     case never
-
+    
     /// Stubbing immediately
     case immediately
 }

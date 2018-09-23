@@ -10,10 +10,10 @@ import XCTest
 @testable import Youth
 
 final class UnsplashNetworkClientPhotosRequesterTests: XCTestCase {
-
+    
     func testPhotosRequest_immediatelyResponse() {
         let networkClient: PhotosNetworkRequester = UnsplashNetworkClient(stubbing: .immediately)
-
+        
         networkClient.photos(page: 1, perPage: 10, orderBy: .latest) { (result) in
             switch result {
             case .success(let payload, _):
@@ -23,5 +23,5 @@ final class UnsplashNetworkClientPhotosRequesterTests: XCTestCase {
             }
         }
     }
-
+    
 }

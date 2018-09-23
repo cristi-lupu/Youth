@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol PhotosViewOutput: class {
+protocol PhotosViewOutput: class {
     
 	func viewIsReady()
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum UserProfileSectionInfoState {
+enum UserProfileSectionInfoState {
     case count(textFormat: String)
     case unknown
 }

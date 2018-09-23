@@ -8,24 +8,24 @@
 
 import Alamofire
 
-public typealias Method = Alamofire.HTTPMethod
+typealias Method = Alamofire.HTTPMethod
 
 /// Task to perform request
-public struct Task {
-
+struct Task {
+    
     /// Endpoint URL
-    public let endpoint: URL
-
+    let endpoint: URL
+    
     /// Method to perform request
-    public let method: Method
-
+    let method: Method
+    
     /// Parameters
-    public let parameters: [String : Any]?
-
+    let parameters: [String : Any]?
+    
     /// Encoding
-    public let encoding: URLEncoding
-
+    let encoding: URLEncoding
+    
     /// Headers
-    public let headers: [String : String]?
-
+    let headers: [String : String]?
+    
 }

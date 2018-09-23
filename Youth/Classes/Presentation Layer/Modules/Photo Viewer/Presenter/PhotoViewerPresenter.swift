@@ -8,27 +8,27 @@
 
 import Foundation
 
-public final class PhotoViewerPresenter {
+final class PhotoViewerPresenter {
     
     // MARK: View
     
-    public weak var view: PhotoViewerViewInput?
-
+    weak var view: PhotoViewerViewInput?
+    
     // MARK: Interactor
-
-    public var interactor: PhotoViewerInteractorInput?
-
+    
+    var interactor: PhotoViewerInteractorInput?
+    
     // MARK: Router
-
-    public var router: PhotoViewerRouterInput?
-
+    
+    var router: PhotoViewerRouterInput?
+    
     // MARK: State
-
-    public var state = PhotoViewerState()
-
+    
+    var state = PhotoViewerState()
+    
     // MARK: Module Output
-
-    public weak var moduleOutput: PhotoViewerModuleOutput?
+    
+    weak var moduleOutput: PhotoViewerModuleOutput?
     
 }
 
@@ -36,7 +36,7 @@ public final class PhotoViewerPresenter {
 
 extension PhotoViewerPresenter: PhotoViewerViewOutput {
     
-    public func viewIsReady() {
+    func viewIsReady() {
         view?.setUpInitialState()
     }   
     
@@ -45,15 +45,15 @@ extension PhotoViewerPresenter: PhotoViewerViewOutput {
 // MARK: PhotoViewerInteractorOutput
 
 extension PhotoViewerPresenter: PhotoViewerInteractorOutput {
-
+    
     
 }
 
 // MARK: PhotoViewerModuleInput
 
 extension PhotoViewerPresenter: PhotoViewerModuleInput {
-
-    public func set(moduleOutput: PhotoViewerModuleOutput) {
+    
+    func set(moduleOutput: PhotoViewerModuleOutput) {
         self.moduleOutput = moduleOutput
     }
     

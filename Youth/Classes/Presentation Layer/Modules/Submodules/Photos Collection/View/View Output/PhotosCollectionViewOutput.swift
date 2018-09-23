@@ -8,18 +8,18 @@
 
 import UIKit
 
-public protocol PhotosCollectionViewOutput: class {
-
+protocol PhotosCollectionViewOutput: class {
+    
     func didTapImage(on indexPath: IndexPath)
-
+    
     func didTouchUpInsideLikeButton(on indexPath: IndexPath)
-
+    
     func didTouchUpInsideShareButton(on indexPath: IndexPath)
-
+    
     func didTapDownloadButton(on indexPath: IndexPath)
-
+    
     func didTapUser(on indexPath: IndexPath)
-
+    
     func didChangeContentHeight(_ height: CGFloat)
-
+    
 }

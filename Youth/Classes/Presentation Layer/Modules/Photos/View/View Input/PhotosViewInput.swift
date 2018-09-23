@@ -8,16 +8,16 @@
 
 import UIKit
 
-public protocol PhotosViewInput: class {
+protocol PhotosViewInput: class {
     
     func setUpInitialState(collectionLayout: YouthCollectionLayout,
                            photosCategoriesTitles: [String],
                            photosCategoriesCurrentIndex: Int)
-
+    
     func photosCollectionCanvasView() -> UIView
-
+    
     func updateState(for collectionLayout: YouthCollectionLayout)
-
+    
     func showNotification(withText text: String)
     
 }

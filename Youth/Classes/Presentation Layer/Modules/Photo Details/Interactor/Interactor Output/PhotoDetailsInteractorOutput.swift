@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol PhotoDetailsInteractorOutput: class {
-
+protocol PhotoDetailsInteractorOutput: class {
+    
     func didObtain(photo: UnsplashPhoto?, withError error: PhotoProvider.Error?)
-
+    
 }

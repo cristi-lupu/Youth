@@ -9,8 +9,8 @@
 import Foundation
 
 /// Responsible to catch ObjC Exceptions
-public final class ObjCExceptionCatcher {
-
+final class ObjCExceptionCatcher {
+    
     static func tryClosure(tryClosure: () -> (),
                            catchClosure: @escaping (NSException) -> (),
                            finallyClosure: @escaping () -> () = {}) {
@@ -18,5 +18,5 @@ public final class ObjCExceptionCatcher {
                                                catch: catchClosure,
                                                finally: finallyClosure)
     }
-
+    
 }

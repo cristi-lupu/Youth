@@ -8,29 +8,29 @@
 
 import UIKit
 
-public final class PhotoDetailsPresenter {
+final class PhotoDetailsPresenter {
     
     // MARK: View
     
-    public weak var view: PhotoDetailsViewInput?
-
+    weak var view: PhotoDetailsViewInput?
+    
     // MARK: Interactor
-
-    public var interactor: PhotoDetailsInteractorInput?
-
+    
+    var interactor: PhotoDetailsInteractorInput?
+    
     // MARK: Router
-
-    public var router: PhotoDetailsRouterInput?
-
+    
+    var router: PhotoDetailsRouterInput?
+    
     // MARK: State
-
-    public var state = PhotoDetailsState()
-
+    
+    var state = PhotoDetailsState()
+    
     // MARK: Private properties
-
+    
     private let viewModelBuilder: PhotoDetailsViewModelBuilder
-
-    public init(viewModelBuilder: PhotoDetailsViewModelBuilder) {
+    
+    init(viewModelBuilder: PhotoDetailsViewModelBuilder) {
         self.viewModelBuilder = viewModelBuilder
     }
     
@@ -40,23 +40,23 @@ public final class PhotoDetailsPresenter {
 
 extension PhotoDetailsPresenter: PhotoDetailsViewOutput {
     
-    public func viewIsReady() {
+    func viewIsReady() {
         guard let id = state.photo?.id else {
             return
         }
-
+        
         view?.setUpInitialState(title: "Photo")
         
         view?.showTopLoading()
-
+        
         interactor?.obtainPhoto(withID: id)
     }
-
-    public func didTapUser() {
+    
+    func didTapUser() {
         guard let user = state.photo?.user else {
             return
         }
-
+        
         router?.showUserProfile(withUser: user)
     }
     
@@ -65,15 +65,15 @@ extension PhotoDetailsPresenter: PhotoDetailsViewOutput {
 // MARK: PhotoDetailsInteractorOutput
 
 extension PhotoDetailsPresenter: PhotoDetailsInteractorOutput {
-
-    public func didObtain(photo: UnsplashPhoto?, withError error: PhotoProvider.Error?) {
+    
+    func didObtain(photo: UnsplashPhoto?, withError error: PhotoProvider.Error?) {
         view?.hideTopLoading()
-
+        
         guard let photo = photo else {
             print(error!)
             return
         }
-
+        
         let viewModel = viewModelBuilder.build(withPhoto: photo)
         view?.updateState(withViewModel: viewModel)
     }
@@ -83,8 +83,8 @@ extension PhotoDetailsPresenter: PhotoDetailsInteractorOutput {
 // MARK: PhotoDetailsModuleInput
 
 extension PhotoDetailsPresenter: PhotoDetailsModuleInput {
-
-    public func configure(withPhoto photo: UnsplashPhoto) {
+    
+    func configure(withPhoto photo: UnsplashPhoto) {
         state.photo = photo
     }
     
