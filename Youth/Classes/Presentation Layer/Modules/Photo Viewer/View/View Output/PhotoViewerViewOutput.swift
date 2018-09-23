@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol PhotoViewerViewOutput: class {
+protocol PhotoViewerViewOutput: class {
     
-	func viewIsReady()
-
+    func viewIsReady()
+    
 }

@@ -10,52 +10,52 @@ import Foundation
 import Alamofire
 
 /// Responsible to obtain photos
-public final class PhotosCollectionProvider {
-
-    public typealias PhotosProviderNetworkClient = PhotosNetworkRequester & UserPhotosNetworkRequester & UserLikedPhotosNetworkRequester & SearchPhotosNetworkRequester
-
+final class PhotosCollectionProvider {
+    
+    typealias PhotosProviderNetworkClient = PhotosNetworkRequester & UserPhotosNetworkRequester & UserLikedPhotosNetworkRequester & SearchPhotosNetworkRequester
+    
     deinit {
         currentRequest?.cancelRequest()
     }
-
-    public enum Error: Swift.Error {
+    
+    enum Error: Swift.Error {
         case noInternetConnection
         case noMorePhotos
         case `internal`
     }
-
-    public enum PhotosResult<Model, ProviderError> where ProviderError: Swift.Error {
+    
+    enum PhotosResult<Model, ProviderError> where ProviderError: Swift.Error {
         case success(payload: Model)
         case failure(ProviderError)
     }
-
+    
     private let networkClient: PhotosProviderNetworkClient
-
+    
     private var currentRequest: NetworkRequestCancelable?
-
-    public init(networkClient: PhotosProviderNetworkClient) {
+    
+    init(networkClient: PhotosProviderNetworkClient) {
         self.networkClient = networkClient
     }
-
+    
 }
 
 extension PhotosCollectionProvider {
-
-    public func cancelNetworkRequest() {
+    
+    func cancelNetworkRequest() {
         currentRequest?.cancelRequest()
     }
-
+    
 }
 
 extension PhotosCollectionProvider {
-
-    public typealias PhotosProviderCompletion = (PhotosResult<[UnsplashPhoto], Error>) -> ()
-
-    public func photos(page: Int,
-                       perPage: Int,
-                       orderBy: UnsplashPhotosOrderBy,
-                       usage: ProviderUsage,
-                       completion: @escaping PhotosProviderCompletion) {
+    
+    typealias PhotosProviderCompletion = (PhotosResult<[UnsplashPhoto], Error>) -> ()
+    
+    func photos(page: Int,
+                perPage: Int,
+                orderBy: UnsplashPhotosOrderBy,
+                usage: ProviderUsage,
+                completion: @escaping PhotosProviderCompletion) {
         switch usage {
         case .network:
             currentRequest = networkClient.photos(
@@ -85,17 +85,17 @@ extension PhotosCollectionProvider {
             break
         }
     }
-
+    
 }
 
 extension PhotosCollectionProvider {
-
-    public func userPhotos(username: String,
-                           page: Int,
-                           perPage: Int,
-                           orderBy: UnsplashPhotosOrderBy,
-                           usage: ProviderUsage,
-                           completion: @escaping PhotosProviderCompletion) {
+    
+    func userPhotos(username: String,
+                    page: Int,
+                    perPage: Int,
+                    orderBy: UnsplashPhotosOrderBy,
+                    usage: ProviderUsage,
+                    completion: @escaping PhotosProviderCompletion) {
         switch usage {
         case .network:
             currentRequest = networkClient.userPhotos(
@@ -127,17 +127,17 @@ extension PhotosCollectionProvider {
             break
         }
     }
-
+    
 }
 
 extension PhotosCollectionProvider {
-
-    public func userLikedPhotos(username: String,
-                                page: Int,
-                                perPage: Int,
-                                orderBy: UnsplashPhotosOrderBy,
-                                usage: ProviderUsage,
-                                completion: @escaping PhotosProviderCompletion) {
+    
+    func userLikedPhotos(username: String,
+                         page: Int,
+                         perPage: Int,
+                         orderBy: UnsplashPhotosOrderBy,
+                         usage: ProviderUsage,
+                         completion: @escaping PhotosProviderCompletion) {
         switch usage {
         case .network:
             currentRequest = networkClient.userLikedPhotos(
@@ -168,21 +168,21 @@ extension PhotosCollectionProvider {
             break
         }
     }
-
+    
 }
 
 extension PhotosCollectionProvider {
-
-    public func searchPhotos(query: String,
-                             page: Int,
-                             perPage: Int,
-                             usage: ProviderUsage,
-                             completion: @escaping PhotosProviderCompletion) {
+    
+    func searchPhotos(query: String,
+                      page: Int,
+                      perPage: Int,
+                      usage: ProviderUsage,
+                      completion: @escaping PhotosProviderCompletion) {
         guard !query.isEmpty else {
             completion(.success(payload: []))
             return
         }
-
+        
         switch usage {
         case .network:
             currentRequest = networkClient.searchPhotos(
@@ -213,5 +213,5 @@ extension PhotosCollectionProvider {
             break
         }
     }
-
+    
 }

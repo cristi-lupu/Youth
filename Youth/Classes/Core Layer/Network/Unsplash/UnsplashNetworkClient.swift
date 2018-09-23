@@ -11,7 +11,7 @@ import Alamofire
 /**
  Client for performing network requests with Unsplash API
  */
-public final class UnsplashNetworkClient {
+final class UnsplashNetworkClient {
 
     private let authorization: UnsplashAuthorization
 
@@ -26,8 +26,8 @@ public final class UnsplashNetworkClient {
      - note: Parameter authorization is default.
      - note: Parameter stubbing is default. Use for testing only.
      */
-    public init(with authorization: UnsplashAuthorization = .default,
-                stubbing: NetworkStubbing = .never) {
+    init(with authorization: UnsplashAuthorization = .default,
+         stubbing: NetworkStubbing = .never) {
         self.authorization = authorization
         self.stubbing = stubbing
     }
@@ -74,10 +74,10 @@ public final class UnsplashNetworkClient {
 extension UnsplashNetworkClient: PhotosNetworkRequester {
 
     @discardableResult
-    public func photos(page: Int,
-                       perPage: Int,
-                       orderBy: UnsplashPhotosOrderBy,
-                       completion: @escaping PhotosResponse) -> NetworkRequestCancelable {
+    func photos(page: Int,
+                perPage: Int,
+                orderBy: UnsplashPhotosOrderBy,
+                completion: @escaping PhotosResponse) -> NetworkRequestCancelable {
         let api = UnsplashAPI.photos(page: page,
                                      perPage: perPage,
                                      orderBy: orderBy,
@@ -135,8 +135,8 @@ extension UnsplashNetworkClient: PhotosNetworkRequester {
 extension UnsplashNetworkClient: UserPublicProfileNetworkRequester {
 
     @discardableResult
-    public func userPublicProfile(username: String,
-                                  completion: @escaping UserPublicProfileResponse) -> NetworkRequestCancelable {
+    func userPublicProfile(username: String,
+                           completion: @escaping UserPublicProfileResponse) -> NetworkRequestCancelable {
         let api = UnsplashAPI.userPublicProfile(username: username,
                                                 authorization: authorization)
 
@@ -192,12 +192,12 @@ extension UnsplashNetworkClient: UserPublicProfileNetworkRequester {
 extension UnsplashNetworkClient: UserPhotosNetworkRequester {
 
     @discardableResult
-    public func userPhotos(username: String,
-                           page: Int,
-                           perPage: Int,
-                           orderBy: UnsplashPhotosOrderBy,
-                           includeStats: Bool,
-                           completion: @escaping PhotosResponse) -> NetworkRequestCancelable {
+    func userPhotos(username: String,
+                    page: Int,
+                    perPage: Int,
+                    orderBy: UnsplashPhotosOrderBy,
+                    includeStats: Bool,
+                    completion: @escaping PhotosResponse) -> NetworkRequestCancelable {
         let api = UnsplashAPI.userPhotos(username: username,
                                          page: page,
                                          perPage: perPage,
@@ -257,16 +257,16 @@ extension UnsplashNetworkClient: UserPhotosNetworkRequester {
 extension UnsplashNetworkClient: UserLikedPhotosNetworkRequester {
 
     @discardableResult
-    public func userLikedPhotos(username: String,
-                                page: Int,
-                                perPage: Int,
-                                orderBy: UnsplashPhotosOrderBy,
-                                completion: @escaping PhotosResponse) -> NetworkRequestCancelable {
+    func userLikedPhotos(username: String,
+                         page: Int,
+                         perPage: Int,
+                         orderBy: UnsplashPhotosOrderBy,
+                         completion: @escaping PhotosResponse) -> NetworkRequestCancelable {
         let api = UnsplashAPI.userLikedPhotos(username: username,
-                                         page: page,
-                                         perPage: perPage,
-                                         orderBy: orderBy,
-                                         authorization: authorization)
+                                              page: page,
+                                              perPage: perPage,
+                                              orderBy: orderBy,
+                                              authorization: authorization)
 
         let request = self.request(for: api)
 
@@ -320,10 +320,10 @@ extension UnsplashNetworkClient: UserLikedPhotosNetworkRequester {
 extension UnsplashNetworkClient: SearchPhotosNetworkRequester {
 
     @discardableResult
-    public func searchPhotos(query: String,
-                             page: Int,
-                             perPage: Int,
-                             completion: @escaping SearchPhotosResponse) -> NetworkRequestCancelable {
+    func searchPhotos(query: String,
+                      page: Int,
+                      perPage: Int,
+                      completion: @escaping SearchPhotosResponse) -> NetworkRequestCancelable {
         let api = UnsplashAPI.searchPhotos(query: query,
                                            page: page,
                                            perPage: perPage,
@@ -380,7 +380,7 @@ extension UnsplashNetworkClient: SearchPhotosNetworkRequester {
 
 extension UnsplashNetworkClient: PhotoNetworkRequester {
 
-    public func photo(id: String, completion: @escaping PhotoResponse) -> NetworkRequestCancelable {
+    func photo(id: String, completion: @escaping PhotoResponse) -> NetworkRequestCancelable {
         let api = UnsplashAPI.photo(id: id,
                                     width: nil,
                                     height: nil,

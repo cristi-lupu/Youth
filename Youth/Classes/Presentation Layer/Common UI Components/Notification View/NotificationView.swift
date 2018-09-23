@@ -9,12 +9,12 @@
 import UIKit
 
 /// Notification View
-public final class NotificationView: UIView {
-
+final class NotificationView: UIView {
+    
     // MARK: Private properties
-
+    
     private weak var titleLabel: UILabel!
-
+    
     private var configuredTitleLabel: UILabel {
         let label = UILabel()
         label.textAlignment = .center
@@ -23,48 +23,50 @@ public final class NotificationView: UIView {
         label.textColor = .white
         return label
     }
-
+    
     // MARK: Initialization
-
-    public override init(frame: CGRect) {
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
+        
         commonInit()
     }
-
-    public required init?(coder aDecoder: NSCoder) {
+    
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
         commonInit()
     }
-
+    
     // MARK: Private methods
-
+    
     private func commonInit() {
         backgroundColor = .black
-
+        
         let titleLabel = configuredTitleLabel
-
+        
         addSubview(titleLabel)
-
+        
         titleLabel.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
         }
-
+        
         snp.makeConstraints { (maker) in
             maker.height.equalTo(40)
         }
-
+        
         self.titleLabel = titleLabel
     }
-
+    
     // MARK: Public methods
-
+    
     /**
      Set title
-
+     
      - parameter title: Title string
-    */
-    public func set(title: String) {
+     */
+    func set(title: String) {
         titleLabel.text = title
     }
-
+    
 }

@@ -9,11 +9,12 @@
 import UIKit
 
 /// Main navigation controller of app
-public final class YouthNavigationController: UINavigationController {
-
-    public convenience init(initialViewController: UIViewController) {
+final class YouthNavigationController: UINavigationController {
+    
+    convenience init(initialViewController: UIViewController) {
         self.init(navigationBarClass: YouthNavigationBar.self, toolbarClass: nil)
+        
         viewControllers = [initialViewController]
     }
-
+    
 }

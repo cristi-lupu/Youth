@@ -9,22 +9,29 @@
 import UIKit
 
 /// Main navigation bar of app
-public final class YouthNavigationBar: UINavigationBar {
-
-    public override init(frame: CGRect) {
+final class YouthNavigationBar: UINavigationBar {
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        commonInit()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        topItem?.title = ""
+    }
+    
+    private func commonInit() {
         let backImage = UIImage(named: "Actions/navigation-arrow")
         backIndicatorImage = backImage
         backIndicatorTransitionMaskImage = backImage
     }
-
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        topItem?.title = ""
-    }
-
+    
 }

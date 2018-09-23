@@ -8,34 +8,34 @@
 
 import UIKit
 
-public final class UserProfileInteractor {
-
-	// MARK: Output
-
-    public weak var output: UserProfileInteractorOutput?
-
+final class UserProfileInteractor {
+    
+    // MARK: Output
+    
+    weak var output: UserProfileInteractorOutput?
+    
     // MARK: Instagram App Opener
-
-    public var instagramOpener: InstagramAppOpener?
-
+    
+    var instagramOpener: InstagramAppOpener?
+    
     // MARK: Twitter Opener
-
-    public var twitterOpener: TwitterAppOpener?
-
+    
+    var twitterOpener: TwitterAppOpener?
+    
 }
 
 // MARK: UserProfileInteractorInput 
 
 extension UserProfileInteractor: UserProfileInteractorInput {
-
-    public func openInstagramUserProfile(username: String) {
+    
+    func openInstagramUserProfile(username: String) {
         instagramOpener?.openApp(withData: username, completion: { (success, error) in
             print(success)
             print(error ?? "tip nui erroare instagram")
         })
     }
-
-    public func openTwitterUserProfile(username: String) {
+    
+    func openTwitterUserProfile(username: String) {
         twitterOpener?.openApp(withData: username, completion: { (success, error) in
             print(success)
             print(error ?? "tip nui erroare twitter")

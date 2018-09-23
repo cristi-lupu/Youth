@@ -8,14 +8,14 @@
 
 import Foundation
 
-public protocol SearchPhotosViewOutput: class {
+protocol SearchPhotosViewOutput: class {
     
-	func viewIsReady()
-
+    func viewIsReady()
+    
     func viewDidAppear()
-
+    
     func didTapLayoutButton()
-
+    
     func didChange(searchText: String)
-
+    
 }

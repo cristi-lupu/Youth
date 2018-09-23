@@ -8,16 +8,16 @@
 
 import UIKit
 
-public protocol SearchPhotosViewInput: class {
+protocol SearchPhotosViewInput: class {
     
     func setUpInitialState(collectionLayout: YouthCollectionLayout)
-
+    
     func updateState(for collectionLayout: YouthCollectionLayout)
-
+    
     func showKeyboard()
-
+    
     func photosCollectionCanvasView() -> UIView
-
+    
     func showNotification(withText text: String)
     
 }

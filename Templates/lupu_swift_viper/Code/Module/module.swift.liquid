@@ -2,17 +2,17 @@
 
 import UIKit
 
-public final class {{ module_info.name }}Module {
+final class {{ module_info.name }}Module {
 	
 	// MARK: View Controller
 
-	public let viewController: UIViewController
+	let viewController: UIViewController
 
 	// MARK: Module Input
 	
-	public let moduleInput: {{ module_info.name }}ModuleInput
+	let moduleInput: {{ module_info.name }}ModuleInput
 
-	public required init(viewController: UIViewController, moduleInput: {{ module_info.name }}ModuleInput) {
+	required init(viewController: UIViewController, moduleInput: {{ module_info.name }}ModuleInput) {
 		self.viewController = viewController
 		self.moduleInput = moduleInput
 	}

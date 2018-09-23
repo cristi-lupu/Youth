@@ -9,56 +9,56 @@
 import Foundation
 
 /// Responsible to obtain photo
-public final class PhotoProvider {
-
-    public typealias PhotoProviderNetworkClient = PhotoNetworkRequester
-
+final class PhotoProvider {
+    
+    typealias PhotoProviderNetworkClient = PhotoNetworkRequester
+    
     deinit {
         currentRequest?.cancelRequest()
     }
-
+    
     /// Provider Error
-    public enum Error: Swift.Error {
+    enum Error: Swift.Error {
         /// No internet connection
         case noInternetConnection
-
+        
         /// Internal
         case `internal`
     }
-
+    
     /// Photo Result
-    public enum PhotoResult<ProviderError> where ProviderError: Swift.Error {
-
+    enum PhotoResult<ProviderError> where ProviderError: Swift.Error {
+        
         /// Success
         case success(payload: UnsplashPhoto)
-
+        
         /// Failure
         case failure(ProviderError)
     }
-
+    
     private let networkClient: PhotoProviderNetworkClient
-
+    
     private var currentRequest: NetworkRequestCancelable?
-
-    public init(networkClient: PhotoProviderNetworkClient) {
+    
+    init(networkClient: PhotoProviderNetworkClient) {
         self.networkClient = networkClient
     }
-
+    
 }
 
 extension PhotoProvider {
-
-    public func cancelNetworkRequest() {
+    
+    func cancelNetworkRequest() {
         currentRequest?.cancelRequest()
     }
-
+    
 }
 
 extension PhotoProvider {
-
-    public typealias PhotoProviderCompletion = (PhotoResult<Error>) -> ()
-
-    public func photo(id: String, usage: ProviderUsage, completion: @escaping PhotoProviderCompletion) {
+    
+    typealias PhotoProviderCompletion = (PhotoResult<Error>) -> ()
+    
+    func photo(id: String, usage: ProviderUsage, completion: @escaping PhotoProviderCompletion) {
         switch usage {
         case .network:
             currentRequest = networkClient.photo(id: id) { (result) in
@@ -81,5 +81,5 @@ extension PhotoProvider {
             break
         }
     }
-
+    
 }

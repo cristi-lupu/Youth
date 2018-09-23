@@ -9,9 +9,9 @@
 import Foundation
 
 /// Responsible to notify receiver with scroll actions
-public protocol PhotosCollectionScrollOwner: class {
-
+protocol PhotosCollectionScrollOwner: class {
+    
     /// Scroll Actions Receiver
     var photosCollectionScrollingUpdateReceiver: PhotosCollectionScrollingUpdateReceiver? { get set }
-
+    
 }

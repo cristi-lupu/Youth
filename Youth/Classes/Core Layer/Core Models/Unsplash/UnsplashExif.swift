@@ -9,44 +9,44 @@
 import Foundation
 
 /// Photo Metadata
-public struct UnsplashExif {
-
+struct UnsplashExif {
+    
     /**
      Camera’s brand
-    */
-    public let make: String?
-
+     */
+    let make: String?
+    
     /**
      Camera’s model
-    */
-    public let model: String?
-
+     */
+    let model: String?
+    
     /**
      Camera’s exposure time
      */
-    public let exposureTime: String?
-
+    let exposureTime: String?
+    
     /**
      Camera’s aperture value
      */
-    public let aperture: String?
-
+    let aperture: String?
+    
     /**
      Camera’s focal length
      */
-    public let focalLength: String?
-
+    let focalLength: String?
+    
     /**
      Camera’s iso
      */
-    public let iso: Int?
-
+    let iso: Int?
+    
 }
 
 // MARK: Decodable
 
 extension UnsplashExif: Decodable {
-
+    
     private enum CodingKeys: String, CodingKey {
         case make
         case model
@@ -55,8 +55,8 @@ extension UnsplashExif: Decodable {
         case focalLength = "focal_length"
         case iso
     }
-
-    public init(from decoder: Decoder) throws {
+    
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.make = try container.decodeIfPresent(String.self, forKey: .make)
         self.model = try container.decodeIfPresent(String.self, forKey: .model)
@@ -65,5 +65,5 @@ extension UnsplashExif: Decodable {
         self.focalLength = try container.decodeIfPresent(String.self, forKey: .focalLength)
         self.iso = try container.decodeIfPresent(Int.self, forKey: .iso)
     }
-
+    
 }

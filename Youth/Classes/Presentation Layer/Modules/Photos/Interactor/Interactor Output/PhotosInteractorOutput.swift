@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol PhotosInteractorOutput: class {
-
+protocol PhotosInteractorOutput: class {
+    
 }

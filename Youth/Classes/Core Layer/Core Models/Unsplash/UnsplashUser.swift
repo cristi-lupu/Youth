@@ -9,83 +9,83 @@
 import Foundation
 
 /// User object
-public struct UnsplashUser {
-
+struct UnsplashUser {
+    
     /// Identifier
-    public let id: String?
-
+    let id: String?
+    
     /// Updated at (date)
-    public let updatedAt: Date?
-
+    let updatedAt: Date?
+    
     /// Username
-    public let username: String?
-
+    let username: String?
+    
     /// First name
-    public let firstName: String?
-
+    let firstName: String?
+    
     /// Last name
-    public let lastName: String?
-
+    let lastName: String?
+    
     /// Name
-    public let name: String?
-
+    let name: String?
+    
     /// Instagram username
-    public let instagramUsername: String?
-
+    let instagramUsername: String?
+    
     /// Twitter username
-    public let twitterUsername: String?
-
+    let twitterUsername: String?
+    
     /// Email
-    public let email: String?
-
+    let email: String?
+    
     /// Bio
-    public let bio: String?
-
+    let bio: String?
+    
     /// Is followed by user
-    public let followedByUser: Bool?
-
+    let followedByUser: Bool?
+    
     /// Followers Count
-    public let followersCount: Int64?
-
+    let followersCount: Int64?
+    
     /// Following Count
-    public let followingCount: Int64?
-
+    let followingCount: Int64?
+    
     /// Downloads Count
-    public let downloads: Int64?
-
+    let downloads: Int64?
+    
     /// Uploads Remaining Count
-    public let uploadsRemaining: Int64?
-
+    let uploadsRemaining: Int64?
+    
     /// Location
-    public let location: String?
-
+    let location: String?
+    
     /// Total likes count
-    public let totalLikes: Int64?
-
+    let totalLikes: Int64?
+    
     /// Total photos count
-    public let totalPhotos: Int64?
-
+    let totalPhotos: Int64?
+    
     /// Total collections count
-    public let totalCollections: Int64?
-
+    let totalCollections: Int64?
+    
     /// Profile Image
-    public let profileImage: UnsplashProfileImage?
-
+    let profileImage: UnsplashProfileImage?
+    
     /// Links
-    public let links: UnsplashLinks?
-
+    let links: UnsplashLinks?
+    
     /// Portfolio URL
-    public let portfolioURL: URL?
-
+    let portfolioURL: URL?
+    
     /// Badge
-    public let badge: UnsplashBadge?
-
+    let badge: UnsplashBadge?
+    
 }
 
 // MARK: Decodable
 
 extension UnsplashUser: Decodable {
-
+    
     private enum CodingKeys: String, CodingKey {
         case id
         case updatedAt = "updated_at"
@@ -111,11 +111,11 @@ extension UnsplashUser: Decodable {
         case portfolioURL = "portfolio_url"
         case badge
     }
-
-    public init(from decoder: Decoder) throws {
+    
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decodeIfPresent(String.self, forKey: .id)
-
+        
         let updatedAtString = try container.decodeIfPresent(String.self, forKey: .updatedAt)
         self.updatedAt = UnsplashDateConverter.date(from: updatedAtString)
         
@@ -141,5 +141,5 @@ extension UnsplashUser: Decodable {
         self.portfolioURL = try container.decodeIfPresent(URL.self, forKey: .portfolioURL)
         self.badge = try container.decodeIfPresent(UnsplashBadge.self, forKey: .badge)
     }
-
+    
 }

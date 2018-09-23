@@ -9,38 +9,38 @@
 import UIKit
 
 /// PhotosCollectionCellViewModel
-public struct PhotosCollectionCellViewModel {
+struct PhotosCollectionCellViewModel {
 
     /// Original photo size
-    public let originalPhotoSize: CGSize
+    let originalPhotoSize: CGSize
 
     /// Image Background Color
-    public let backgroundColor: UIColor
+    let backgroundColor: UIColor
 
     /// Likes Count
-    public let likes: String
+    let likes: String
 
     /// Is liked By User
-    public let likedByUser: Bool
+    let likedByUser: Bool
 
     /// Image URL
-    public let imageURL: URL?
+    let imageURL: URL?
 
     /// User View Model
-    public let userViewModel: YouthUserViewModel
+    let userViewModel: YouthUserViewModel
 
     /// Is Downloading
-    public var isDownloading = false
+    var isDownloading = false
 
     /// Downloading progress
-    public var downloadingProgress: Double = 0.0
+    var downloadingProgress: Double = 0.0
 
-    public init(originalPhotoSize: CGSize,
-                backgroundColor: UIColor,
-                likes: String,
-                likedByUser: Bool,
-                imageURL: URL?,
-                userViewModel: YouthUserViewModel) {
+    init(originalPhotoSize: CGSize,
+         backgroundColor: UIColor,
+         likes: String,
+         likedByUser: Bool,
+         imageURL: URL?,
+         userViewModel: YouthUserViewModel) {
         self.originalPhotoSize = originalPhotoSize
         self.backgroundColor = backgroundColor
         self.likes = likes

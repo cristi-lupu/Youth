@@ -8,14 +8,14 @@
 
 import Foundation
 
-public protocol PhotoDetailsViewInput: class {
-	
+protocol PhotoDetailsViewInput: class {
+    
     func setUpInitialState(title: String)
-
+    
     func updateState(withViewModel viewModel: PhotoDetailsViewModel)
-
+    
     func showTopLoading()
-
+    
     func hideTopLoading()
-
+    
 }

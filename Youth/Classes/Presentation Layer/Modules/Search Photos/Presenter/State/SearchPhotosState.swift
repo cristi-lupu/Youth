@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct SearchPhotosState {
-
+struct SearchPhotosState {
+    
     /// Collection Layout. Default value .grid
-    public var collectionLayout: YouthCollectionLayout = .grid
+    var collectionLayout: YouthCollectionLayout = .grid
     
 }

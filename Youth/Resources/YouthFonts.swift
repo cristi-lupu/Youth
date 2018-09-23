@@ -8,13 +8,13 @@
 
 import UIKit
 
-public enum YouthFonts {
+enum YouthFonts {
     case avenirNextRegular(size: CGFloat)
     case avenirNextMedium(size: CGFloat)
     case avenirNextBold(size: CGFloat)
     case avenirNextDemiBold(size: CGFloat)
-
-    public var font: UIFont {
+    
+    var font: UIFont {
         switch self {
         case let .avenirNextRegular(size):
             return UIFont(name: "AvenirNext-Regular", size: size) ?? UIFont.systemFont(ofSize: size)

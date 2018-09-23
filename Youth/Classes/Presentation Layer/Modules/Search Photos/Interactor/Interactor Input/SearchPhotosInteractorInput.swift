@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol SearchPhotosInteractorInput: class {
-
+protocol SearchPhotosInteractorInput: class {
+    
 }

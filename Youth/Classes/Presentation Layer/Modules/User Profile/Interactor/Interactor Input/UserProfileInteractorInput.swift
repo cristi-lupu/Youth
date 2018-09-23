@@ -8,10 +8,10 @@
 
 import Foundation
 
-public protocol UserProfileInteractorInput: class {
-
+protocol UserProfileInteractorInput: class {
+    
     func openInstagramUserProfile(username: String)
-
+    
     func openTwitterUserProfile(username: String)
-
+    
 }

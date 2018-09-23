@@ -8,29 +8,29 @@
 
 import UIKit
 
-public final class PhotoDetailsRouter {
-	
-	public weak var viewController: UIViewController?
-
+final class PhotoDetailsRouter {
+    
+    weak var viewController: UIViewController?
+    
 }
 
 extension PhotoDetailsRouter: PhotoDetailsRouterInput {
-	
-	public func closeModule() {
-		viewController?.dismiss(animated: true)
-	}
-
-    public func showUserProfile(withUser user: UnsplashUser) {
+    
+    func closeModule() {
+        viewController?.dismiss(animated: true)
+    }
+    
+    func showUserProfile(withUser user: UnsplashUser) {
         guard let navigationController = viewController?.navigationController else {
             return
         }
-
+        
         let userProfileAssembly = UserProfileAssembly()
         let userProfileModule = userProfileAssembly.assemblyUserProfileModule()
-
+        
         userProfileModule.moduleInput.configure(withUser: user)
-
+        
         navigationController.pushViewController(userProfileModule.viewController, animated: true)
     }
-
+    
 }

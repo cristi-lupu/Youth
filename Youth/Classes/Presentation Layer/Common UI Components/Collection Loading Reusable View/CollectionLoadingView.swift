@@ -8,15 +8,15 @@
 
 import UIKit
 
-public final class CollectionLoadingView: UICollectionReusableView, NibReusable {
-
+final class CollectionLoadingView: UICollectionReusableView, NibReusable {
+    
     @IBOutlet weak private var activityIndicatorView: UIActivityIndicatorView!
-
-    public func startAnimating() {
+    
+    func startAnimating() {
         activityIndicatorView.startAnimating()
     }
-
-    public func stopAnimating() {
+    
+    func stopAnimating() {
         activityIndicatorView.stopAnimating()
     }
     

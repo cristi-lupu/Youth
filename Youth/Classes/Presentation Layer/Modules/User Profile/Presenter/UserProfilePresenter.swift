@@ -8,29 +8,29 @@
 
 import UIKit
 
-public final class UserProfilePresenter {
+final class UserProfilePresenter {
     
     // MARK: View
     
-    public weak var view: UserProfileViewInput?
-
+    weak var view: UserProfileViewInput?
+    
     // MARK: Interactor
-
-    public var interactor: UserProfileInteractorInput?
-
+    
+    var interactor: UserProfileInteractorInput?
+    
     // MARK: Router
-
-    public var router: UserProfileRouterInput?
-
+    
+    var router: UserProfileRouterInput?
+    
     // MARK: State
-
-    public var state = UserProfileState()
-
+    
+    var state = UserProfileState()
+    
     // MARK: View Model Builder
-
+    
     private let viewModelBuider: UserProfileViewModelBuilder
-
-    public init(viewModelBuilder: UserProfileViewModelBuilder) {
+    
+    init(viewModelBuilder: UserProfileViewModelBuilder) {
         self.viewModelBuider = viewModelBuilder
     }
     
@@ -40,15 +40,15 @@ public final class UserProfilePresenter {
 
 extension UserProfilePresenter: UserProfileViewOutput {
     
-    public func viewIsReady() {
+    func viewIsReady() {
         guard let view = view,
             let user = state.user,
             let username = user.username else {
-            return
+                return
         }
-
+        
         view.setUpInitialState(withViewModel: viewModelBuider.build(withUser: user))
-
+        
         router?.addPhotosCollectionSubmodule(on: view.photosCollectionCanvasView(),
                                              layout: .grid,
                                              usage: .userPhotos(username: username,
@@ -56,25 +56,25 @@ extension UserProfilePresenter: UserProfileViewOutput {
                                              scrollEnabled: false,
                                              scrollOwner: view.photosCollectionScrollOwner(),
                                              subModuleOutput: self)
-
+        
         defer {
             router?.photosCollectionSubModuleOnParentModuleReady?()
         }
     }
-
-    public func didTouchUpInsideInstagramButton() {
+    
+    func didTouchUpInsideInstagramButton() {
         guard let instagramUsername = state.user?.instagramUsername else {
             return
         }
-
+        
         interactor?.openInstagramUserProfile(username: instagramUsername)
     }
-
-    public func didTouchUpInsideTwitterButton() {
+    
+    func didTouchUpInsideTwitterButton() {
         guard let twitterUsername = state.user?.twitterUsername else {
             return
         }
-
+        
         interactor?.openTwitterUserProfile(username: twitterUsername)
     }
     
@@ -83,31 +83,31 @@ extension UserProfilePresenter: UserProfileViewOutput {
 // MARK: UserProfileInteractorOutput
 
 extension UserProfilePresenter: UserProfileInteractorOutput {
-
+    
 }
 
 // MARK: UserProfileModuleInput
 
 extension UserProfilePresenter: UserProfileModuleInput {
-
-    public func configure(withUser user: UnsplashUser) {
+    
+    func configure(withUser user: UnsplashUser) {
         state.user = user
     }
     
 }
 
 extension UserProfilePresenter: PhotosCollectionModuleOutput {
-
-    public func didSelectPhoto(_ photo: UnsplashPhoto) {
+    
+    func didSelectPhoto(_ photo: UnsplashPhoto) {
         router?.showPhotoDetails(withPhoto: photo)
     }
-
-    public func didSelectUser(_ user: UnsplashUser) {}
-
-    public func didSavePhoto(success: Bool, error: Error?) {}
-
-    public func didChangePhotosCollectionContentHeight(_ height: CGFloat) {
+    
+    func didSelectUser(_ user: UnsplashUser) {}
+    
+    func didSavePhoto(success: Bool, error: Error?) {}
+    
+    func didChangePhotosCollectionContentHeight(_ height: CGFloat) {
         view?.updatePhotosCollectionCanvasViewHeight(height)
     }
-
+    
 }

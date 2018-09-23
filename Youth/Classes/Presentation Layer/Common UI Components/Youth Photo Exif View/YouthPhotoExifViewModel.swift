@@ -8,29 +8,34 @@
 
 import Foundation
 
-public struct YouthPhotoExifViewModel {
-
+struct YouthPhotoExifViewModel {
+    
     /// Photo dimension. Like 3444 * 1222
-    public let photoDimensions: String
-
+    let photoDimensions: String
+    
     /// Camera Model
-    public let cameraModel: String
-
+    let cameraModel: String
+    
     /// Focal length
-    public let focalLength: String
-
+    let focalLength: String
+    
     /// Aperture
-    public let aperture: String
-
+    let aperture: String
+    
     /// Exposure Time
-    public let exposureTime: String
-
+    let exposureTime: String
+    
     /// ISO
-    public let iso: String
-
+    let iso: String
+    
     /// If does not contain anything return false, otherwise true
-    public var isEmpty: Bool {
-        return photoDimensions.isEmpty && cameraModel.isEmpty && focalLength.isEmpty && aperture.isEmpty && exposureTime.isEmpty && iso.isEmpty
+    var isEmpty: Bool {
+        return photoDimensions.isEmpty
+            && cameraModel.isEmpty
+            && focalLength.isEmpty
+            && aperture.isEmpty
+            && exposureTime.isEmpty
+            && iso.isEmpty
     }
-
+    
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol PhotoViewerModuleOutput: class {	
-	
-	
+protocol PhotoViewerModuleOutput: class {	
+    
+    
 }

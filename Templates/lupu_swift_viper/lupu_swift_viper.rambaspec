@@ -1,7 +1,7 @@
 # Template information section
 name: "lupu_viper"
 summary: "Swift VIPER module template with UIViewController playing as a View."
-author: "Lupu Cristian"
+author: "Cristian Lupu"
 version: "0.1.0"
 license: "MIT"
 

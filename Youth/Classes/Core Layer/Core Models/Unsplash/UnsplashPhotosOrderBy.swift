@@ -10,10 +10,10 @@ import Foundation
 
 /**
  Describe how to sort photos.
-
+ 
  Used for Unsplash API.
  */
-public enum UnsplashPhotosOrderBy: String {
+enum UnsplashPhotosOrderBy: String {
     case latest = "latest"
     case oldest = "oldest"
     case popular = "popular"

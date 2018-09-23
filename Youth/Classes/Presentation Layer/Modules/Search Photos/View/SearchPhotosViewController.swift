@@ -9,45 +9,45 @@
 import UIKit
 import SwiftMessages
 
-public final class SearchPhotosViewController: UIViewController {
-
+final class SearchPhotosViewController: UIViewController {
+    
     deinit {
         // Remove text field observer
         titleView?.textField.removeTarget(nil,
                                           action: nil,
                                           for: .editingChanged)
     }
-
+    
     // MARK: Output
-
-    public var output: SearchPhotosViewOutput?
-
+    
+    var output: SearchPhotosViewOutput?
+    
     // MARK: Title View
-
+    
     private weak var titleView: YouthNavigationSearchTitleView?
-
+    
     // MARK: Layout Bar Button Item
-
+    
     private weak var layoutBarButtonItem: UIBarButtonItem?
-
+    
     // MARK: View Controller Life Cycle
-
-    override public func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         output?.viewIsReady()
     }
-
-    public override func viewDidAppear(_ animated: Bool) {
+    
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         output?.viewDidAppear()
     }
-
+    
     // MARK: Actions
-
+    
     @objc private func didTapLayoutButton(_ sender: UIBarButtonItem) {
         output?.didTapLayoutButton()
     }
-
+    
     @objc private func didChangeSearchText(_ textField: UITextField) {
         guard let text = textField.text else {
             return
@@ -55,30 +55,30 @@ public final class SearchPhotosViewController: UIViewController {
         
         output?.didChange(searchText: text)
     }
-
+    
 }
 
 // MARK: SearchPhotosViewInput
 
 extension SearchPhotosViewController: SearchPhotosViewInput {
-	
-    public func setUpInitialState(collectionLayout: YouthCollectionLayout) {
+    
+    func setUpInitialState(collectionLayout: YouthCollectionLayout) {
         view.backgroundColor = .white
         
         let titleView = YouthNavigationSearchTitleView()
         titleView.set(placeholder: "Search Photos")
-
+        
         // Add text field observer
         titleView.textField.addTarget(self,
                                       action: #selector(didChangeSearchText(_:)),
                                       for: .editingChanged)
-
+        
         navigationItem.titleView = titleView
-
+        
         self.titleView = titleView
-
+        
         let layoutBarButton: UIBarButtonItem
-
+        
         switch collectionLayout {
         case .grid:
             layoutBarButton = UIBarButtonItem(image: UIImage(named: "Actions/Layout/layout-grid"),
@@ -91,13 +91,13 @@ extension SearchPhotosViewController: SearchPhotosViewInput {
                                               target: self,
                                               action: #selector(didTapLayoutButton(_:)))
         }
-
+        
         navigationItem.rightBarButtonItem = layoutBarButton
-
+        
         layoutBarButtonItem = layoutBarButton
     }
-
-    public func updateState(for collectionLayout: YouthCollectionLayout) {
+    
+    func updateState(for collectionLayout: YouthCollectionLayout) {
         switch collectionLayout {
         case .grid:
             layoutBarButtonItem?.image = UIImage(named: "Actions/Layout/layout-grid")
@@ -105,25 +105,25 @@ extension SearchPhotosViewController: SearchPhotosViewInput {
             layoutBarButtonItem?.image = UIImage(named: "Actions/Layout/layout-list")
         }
     }
-
-    public func showKeyboard() {
+    
+    func showKeyboard() {
         titleView?.textFieldBecomeFirstResponder()
     }
-
-    public func photosCollectionCanvasView() -> UIView {
+    
+    func photosCollectionCanvasView() -> UIView {
         return view
     }
-
-    public func showNotification(withText text: String) {
+    
+    func showNotification(withText text: String) {
         let notificationView = NotificationView()
         notificationView.set(title: text)
-
+        
         var config = SwiftMessages.Config()
         config.ignoreDuplicates = true
         config.presentationContext = .view(view)
         config.presentationStyle = .top
-
+        
         SwiftMessages.show(config: config, view: notificationView)
     }
-	
+    
 }

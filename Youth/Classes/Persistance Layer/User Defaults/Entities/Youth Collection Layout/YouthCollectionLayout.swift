@@ -8,11 +8,11 @@
 
 import Foundation
 
-public enum YouthCollectionLayout: Int {
+enum YouthCollectionLayout: Int {
     case grid = 0
     case list = 1
-
-    public var inversed: YouthCollectionLayout {
+    
+    var inversed: YouthCollectionLayout {
         switch self {
         case .grid:
             return .list

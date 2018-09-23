@@ -10,6 +10,6 @@ import Foundation
 
 // Maybe separate delegate, with inheritance from PhotosCollectionCellDelegate, will be usefull.
 
-public protocol PhotosCollectionGridCellDelegate: PhotosCollectionCellDelegate {
-
+protocol PhotosCollectionGridCellDelegate: PhotosCollectionCellDelegate {
+    
 }

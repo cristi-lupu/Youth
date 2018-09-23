@@ -8,24 +8,24 @@
 
 import Foundation
 
-public enum PhotosCategoryType: Int {
+enum PhotosCategoryType: Int {
     case latest = 0
     case popular = 1
     case oldest = 2
 }
 
 extension PhotosCategoryType: CustomStringConvertible {
-
-    public var description: String {
+    
+    var description: String {
         switch self {
         case .latest: return "Latest"
         case .popular: return "Popular"
         case .oldest: return "Oldest"
         }
     }
-
-    public static var allInOrder: [PhotosCategoryType] {
+    
+    static var allInOrder: [PhotosCategoryType] {
         return [.latest, .popular, .oldest]
     }
-
+    
 }
