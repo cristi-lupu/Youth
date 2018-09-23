@@ -10,11 +10,12 @@ import XCTest
 @testable import Youth
 
 final class UnsplashCategoryTests: XCTestCase {
-
+    
     private var data: Data?
     
     override func setUp() {
         super.setUp()
+        
         let bundle = Bundle(for: type(of: self))
         if let url = bundle.url(forResource: "UnsplashCategoryJSON", withExtension: "json") {
             self.data = try? Data(contentsOf: url)
@@ -23,27 +24,28 @@ final class UnsplashCategoryTests: XCTestCase {
     
     override func tearDown() {
         data = nil
+        
         super.tearDown()
     }
-
+    
     func testMapping() {
         guard let data = self.data else {
             XCTAssert(false, "Failed load json")
             return
         }
-
+        
         do {
             let category = try JSONDecoder().decode(UnsplashCategory.self, from: data)
-
+            
             XCTAssertEqual(category.id,
                            345)
-
+            
             XCTAssertEqual(category.exposureTime,
                            "some-exposure_time")
-
+            
             XCTAssertEqual(category.photoCount,
                            33)
-
+            
             XCTAssertNotNil(category.links)
         } catch {
             XCTAssert(false, "Failed to decode")

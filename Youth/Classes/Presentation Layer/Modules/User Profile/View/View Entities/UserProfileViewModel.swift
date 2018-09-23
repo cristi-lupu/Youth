@@ -8,21 +8,21 @@
 
 import Foundation
 
-public struct UserProfileViewModel {
-
-    public let userViewModel: YouthUserViewModel
-    public let locationViewModel: YouthLocationViewModel
-
-    public let biography: String
-    public let biographyIsVisible: Bool
-
-    public let locationIsVisible: Bool
-
-    public let likedSectionState: UserProfileSectionInfoState
-    public let photosSectionState: UserProfileSectionInfoState
-    public let collectionsSectionState: UserProfileSectionInfoState
-
-    public let twitterButtonIsVisible: Bool
-    public let instagramButtonIsVisible: Bool
-
+struct UserProfileViewModel {
+    
+    let userViewModel: YouthUserViewModel
+    let locationViewModel: YouthLocationViewModel
+    
+    let biography: String
+    let biographyIsVisible: Bool
+    
+    let locationIsVisible: Bool
+    
+    let likedSectionState: UserProfileSectionInfoState
+    let photosSectionState: UserProfileSectionInfoState
+    let collectionsSectionState: UserProfileSectionInfoState
+    
+    let twitterButtonIsVisible: Bool
+    let instagramButtonIsVisible: Bool
+    
 }

@@ -8,12 +8,12 @@
 
 import Foundation
 
-public final class PhotosInteractor {
-
-	// MARK: Output
-
-    public weak var output: PhotosInteractorOutput?
-
+final class PhotosInteractor {
+    
+    // MARK: Output
+    
+    weak var output: PhotosInteractorOutput?
+    
 }
 
 // MARK: PhotosInteractorInput 

@@ -2,9 +2,9 @@
 
 import UIKit
 
-public final class {{ module_info.name }}Assembly {
+final class {{ module_info.name }}Assembly {
 
-	public func assembly{{ module_info.name }}Module() -> {{ module_info.name }}Module {
+	func assembly{{ module_info.name }}Module() -> {{ module_info.name }}Module {
 		let view = {{ module_info.name }}ViewController()
 		let presenter = {{ module_info.name }}Presenter()
 		let router = {{ module_info.name }}Router()

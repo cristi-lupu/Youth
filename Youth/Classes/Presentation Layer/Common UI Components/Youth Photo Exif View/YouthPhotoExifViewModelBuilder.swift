@@ -9,7 +9,7 @@
 import Foundation
 
 /// Responsible to build YouthPhotoExifViewModel
-public final class YouthPhotoExifViewModelBuilder {
+final class YouthPhotoExifViewModelBuilder {
 
     /**
      Build YouthPhotoExifViewModel.
@@ -20,9 +20,9 @@ public final class YouthPhotoExifViewModelBuilder {
 
      - returns: Builded YouthPhotoExifViewModel
      */
-    public func build(fromExif exif: UnsplashExif?,
-                     photoWidth: Int?,
-                     photoHeight: Int?) -> YouthPhotoExifViewModel {
+    func build(fromExif exif: UnsplashExif?,
+               photoWidth: Int?,
+               photoHeight: Int?) -> YouthPhotoExifViewModel {
         guard let exif = exif else {
             return YouthPhotoExifViewModel(photoDimensions: "",
                                            cameraModel: "",

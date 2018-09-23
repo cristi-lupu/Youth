@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol PhotoViewerModuleInput: class {
-
+protocol PhotoViewerModuleInput: class {
+    
     func set(moduleOutput: PhotoViewerModuleOutput)
-	
+    
 }

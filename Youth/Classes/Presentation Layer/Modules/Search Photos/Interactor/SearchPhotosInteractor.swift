@@ -8,12 +8,12 @@
 
 import Foundation
 
-public final class SearchPhotosInteractor {
-
-	// MARK: Output
-
-    public weak var output: SearchPhotosInteractorOutput?
-
+final class SearchPhotosInteractor {
+    
+    // MARK: Output
+    
+    weak var output: SearchPhotosInteractorOutput?
+    
 }
 
 // MARK: SearchPhotosInteractorInput 

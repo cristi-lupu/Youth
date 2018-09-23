@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol PhotoDetailsModuleInput: class {
-
+protocol PhotoDetailsModuleInput: class {
+    
     func configure(withPhoto photo: UnsplashPhoto)
-	
+    
 }

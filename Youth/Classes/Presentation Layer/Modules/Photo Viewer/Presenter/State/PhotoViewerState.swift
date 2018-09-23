@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct PhotoViewerState {
+struct PhotoViewerState {
     
     
 }

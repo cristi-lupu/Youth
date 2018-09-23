@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol PhotoDetailsInteractorInput: class {
-
+protocol PhotoDetailsInteractorInput: class {
+    
     func obtainPhoto(withID id: String)
-
+    
 }

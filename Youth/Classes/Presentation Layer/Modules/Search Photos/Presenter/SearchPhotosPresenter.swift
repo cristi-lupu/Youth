@@ -8,23 +8,23 @@
 
 import UIKit
 
-public final class SearchPhotosPresenter {
+final class SearchPhotosPresenter {
     
     // MARK: View
     
-    public weak var view: SearchPhotosViewInput?
-
+    weak var view: SearchPhotosViewInput?
+    
     // MARK: Interactor
-
-    public var interactor: SearchPhotosInteractorInput?
-
+    
+    var interactor: SearchPhotosInteractorInput?
+    
     // MARK: Router
-
-    public var router: SearchPhotosRouterInput?
-
+    
+    var router: SearchPhotosRouterInput?
+    
     // MARK: State
-
-    public var state = SearchPhotosState()
+    
+    var state = SearchPhotosState()
     
 }
 
@@ -32,41 +32,41 @@ public final class SearchPhotosPresenter {
 
 extension SearchPhotosPresenter: SearchPhotosViewOutput {
     
-    public func viewIsReady() {
+    func viewIsReady() {
         guard let view = view else {
             return
         }
         
         view.setUpInitialState(collectionLayout: state.collectionLayout.inversed)
-
+        
         router?.addPhotosCollectionSubmodule(on: view.photosCollectionCanvasView(),
                                              layout: state.collectionLayout,
                                              usage: .searchPhotos(query: ""),
                                              subModuleOutput: self)
-
+        
         router?.photosCollectionSubModuleOnParentModuleReady?()
     }
-
-    public func didTapLayoutButton() {
+    
+    func didTapLayoutButton() {
         switch state.collectionLayout {
         case .grid:
             state.collectionLayout = .list
         case .list:
             state.collectionLayout = .grid
         }
-
+        
         // Update View
         view?.updateState(for: state.collectionLayout.inversed)
-
+        
         // Update submodule
         router?.photosCollectionSubModuleOnLayoutChange?(state.collectionLayout)
     }
-
-    public func viewDidAppear() {
+    
+    func viewDidAppear() {
         view?.showKeyboard()
     }
-
-    public func didChange(searchText: String) {
+    
+    func didChange(searchText: String) {
         router?.photosCollectionSubModuleOnUsageChange?(.searchPhotos(query: searchText))
     }
     
@@ -75,29 +75,29 @@ extension SearchPhotosPresenter: SearchPhotosViewOutput {
 // MARK: PhotosCollectionModuleOutput
 
 extension SearchPhotosPresenter: PhotosCollectionModuleOutput {
-
-    public func didSelectPhoto(_ photo: UnsplashPhoto) {
+    
+    func didSelectPhoto(_ photo: UnsplashPhoto) {
         router?.showPhotoDetails(withPhoto: photo)
     }
-
-    public func didSelectUser(_ user: UnsplashUser) {
+    
+    func didSelectUser(_ user: UnsplashUser) {
         router?.showUserProfile(withUser: user)
     }
-
-    public func didSavePhoto(success: Bool, error: Error?) {
+    
+    func didSavePhoto(success: Bool, error: Error?) {
         if success {
             view?.showNotification(withText: "Photo saved")
         } else {
             view?.showNotification(withText: "Could not save photo")
         }
     }
-
-    public func didChangePhotosCollectionContentHeight(_ height: CGFloat) {}
-
+    
+    func didChangePhotosCollectionContentHeight(_ height: CGFloat) {}
+    
 }
 
 // MARK: SearchPhotosInteractorOutput
 
 extension SearchPhotosPresenter: SearchPhotosInteractorOutput {
-
+    
 }

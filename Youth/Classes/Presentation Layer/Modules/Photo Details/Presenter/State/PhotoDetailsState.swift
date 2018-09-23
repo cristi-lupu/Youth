@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct PhotoDetailsState {
-
+struct PhotoDetailsState {
+    
     /// Photo
-    public var photo: UnsplashPhoto?
-
+    var photo: UnsplashPhoto?
+    
 }

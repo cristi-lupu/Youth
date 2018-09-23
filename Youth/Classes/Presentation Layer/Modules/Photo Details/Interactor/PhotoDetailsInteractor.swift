@@ -8,33 +8,33 @@
 
 import Foundation
 
-public final class PhotoDetailsInteractor {
-
-	// MARK: Output
-
-    public weak var output: PhotoDetailsInteractorOutput?
-
+final class PhotoDetailsInteractor {
+    
+    // MARK: Output
+    
+    weak var output: PhotoDetailsInteractorOutput?
+    
     private let photoProvider: PhotoProvider
-
-    public init(photoProvider: PhotoProvider) {
+    
+    init(photoProvider: PhotoProvider) {
         self.photoProvider = photoProvider
     }
-
+    
 }
 
 // MARK: PhotoDetailsInteractorInput 
 
 extension PhotoDetailsInteractor: PhotoDetailsInteractorInput {
-
-    public func obtainPhoto(withID id: String) {
+    
+    func obtainPhoto(withID id: String) {
         photoProvider.cancelNetworkRequest()
-
+        
         photoProvider.photo(id: id, usage: .network) { [weak self] (result) in
             DispatchQueue.main.async {
                 guard let strongSelf = self else {
                     return
                 }
-
+                
                 switch result {
                 case let .success(payload):
                     strongSelf.output?.didObtain(photo: payload, withError: nil)

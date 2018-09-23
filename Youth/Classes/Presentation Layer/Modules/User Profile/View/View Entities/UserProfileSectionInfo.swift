@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum UserProfileSectionInfo {
+enum UserProfileSectionInfo {
     case liked
     case photos
     case collections

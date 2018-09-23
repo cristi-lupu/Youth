@@ -8,12 +8,12 @@
 
 import Foundation
 
-public protocol UserProfileViewOutput: class {
+protocol UserProfileViewOutput: class {
     
-	func viewIsReady()
-
+    func viewIsReady()
+    
     func didTouchUpInsideInstagramButton()
-
+    
     func didTouchUpInsideTwitterButton()
-
+    
 }

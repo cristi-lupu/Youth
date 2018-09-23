@@ -8,58 +8,58 @@
 
 import Alamofire
 
-public final class PhotosCollectionInteractor {
-
+final class PhotosCollectionInteractor {
+    
     deinit {
         networkReachability?.stopListening()
         photoDownloader?.removeObserver(self)
     }
-
+    
     // MARK: Output
-
-    public weak var output: PhotosCollectionInteractorOutput?
-
+    
+    weak var output: PhotosCollectionInteractorOutput?
+    
     // MARK: Network Reachability
-
+    
     private let networkReachability: NetworkReachabilityManager?
-
+    
     // MARK: Photos Provider
-
+    
     private let photosProvider: PhotosCollectionProvider
-
+    
     // MARK: Photo Downloader
-
+    
     private weak var photoDownloader: YouthPhotoDownloader?
-
+    
     // MARK: Photo Saver
-
+    
     private let photoSaver: YouthPhotoSaver
-
-    public init(networkReachability: NetworkReachabilityManager?,
-                photosProvider: PhotosCollectionProvider,
-                photoDownloader: YouthPhotoDownloader,
-                photoSaver: YouthPhotoSaver) {
+    
+    init(networkReachability: NetworkReachabilityManager?,
+         photosProvider: PhotosCollectionProvider,
+         photoDownloader: YouthPhotoDownloader,
+         photoSaver: YouthPhotoSaver) {
         self.networkReachability = networkReachability
         self.photosProvider = photosProvider
         self.photoDownloader = photoDownloader
         self.photoSaver = photoSaver
-
+        
         if let reachability = self.networkReachability {
             initialize(reachability: reachability)
         }
-
+        
         self.photoDownloader?.addObserver(self)
     }
-
+    
 }
 
 // MARK: PhotosCollectionInteractorInput 
 
 extension PhotosCollectionInteractor: PhotosCollectionInteractorInput {
-
-    public func obtainPhotos(atPage page: Int, perPage: Int, orderBy: UnsplashPhotosOrderBy) {
+    
+    func obtainPhotos(atPage page: Int, perPage: Int, orderBy: UnsplashPhotosOrderBy) {
         photosProvider.cancelNetworkRequest()
-
+        
         photosProvider.photos(
             page: page,
             perPage: perPage,
@@ -70,7 +70,7 @@ extension PhotosCollectionInteractor: PhotosCollectionInteractorInput {
                     guard let strongSelf = self else {
                         return
                     }
-
+                    
                     switch photosResult {
                     case .success(let payload):
                         strongSelf.output?.didObtain(photos: payload,
@@ -84,10 +84,10 @@ extension PhotosCollectionInteractor: PhotosCollectionInteractorInput {
                 }
         })
     }
-
-    public func obtainUserPhotos(username: String, atPage page: Int, perPage: Int, orderBy: UnsplashPhotosOrderBy) {
+    
+    func obtainUserPhotos(username: String, atPage page: Int, perPage: Int, orderBy: UnsplashPhotosOrderBy) {
         photosProvider.cancelNetworkRequest()
-
+        
         photosProvider.userPhotos(
             username: username,
             page: page,
@@ -99,7 +99,7 @@ extension PhotosCollectionInteractor: PhotosCollectionInteractorInput {
                     guard let strongSelf = self else {
                         return
                     }
-
+                    
                     switch photosResult {
                     case .success(let payload):
                         strongSelf.output?.didObtain(photos: payload,
@@ -113,10 +113,10 @@ extension PhotosCollectionInteractor: PhotosCollectionInteractorInput {
                 }
         })
     }
-
-    public func obtainPhotosOnSearch(query: String, atPage page: Int, perPage: Int) {
+    
+    func obtainPhotosOnSearch(query: String, atPage page: Int, perPage: Int) {
         photosProvider.cancelNetworkRequest()
-
+        
         photosProvider.searchPhotos(
             query: query,
             page: page,
@@ -127,7 +127,7 @@ extension PhotosCollectionInteractor: PhotosCollectionInteractorInput {
                     guard let strongSelf = self else {
                         return
                     }
-
+                    
                     switch photosResult {
                     case .success(let payload):
                         strongSelf.output?.didObtain(photos: payload,
@@ -141,47 +141,47 @@ extension PhotosCollectionInteractor: PhotosCollectionInteractorInput {
                 }
         })
     }
-
-    public func download(photo: UnsplashPhoto) {
+    
+    func download(photo: UnsplashPhoto) {
         photoDownloader?.download(photo: photo)
     }
-
-    public func cancelDownloadingPhoto(withID id: String) {
+    
+    func cancelDownloadingPhoto(withID id: String) {
         photoDownloader?.cancelDownloadingPhoto(withID: id)
     }
-
-    public func isDownloadingPhoto(withID id: String) -> Bool {
+    
+    func isDownloadingPhoto(withID id: String) -> Bool {
         return photoDownloader?.isDownloadingPhoto(withID: id) ?? false
     }
-
-    public func save(image: UIImage, completion: @escaping YouthPhotoSaver.SaveCompletion) {
+    
+    func save(image: UIImage, completion: @escaping YouthPhotoSaver.SaveCompletion) {
         photoSaver.save(image: image, completion: completion)
     }
     
 }
 
 extension PhotosCollectionInteractor: YouthPhotoDownloadObserver {
-
-    public func didUpdateProgress(photoID: String, progress: Double) {
+    
+    func didUpdateProgress(photoID: String, progress: Double) {
         output?.didUpdateProgress(photoID: photoID, progress: progress)
     }
-
-    public func didDownload(photoID: String, image: UIImage?, withError error: Error?) {
+    
+    func didDownload(photoID: String, image: UIImage?, withError error: Error?) {
         output?.didDownload(photoID: photoID, image: image, withError: error)
     }
-
+    
 }
 
 extension PhotosCollectionInteractor {
-
+    
     private func initialize(reachability: NetworkReachabilityManager) {
         reachability.listener = { (reachabilityStatus) in
             print(reachabilityStatus)
         }
-
+        
         if !reachability.startListening() {
             print("Reachability listening was started with fail. 😪😪😪 sooo sad...")
         }
     }
-
+    
 }

@@ -8,17 +8,17 @@
 
 import UIKit
 
-public final class UserProfileModule {
-	
-	// MARK: View Controller
-	public let viewController: UIViewController
-
-	// MARK: Module Input
-	public let moduleInput: UserProfileModuleInput
-
-	public required init(viewController: UIViewController, moduleInput: UserProfileModuleInput) {
-		self.viewController = viewController
-		self.moduleInput = moduleInput
-	}
-
+final class UserProfileModule {
+    
+    // MARK: View Controller
+    let viewController: UIViewController
+    
+    // MARK: Module Input
+    let moduleInput: UserProfileModuleInput
+    
+    required init(viewController: UIViewController, moduleInput: UserProfileModuleInput) {
+        self.viewController = viewController
+        self.moduleInput = moduleInput
+    }
+    
 }

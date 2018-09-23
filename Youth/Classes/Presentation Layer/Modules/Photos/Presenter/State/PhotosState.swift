@@ -8,15 +8,15 @@
 
 import Foundation
 
-public struct PhotosState {
-
+struct PhotosState {
+    
     /// Collection Layout. Default value .list
-    public var collectionLayout: YouthCollectionLayout = .list
-
+    var collectionLayout: YouthCollectionLayout = .list
+    
     /// Photos Category. Default value .latest
-    public var photosCategory: PhotosCategoryType = .latest
-
+    var photosCategory: PhotosCategoryType = .latest
+    
     /// Photos Categories Current Index. Default value 0
-    public var photosCategoriesCurrentIndex = 0
+    var photosCategoriesCurrentIndex = 0
     
 }

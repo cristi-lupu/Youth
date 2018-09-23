@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol PhotosCollectionRouterInput: class {
-	
-	func closeModule()
-
+protocol PhotosCollectionRouterInput: class {
+    
+    func closeModule()
+    
 }

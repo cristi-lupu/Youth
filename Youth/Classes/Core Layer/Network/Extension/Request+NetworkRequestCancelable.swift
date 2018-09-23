@@ -9,9 +9,9 @@
 import Alamofire
 
 extension Request: NetworkRequestCancelable {
-
-    public func cancelRequest() {
-         cancel()
+    
+    func cancelRequest() {
+        cancel()
     }
-
+    
 }

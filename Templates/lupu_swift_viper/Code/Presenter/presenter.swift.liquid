@@ -2,27 +2,27 @@
 
 import Foundation
 
-public final class {{ module_info.name }}Presenter {
+final class {{ module_info.name }}Presenter {
     
     // MARK: View
     
-    public weak var view: {{ module_info.name }}ViewInput?
+    weak var view: {{ module_info.name }}ViewInput?
 
     // MARK: Interactor
 
-    public var interactor: {{ module_info.name }}InteractorInput?
+    var interactor: {{ module_info.name }}InteractorInput?
 
     // MARK: Router
 
-    public var router: {{ module_info.name }}RouterInput?
+    var router: {{ module_info.name }}RouterInput?
 
     // MARK: State
 
-    public lazy var state = {{ module_info.name }}State()
+    var state = {{ module_info.name }}State()
 
     // MARK: Module Output
 
-    public weak var moduleOutput: {{ module_info.name }}ModuleOutput?
+    weak var moduleOutput: {{ module_info.name }}ModuleOutput?
     
 }
 
@@ -30,7 +30,7 @@ public final class {{ module_info.name }}Presenter {
 
 extension {{ module_info.name }}Presenter: {{ module_info.name }}ViewOutput {
     
-    public func viewIsReady() {
+    func viewIsReady() {
 
     }   
     
@@ -47,7 +47,7 @@ extension {{ module_info.name }}Presenter: {{ module_info.name }}InteractorOutpu
 
 extension {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput {
 
-    public func set(moduleOutput: {{ module_info.name }}ModuleOutput) {
+    func set(moduleOutput: {{ module_info.name }}ModuleOutput) {
         self.moduleOutput = moduleOutput
     }
     

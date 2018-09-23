@@ -8,19 +8,19 @@
 
 import UIKit
 
-public protocol UserProfileRouterInput: class {
-
+protocol UserProfileRouterInput: class {
+    
     var photosCollectionSubModuleOnParentModuleReady: (() -> ())? { get set }
-	
-	func closeModule()
-
+    
+    func closeModule()
+    
     func addPhotosCollectionSubmodule(on canvasView: UIView,
                                       layout: YouthCollectionLayout,
                                       usage: PhotosCollectionUsage,
                                       scrollEnabled: Bool,
                                       scrollOwner: PhotosCollectionScrollOwner?,
                                       subModuleOutput: PhotosCollectionModuleOutput)
-
+    
     func showPhotoDetails(withPhoto photo: UnsplashPhoto)
-
+    
 }

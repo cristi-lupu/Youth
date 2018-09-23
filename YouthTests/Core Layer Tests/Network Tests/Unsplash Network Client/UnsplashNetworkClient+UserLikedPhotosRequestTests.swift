@@ -13,7 +13,7 @@ final class UnsplashNetworkClientUserLikedPhotosRequesterTests: XCTestCase {
     
     func testUserLikedPhotosRequest_immediatelyResponse() {
         let networkClient: UserLikedPhotosNetworkRequester = UnsplashNetworkClient(stubbing: .immediately)
-
+        
         networkClient.userLikedPhotos(username: "someUsername",
                                       page: 1,
                                       perPage: 30,

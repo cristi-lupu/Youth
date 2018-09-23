@@ -8,16 +8,16 @@
 
 import UIKit
 
-public final class PhotoViewerRouter {
-	
-	public weak var viewController: UIViewController?
-
+final class PhotoViewerRouter {
+    
+    weak var viewController: UIViewController?
+    
 }
 
 extension PhotoViewerRouter: PhotoViewerRouterInput {
-	
-	public func closeModule() {
-		viewController?.dismiss(animated: true)
-	}
-
+    
+    func closeModule() {
+        viewController?.dismiss(animated: true)
+    }
+    
 }

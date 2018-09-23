@@ -9,53 +9,53 @@
 import Foundation
 
 /// Photo Collection Object
-public struct UnsplashPhotoCollection {
-
+struct UnsplashPhotoCollection {
+    
     /// Identifier
-    public let id: Int64?
-
+    let id: Int64?
+    
     /// Title
-    public let title: String?
-
+    let title: String?
+    
     /// Published at (date)
-    public let publishedAt: Date?
-
+    let publishedAt: Date?
+    
     /// Updated at (date)
-    public let updatedAt: Date?
-
+    let updatedAt: Date?
+    
     /// Is curated
-    public let isCurated: Bool?
-
+    let isCurated: Bool?
+    
     /// Is featured
-    public let isFeatured: Bool?
-
+    let isFeatured: Bool?
+    
     /// Is private
-    public let isPrivate: Bool?
-
+    let isPrivate: Bool?
+    
     /// Cover Photo
-    public let coverPhoto: UnsplashPhoto?
-
+    let coverPhoto: UnsplashPhoto?
+    
     /// User
-    public let user: UnsplashUser?
-
+    let user: UnsplashUser?
+    
     /// Links
-    public let links: UnsplashLinks?
-
+    let links: UnsplashLinks?
+    
     /// Share Key
-    public let shareKey: String?
-
+    let shareKey: String?
+    
     /// Total Photos
-    public let totalPhotos: Int64?
-
+    let totalPhotos: Int64?
+    
     /// Description
-    public let description: String?
-
+    let description: String?
+    
 }
 
 /// MARK: Decodable
 
 extension UnsplashPhotoCollection: Decodable {
-
+    
     private enum CodingKeys: String, CodingKey {
         case id
         case title
@@ -71,18 +71,18 @@ extension UnsplashPhotoCollection: Decodable {
         case totalPhotos = "total_photos"
         case description
     }
-
-    public init(from decoder: Decoder) throws {
+    
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decodeIfPresent(Int64.self, forKey: .id)
         self.title = try container.decodeIfPresent(String.self, forKey: .title)
-
+        
         let publishedAtString = try container.decodeIfPresent(String.self, forKey: .publishedAt)
         self.publishedAt = UnsplashDateConverter.date(from: publishedAtString)
-
+        
         let updatedAtString = try container.decodeIfPresent(String.self, forKey: .updatedAt)
         self.updatedAt = UnsplashDateConverter.date(from: updatedAtString)
-
+        
         self.isCurated = try container.decodeIfPresent(Bool.self, forKey: .isCurated)
         self.isFeatured = try container.decodeIfPresent(Bool.self, forKey: .isFeatured)
         self.isPrivate = try container.decodeIfPresent(Bool.self, forKey: .isPrivate)
@@ -93,5 +93,5 @@ extension UnsplashPhotoCollection: Decodable {
         self.totalPhotos = try container.decodeIfPresent(Int64.self, forKey: .totalPhotos)
         self.description = try container.decodeIfPresent(String.self, forKey: .description)
     }
-
+    
 }

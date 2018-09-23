@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol PhotoViewerViewInput: class {
-
+protocol PhotoViewerViewInput: class {
+    
     func setUpInitialState()
     
 }

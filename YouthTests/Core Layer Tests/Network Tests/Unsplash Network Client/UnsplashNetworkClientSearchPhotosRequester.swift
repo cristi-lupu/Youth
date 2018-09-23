@@ -13,7 +13,7 @@ final class UnsplashNetworkClientSearchPhotosRequester: XCTestCase {
     
     func testSearchPhotosRequest_immediatelyResponse() {
         let networkClient: SearchPhotosNetworkRequester = UnsplashNetworkClient(stubbing: .immediately)
-
+        
         networkClient.searchPhotos(query: "some query", page: 1, perPage: 30) { (result) in
             switch result {
             case let .success(payload, _):

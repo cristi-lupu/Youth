@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc public extension UIColor {
+@objc extension UIColor {
 
     /**
      The shorthand three-digit hexadecimal representation of color.
@@ -17,7 +17,7 @@ import UIKit
      - parameter hex3: Three-digit hexadecimal value.
      - parameter alpha: 0.0 - 1.0. The default is 1.0.
      */
-    public convenience init(hex3: UInt16, alpha: CGFloat = 1) {
+    convenience init(hex3: UInt16, alpha: CGFloat = 1) {
         let divisor = CGFloat(15)
         let red     = CGFloat((hex3 & 0xF00) >> 8) / divisor
         let green   = CGFloat((hex3 & 0x0F0) >> 4) / divisor
@@ -31,7 +31,7 @@ import UIKit
 
      - parameter hex4: Four-digit hexadecimal value.
      */
-    public convenience init(hex4: UInt16) {
+    convenience init(hex4: UInt16) {
         let divisor = CGFloat(15)
         let red     = CGFloat((hex4 & 0xF000) >> 12) / divisor
         let green   = CGFloat((hex4 & 0x0F00) >>  8) / divisor
@@ -45,7 +45,7 @@ import UIKit
 
      - parameter hex6: Six-digit hexadecimal value.
      */
-    public convenience init(hex6: UInt32, alpha: CGFloat = 1) {
+    convenience init(hex6: UInt32, alpha: CGFloat = 1) {
         let divisor = CGFloat(255)
         let red     = CGFloat((hex6 & 0xFF0000) >> 16) / divisor
         let green   = CGFloat((hex6 & 0x00FF00) >>  8) / divisor
@@ -58,7 +58,7 @@ import UIKit
 
      - parameter hex8: Eight-digit hexadecimal value.
      */
-    public convenience init(hex8: UInt32) {
+    convenience init(hex8: UInt32) {
         let divisor = CGFloat(255)
         let red     = CGFloat((hex8 & 0xFF000000) >> 24) / divisor
         let green   = CGFloat((hex8 & 0x00FF0000) >> 16) / divisor
@@ -72,7 +72,7 @@ import UIKit
 
      - parameter rgba: String value.
      */
-    public convenience init(rgba_throws rgba: String) throws {
+    convenience init(rgba_throws rgba: String) throws {
         guard rgba.hasPrefix("#") else {
             let error = UIColorInputError.missingHashMarkAsPrefix(rgba)
             print(error.localizedDescription)
@@ -109,7 +109,7 @@ import UIKit
 
      - parameter rgba: String value.
      */
-    public convenience init(_ rgba: String, defaultColor: UIColor = UIColor.clear) {
+    convenience init(_ rgba: String, defaultColor: UIColor = UIColor.clear) {
         guard let color = try? UIColor(rgba_throws: rgba) else {
             self.init(cgColor: defaultColor.cgColor)
             return
@@ -122,7 +122,7 @@ import UIKit
 
      - parameter includeAlpha: Whether the alpha should be included.
      */
-    public func hexStringThrows(_ includeAlpha: Bool = true) throws -> String  {
+    func hexStringThrows(_ includeAlpha: Bool = true) throws -> String  {
         var r: CGFloat = 0
         var g: CGFloat = 0
         var b: CGFloat = 0
@@ -141,13 +141,13 @@ import UIKit
             return String(format: "#%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255))
         }
     }
-
+    
     /**
      Hex string of a UIColor instance, fails to empty string.
 
      - parameter includeAlpha: Whether the alpha should be included.
      */
-    public func hexString(_ includeAlpha: Bool = true) -> String  {
+    func hexString(_ includeAlpha: Bool = true) -> String  {
         guard let hexString = try? hexStringThrows(includeAlpha) else {
             return ""
         }

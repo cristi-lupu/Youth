@@ -9,24 +9,24 @@
 import UIKit
 
 /// PhotoDetailsViewModel
-public struct PhotoDetailsViewModel {
-
+struct PhotoDetailsViewModel {
+    
     /// Photo URL
-    public let photoURL: URL?
-
+    let photoURL: URL?
+    
     /// Photo background color
-    public let photoBackgroundColor: UIColor
-
+    let photoBackgroundColor: UIColor
+    
     /// Photo size
-    public let photoSize: CGSize
-
+    let photoSize: CGSize
+    
     /// User view model
-    public let userViewModel: YouthUserViewModel
-
+    let userViewModel: YouthUserViewModel
+    
     /// Location view model
-    public let locationViewModel: YouthLocationViewModel
-
+    let locationViewModel: YouthLocationViewModel
+    
     /// Exif view model
-    public let exifViewModel: YouthPhotoExifViewModel
-
+    let exifViewModel: YouthPhotoExifViewModel
+    
 }
