@@ -10,7 +10,7 @@ import UIKit
 
 final class UserProfileRouter: UserProfileRouterInput {
     
-    var photosCollectionSubModuleOnParentModuleReady: (() -> ())?
+    private(set) var photosCollectionSubModuleOnParentModuleReady: (() -> ())?
     
     weak var viewController: UIViewController?
     
