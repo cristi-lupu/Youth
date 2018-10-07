@@ -13,9 +13,9 @@ final class PhotosRouter: PhotosRouterInput {
     
     weak var viewController: UIViewController?
     
-    var photosCollectionSubModuleOnParentModuleReady: (() -> ())?
-    var photosCollectionSubModuleOnLayoutChange: ((YouthCollectionLayout) -> ())?
-    var photosCollectionSubModuleOnUsageChange: ((PhotosCollectionUsage) -> ())?
+    private(set) var photosCollectionSubModuleOnParentModuleReady: (() -> ())?
+    private(set) var photosCollectionSubModuleOnLayoutChange: ((YouthCollectionLayout) -> ())?
+    private(set) var photosCollectionSubModuleOnUsageChange: ((PhotosCollectionUsage) -> ())?
     
     func closeModule() {
         viewController?.dismiss(animated: true)

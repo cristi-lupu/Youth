@@ -10,9 +10,9 @@ import UIKit
 
 protocol PhotosRouterInput: class {
     
-    var photosCollectionSubModuleOnParentModuleReady: (() -> ())? { get set }
-    var photosCollectionSubModuleOnLayoutChange: ((YouthCollectionLayout) -> ())? { get set }
-    var photosCollectionSubModuleOnUsageChange: ((PhotosCollectionUsage) -> ())? { get set }
+    var photosCollectionSubModuleOnParentModuleReady: (() -> ())? { get }
+    var photosCollectionSubModuleOnLayoutChange: ((YouthCollectionLayout) -> ())? { get }
+    var photosCollectionSubModuleOnUsageChange: ((PhotosCollectionUsage) -> ())? { get }
     
     func closeModule()
     
