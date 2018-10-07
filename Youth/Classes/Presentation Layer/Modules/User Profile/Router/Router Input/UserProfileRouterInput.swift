@@ -10,7 +10,7 @@ import UIKit
 
 protocol UserProfileRouterInput: class {
     
-    var photosCollectionSubModuleOnParentModuleReady: (() -> ())? { get set }
+    var photosCollectionSubModuleOnParentModuleReady: (() -> ())? { get }
     
     func closeModule()
     
