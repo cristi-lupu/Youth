@@ -233,6 +233,8 @@
 		E731B4EA7ABED137CC3E5F65 /* PhotosCollectionViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580C199326F47975DD93599 /* PhotosCollectionViewOutput.swift */; };
 		E9F5DF6A7FE47725799051AF /* PhotoViewerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B5AF84CAA630A446D4165 /* PhotoViewerInteractor.swift */; };
 		F1716E32F891988CAC9365A3 /* PhotoDetailsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD464625FCE53625612012D0 /* PhotoDetailsInteractorOutput.swift */; };
+		F52984952171DBD1000AFF49 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52984942171DBD1000AFF49 /* UIImageView+Download.swift */; };
+		F52984972171DE1C000AFF49 /* UIImageView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52984962171DE1C000AFF49 /* UIImageView+Animations.swift */; };
 		F80D6E46AF5F114B73B8CC21 /* SearchPhotosInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8194383D7FCA48A554AEFAC /* SearchPhotosInteractor.swift */; };
 		FF92AD216223988A3064162A /* PhotoDetailsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1933D63207D98A296F2BA9 /* PhotoDetailsViewInput.swift */; };
 /* End PBXBuildFile section */
@@ -484,6 +486,8 @@
 		E8194383D7FCA48A554AEFAC /* SearchPhotosInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SearchPhotosInteractor.swift; sourceTree = "<group>"; };
 		EAA37C4AF7D0FCCEF543E125 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		EDA063D422D4178657E602CB /* Pods-YouthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouthTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YouthTests/Pods-YouthTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F52984942171DBD1000AFF49 /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
+		F52984962171DE1C000AFF49 /* UIImageView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animations.swift"; sourceTree = "<group>"; };
 		F9D9031E6F225A59A78FE5CF /* PhotoDetailsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoDetailsPresenter.swift; sourceTree = "<group>"; };
 		FB968038AF3515A364B155E7 /* PhotoViewerModuleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoViewerModuleOutput.swift; sourceTree = "<group>"; };
 		FCB96865CB438C2D72AD9E2E /* Pods-YouthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YouthUITests/Pods-YouthUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2027,6 +2031,7 @@
 		BBFF360220A760B1007A4D02 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F52984932171DBB1000AFF49 /* UIImageView */,
 				BBFF360320A760B9007A4D02 /* UIColor */,
 			);
 			path = Extensions;
@@ -2199,6 +2204,15 @@
 				0B7775BF65039202E7B0BE02 /* SearchPhotosRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		F52984932171DBB1000AFF49 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				F52984942171DBD1000AFF49 /* UIImageView+Download.swift */,
+				F52984962171DE1C000AFF49 /* UIImageView+Animations.swift */,
+			);
+			path = UIImageView;
 			sourceTree = "<group>";
 		};
 		F643206C4E78E60A7909365B /* View Output */ = {
@@ -2394,6 +2408,7 @@
 				"${BUILT_PRODUCTS_DIR}/DownloadButton/DownloadButton.framework",
 				"${BUILT_PRODUCTS_DIR}/Permission/Permission.framework",
 				"${BUILT_PRODUCTS_DIR}/PinterestSegment/PinterestSegment.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 			);
@@ -2404,6 +2419,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DownloadButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Permission.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinterestSegment.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 			);
@@ -2463,6 +2479,7 @@
 				BB1BDBC320A4BD00009097D5 /* YouthCollectionLayout.swift in Sources */,
 				0025477820BD8E020002C229 /* InstagramOpener.swift in Sources */,
 				BB9C56F4209738E30051FF53 /* UnsplashImageURLs.swift in Sources */,
+				F52984952171DBD1000AFF49 /* UIImageView+Download.swift in Sources */,
 				BB9C569A20972A2B0051FF53 /* UnsplashAuthorization.swift in Sources */,
 				BB9C56A020972BEF0051FF53 /* NetworkTask.swift in Sources */,
 				BB9C56F9209738E40051FF53 /* UnsplashBadge.swift in Sources */,
@@ -2551,6 +2568,7 @@
 				BBD54C5D20D1B52400B199EE /* UserProfileViewModel.swift in Sources */,
 				004D2DEE20B81B0500A485BB /* UserProfileSectionInfo.swift in Sources */,
 				2D76416AE82EE14495B3AEEC /* PhotosCollectionModule.swift in Sources */,
+				F52984972171DE1C000AFF49 /* UIImageView+Animations.swift in Sources */,
 				BB46321C20BB2E77007981F2 /* NetworkRequestCancelable.swift in Sources */,
 				66D9A82F44032638F246A04B /* PhotosCollectionAssembly.swift in Sources */,
 				6486DD983FE1C1FF0D9570A3 /* PhotosCollectionViewInput.swift in Sources */,
@@ -2809,11 +2827,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AT3P3UCMEJ;
+				DEVELOPMENT_TEAM = V49UJPQSH6;
 				INFOPLIST_FILE = "Youth/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lupu.Youth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cristianlupu.Youth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OBJC_BRIDGING_HEADER = "Youth/Supporting Files/Bridging Header/Youth-Bridging-Header.h";
@@ -2828,11 +2846,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AT3P3UCMEJ;
+				DEVELOPMENT_TEAM = V49UJPQSH6;
 				INFOPLIST_FILE = "Youth/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lupu.Youth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cristianlupu.Youth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "Youth/Supporting Files/Bridging Header/Youth-Bridging-Header.h";

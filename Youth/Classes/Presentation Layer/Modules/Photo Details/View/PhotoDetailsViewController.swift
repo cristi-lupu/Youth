@@ -2,8 +2,8 @@
 //  PhotoDetailsViewController.swift
 //  Youth
 //
-//  Created by Lupu Cristian on 10/06/2018.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 10/06/2018.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
 import UIKit
@@ -81,20 +81,11 @@ extension PhotoDetailsViewController: PhotoDetailsViewInput {
     
     func updateState(withViewModel viewModel: PhotoDetailsViewModel) {
         userView.updateInConformance(with: viewModel.userViewModel)
-        
         locationView.updateInConformance(with: viewModel.locationViewModel)
-        
         exifView.updateInConformance(with: viewModel.exifViewModel)
-        
         photoImageView.backgroundColor = viewModel.photoBackgroundColor
-        
-        if let url = viewModel.photoURL {
-            photoImageView.af_setImage(withURL: url,
-                                       imageTransition: .crossDissolve(0.3))
-        }
-        
+        photoImageView.loadImage(with: viewModel.photoURL)
         photoSize = viewModel.photoSize
-        
         view.setNeedsLayout()
     }
     

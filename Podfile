@@ -12,6 +12,7 @@ target 'Youth' do
 
   # Image Plugin
   pod 'AlamofireImage', '~> 3.4.1'
+  pod 'SDWebImage/Core', '~> 4.4.2'
 
   # Layout
   pod 'SnapKit', '~> 4.0.1'

@@ -2,7 +2,7 @@
 //  PhotosCollectionViewGridLayout.swift
 //  PhotosCollectionViewGridLayout
 //
-//  Created by Eric Cerney on 7/21/14. // Updated for his needs. Lupu Cristian
+//  Created by Eric Cerney on 7/21/14. // Updated for his needs. Cristian Lupu
 //  Copyright (c) 2014 Eric Cerney. All rights reserved.
 //
 

@@ -3,7 +3,7 @@
 //  Youth
 //
 //  Created by User678 on 5/29/18.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
 import Foundation
