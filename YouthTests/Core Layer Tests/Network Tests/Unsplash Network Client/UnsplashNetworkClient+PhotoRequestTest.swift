@@ -2,8 +2,8 @@
 //  UnsplashNetworkClient+PhotoRequestTest.swift
 //  YouthTests
 //
-//  Created by Lupu Cristian on 6/15/18.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 6/15/18.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
 import XCTest

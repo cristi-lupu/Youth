@@ -2,8 +2,8 @@
 //  YouthUserView.swift
 //  Youth
 //
-//  Created by Lupu Cristian on 6/10/18.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 6/10/18.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
 import UIKit
@@ -161,8 +161,7 @@ final class YouthUserView: UIView {
      - parameter userAvatarImageURL: Image URL
      */
     func set(userAvatarImageURL: URL) {
-        userAvatarImageView.af_setImage(withURL: userAvatarImageURL,
-                                        imageTransition: .crossDissolve(0.3))
+        userAvatarImageView.loadImage(with: userAvatarImageURL)
     }
     
     /**

@@ -2,8 +2,8 @@
 //  UserProfileViewController.swift
 //  Youth
 //
-//  Created by Lupu Cristian on 19/05/2018.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 19/05/2018.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
 import UIKit
@@ -157,17 +157,8 @@ extension UserProfileViewController {
         guard let url = url else {
             return
         }
-        
-        userProfileImageView.af_setImage(
-            withURL: url,
-            imageTransition: .crossDissolve(0.3))
-        { [weak self] (dataResponse) in
-            guard let strongSelf = self else {
-                return
-            }
-            
-            let image = dataResponse.value?.af_imageRoundedIntoCircle()
-            strongSelf.userProfileImageView.image = image
+        userProfileImageView.loadImage(with: url) { [weak self] image, _ in
+            self?.userProfileImageView.image = image?.af_imageRoundedIntoCircle()
         }
     }
     

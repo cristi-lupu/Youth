@@ -2,8 +2,8 @@
 //  UnsplashScope.swift
 //  Youth
 //
-//  Created by Lupu Cristian on 4/22/18.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 4/22/18.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
 import Foundation

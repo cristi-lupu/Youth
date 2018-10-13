@@ -2,8 +2,8 @@
 //  YouthPhotoDownloader.swift
 //  Youth
 //
-//  Created by Lupu Cristian on 6/16/18.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 6/16/18.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
 import Alamofire
@@ -28,7 +28,6 @@ protocol YouthPhotoDownloadObserver: class {
      - parameter error: `Optional` occured error.
      */
     func didDownload(photoID: String, image: UIImage?, withError error: Error?)
-    
 }
 
 final class YouthPhotoDownloader {

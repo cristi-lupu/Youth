@@ -2,12 +2,10 @@
 //  PhotosCollectionGridCell.swift
 //  Youth
 //
-//  Created by Lupu Cristian on 5/13/18.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 5/13/18.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 
 import UIKit
-import Alamofire
-import AlamofireImage
 
 final class PhotosCollectionGridCell: UICollectionViewCell, NibReusable {
     
@@ -52,18 +50,11 @@ final class PhotosCollectionGridCell: UICollectionViewCell, NibReusable {
     @objc func handleImageTapGesture(_ sender: UITapGestureRecognizer) {
         delegate?.didTapImage(on: self)
     }
-    
 }
 
 extension PhotosCollectionGridCell {
-    
     func configure(backgroundColor: UIColor, imageURL: URL?) {
         photoImageView.backgroundColor = backgroundColor
-        
-        if let url = imageURL {
-            photoImageView.af_setImage(withURL: url,
-                                       imageTransition: .crossDissolve(0.3))
-        }
+        photoImageView.loadImage(with: imageURL)
     }
-    
 }

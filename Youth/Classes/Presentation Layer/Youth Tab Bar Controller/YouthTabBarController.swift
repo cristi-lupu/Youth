@@ -2,15 +2,14 @@
 //  YouthTabBarController.swift
 //  Youth
 //
-//  Created by Lupu Cristian on 5/10/18.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 5/10/18.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
 import UIKit
 
 /// Main Tab Bar Controller Class
 final class YouthTabBarController: UITabBarController {
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -34,5 +33,4 @@ final class YouthTabBarController: UITabBarController {
             tabBarItem.imageInsets = imageInset
         }
     }
-    
 }
