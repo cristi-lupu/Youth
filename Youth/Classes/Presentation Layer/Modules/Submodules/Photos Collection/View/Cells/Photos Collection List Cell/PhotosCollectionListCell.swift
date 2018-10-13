@@ -2,8 +2,8 @@
 //  PhotosCollectionListCell.swift
 //  Youth
 //
-//  Created by Lupu Cristian on 5/13/18.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 5/13/18.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
 import UIKit
@@ -124,11 +124,7 @@ extension PhotosCollectionListCell {
         }
         
         likeButton.setImage(likeImage, for: .normal)
-        
-        if let url = imageURL {
-            photoImageView.af_setImage(withURL: url,
-                                       imageTransition: .crossDissolve(0.3))
-        }
+        photoImageView.loadImage(with: imageURL)
     }
     
     func setDownloadingState(withProgress progress: Double) {

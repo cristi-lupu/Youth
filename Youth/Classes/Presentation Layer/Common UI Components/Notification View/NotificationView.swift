@@ -2,8 +2,8 @@
 //  NotificationView.swift
 //  Youth
 //
-//  Created by Lupu Cristian on 6/18/18.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 6/18/18.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
 import UIKit
@@ -68,5 +68,4 @@ final class NotificationView: UIView {
     func set(title: String) {
         titleLabel.text = title
     }
-    
 }

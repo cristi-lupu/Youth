@@ -2,8 +2,8 @@
 //  UnsplashNameFormatterTests.swift
 //  YouthTests
 //
-//  Created by Lupu Cristian on 5/12/18.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 5/12/18.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
 import XCTest
@@ -12,7 +12,7 @@ import XCTest
 final class FullNameFormatterTests: XCTestCase {
     
     func testReturningName() {
-        let name = "Lupu Cristian"
+        let name = "Cristian Lupu"
         
         let fullName = FullNameFormatter().fullName(withName: name, firstName: nil, lastName: nil)
         

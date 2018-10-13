@@ -2,15 +2,14 @@
 //  YouthTabBarControllerAssembly.swift
 //  Youth
 //
-//  Created by Lupu Cristian on 5/10/18.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 5/10/18.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
 import UIKit
 
 /// Assembly for main tab bar controller of app
 final class YouthTabControllerAssembly {
-    
     func assemblyTabBarController() -> UITabBarController {
         let tabBarController = YouthTabBarController()
         
@@ -33,5 +32,4 @@ final class YouthTabControllerAssembly {
     private func photosViewController() -> UIViewController {
         return PhotosAssembly().assemblyPhotosModule()
     }
-    
 }

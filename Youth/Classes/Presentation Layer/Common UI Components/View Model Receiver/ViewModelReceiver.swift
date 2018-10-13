@@ -2,11 +2,9 @@
 //  ViewModelReceiver.swift
 //  Youth
 //
-//  Created by Lupu Cristian on 6/13/18.
-//  Copyright © 2018 Lupu Cristian. All rights reserved.
+//  Created by Cristian Lupu on 6/13/18.
+//  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
-
-import Foundation
 
 /// The protocol describes the object which receive and handle a arbitrary view model
 protocol ViewModelReceiver: class {
@@ -27,5 +25,4 @@ protocol ViewModelReceiver: class {
      - parameter viewModel: ViewModel of type ViewModelType
      */
     func updateInConformance(with viewModel: ViewModelType)
-    
 }
