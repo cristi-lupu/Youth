@@ -10,8 +10,8 @@ import Foundation
 
 /// Youth Location View Model
 struct YouthLocationViewModel {
-    
+
     /// Location
     let location: String
-    
+
 }

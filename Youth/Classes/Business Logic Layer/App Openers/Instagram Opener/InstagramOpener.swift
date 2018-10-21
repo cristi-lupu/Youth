@@ -9,16 +9,16 @@
 import UIKit
 
 /// Responsible to open Instagram App
-class InstagramAppOpener: YouthAppOpener {
-    
+final class InstagramAppOpener: YouthAppOpener {
+
     typealias DataType = String
-    
+
     func openApp(withData data: String, completion: AppOpenerActionCompletion) {
         guard let url = URL(string: "instagram://user?username=" + data) else {
             completion(false, .couldNotCreateAppURL)
             return
         }
-        
+
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.openURL(url)
             completion(true, nil)
@@ -26,5 +26,4 @@ class InstagramAppOpener: YouthAppOpener {
             completion(false, .appNotInstalled)
         }
     }
-    
 }

@@ -10,11 +10,10 @@ import UIKit
 
 /// Responsible to build PhotoDetailsViewModel
 final class PhotoDetailsViewModelBuilder {
-    
     private let userViewModelBuilder: YouthUserViewModelBuider
     private let locationViewModelBuilder: YouthLocationViewModelBuilder
     private let exifViewModelBuilder: YouthPhotoExifViewModelBuilder
-    
+
     /**
      Initialize builder
      
@@ -29,7 +28,7 @@ final class PhotoDetailsViewModelBuilder {
         self.locationViewModelBuilder = locationViewModelBuilder
         self.exifViewModelBuilder = exifViewModelBuilder
     }
-    
+
     /**
      Build PhotoDetailsViewModel
      
@@ -39,7 +38,7 @@ final class PhotoDetailsViewModelBuilder {
      */
     func build(withPhoto photo: UnsplashPhoto) -> PhotoDetailsViewModel {
         let photoURL: URL?
-        
+
         if let url = photo.imageURLs?.regular {
             photoURL = url
         } else if let url = photo.imageURLs?.small {
@@ -49,32 +48,32 @@ final class PhotoDetailsViewModelBuilder {
         } else {
             photoURL = nil
         }
-        
+
         let photoSize: CGSize
-        
+
         if let width = photo.width, let height = photo.height {
             photoSize = CGSize(width: width, height: height)
         } else {
             photoSize = .zero
         }
-        
+
         let userViewModel = userViewModelBuilder.build(withUser: photo.user)
-        
+
         let locationViewModel = locationViewModelBuilder.build(withLocation: photo.location)
-        
+
         let exifViewModel = exifViewModelBuilder.build(fromExif: photo.exif,
                                                        photoWidth: photo.width,
                                                        photoHeight: photo.height)
-        
+
         let photoBackgroundColor: UIColor
-        
+
         if let hex = photo.hexColor {
             photoBackgroundColor = UIColor(hex,
                                            defaultColor: .lightGray)
         } else {
             photoBackgroundColor = .lightGray
         }
-        
+
         return PhotoDetailsViewModel(photoURL: photoURL,
                                      photoBackgroundColor: photoBackgroundColor,
                                      photoSize: photoSize,
@@ -82,5 +81,4 @@ final class PhotoDetailsViewModelBuilder {
                                      locationViewModel: locationViewModel,
                                      exifViewModel: exifViewModel)
     }
-    
 }

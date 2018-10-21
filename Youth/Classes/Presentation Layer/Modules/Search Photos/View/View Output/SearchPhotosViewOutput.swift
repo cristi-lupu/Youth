@@ -9,13 +9,13 @@
 import Foundation
 
 protocol SearchPhotosViewOutput: class {
-    
+
     func viewIsReady()
-    
+
     func viewDidAppear()
-    
+
     func didTapLayoutButton()
-    
+
     func didChange(searchText: String)
-    
+
 }

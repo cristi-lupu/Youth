@@ -9,8 +9,8 @@
 import Foundation
 
 struct SearchPhotosState {
-    
+
     /// Collection Layout. Default value .grid
     var collectionLayout: YouthCollectionLayout = .grid
-    
+
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PhotoViewerViewInput: class {
-    
+
     func setUpInitialState()
-    
+
 }

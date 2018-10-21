@@ -18,14 +18,14 @@ enum UnsplashAuthorization {
      - parameter clientID: Valid Client ID.
      */
     case unauthorizedUser(clientID: String)
-    
+
     /**
      Authorized User
      
      - parameter accessToken: Valid AccessToken.
      */
     case authorizedUser(accessToken: String)
-    
+
     /**
      Default configuration. It is the unathorized user with client id from Constants
      */

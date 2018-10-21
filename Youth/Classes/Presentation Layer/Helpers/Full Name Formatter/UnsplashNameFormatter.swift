@@ -10,7 +10,6 @@ import Foundation
 
 /// Responsible to modify fullname in conformance with Youth style
 final class FullNameFormatter {
-    
     /**
      Modify full name if needed.
      
@@ -24,19 +23,21 @@ final class FullNameFormatter {
         if let name = name {
             return name
         }
-        
+
+        // swiftlint:disable:next identifier_name
         var _firstName = ""
-        
+
         if let fName = firstName {
             _firstName = fName
         }
-        
+
+        // swiftlint:disable:next identifier_name
         var _lastName = ""
-        
+
         if let lName = lastName {
             _lastName = lName
         }
-        
+
         if _firstName.isEmpty {
             return _lastName
         } else if _lastName.isEmpty {
@@ -45,5 +46,4 @@ final class FullNameFormatter {
             return _firstName + " " + _lastName
         }
     }
-    
 }

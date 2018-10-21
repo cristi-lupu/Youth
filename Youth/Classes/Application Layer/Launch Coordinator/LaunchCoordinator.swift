@@ -10,7 +10,6 @@ import UIKit
 
 /// Handle application launch
 final class LaunchCoordinator {
-    
     /**
      Handle launch
      
@@ -21,5 +20,4 @@ final class LaunchCoordinator {
         window?.rootViewController = tabBarControllerAssembly.assemblyTabBarController()
         window?.makeKeyAndVisible()
     }
-    
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PhotoViewerViewOutput: class {
-    
+
     func viewIsReady()
-    
+
 }

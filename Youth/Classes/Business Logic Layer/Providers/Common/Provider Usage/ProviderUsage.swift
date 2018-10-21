@@ -6,14 +6,11 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
-import Foundation
-
 /// Provider Usage
 enum ProviderUsage {
-    
     /// From network
     case network
-    
+
     /// From persistance
     case persistance
 }

@@ -14,7 +14,7 @@ import Foundation
  Used for Unsplash API.
  */
 enum UnsplashPhotosOrderBy: String {
-    case latest = "latest"
-    case oldest = "oldest"
-    case popular = "popular"
+    case latest
+    case oldest
+    case popular
 }

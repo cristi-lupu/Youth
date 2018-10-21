@@ -6,6 +6,8 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
+// swiftlint:disable all
+
 import Alamofire
 
 /**
@@ -43,12 +45,12 @@ final class UnsplashNetworkClient {
     }
 
     private func stubbing<Model>(for case: NetworkStubbing,
-                                 data _data: Data?,
+                                 data: Data?,
                                  modelType: Model.Type,
-                                 onSuccess: @escaping ((Model) -> ()),
-                                 onFail: @escaping ((NetworkStubbing.StubbingError) -> ())) where Model: Decodable {
+                                 onSuccess: @escaping ((Model) -> Void),
+                                 onFail: @escaping ((NetworkStubbing.StubbingError) -> Void)) where Model: Decodable {
         func execute() {
-            guard let data = _data else {
+            guard let data = data else {
                 onFail(.noData)
                 return
             }
@@ -87,7 +89,7 @@ extension UnsplashNetworkClient: PhotosNetworkRequester {
 
         switch self.stubbing {
         case .never:
-            request.responseData(queue: DispatchQueue.global(qos: .utility)) { (dataResponse) in
+            request.responseData(queue: DispatchQueue.global(qos: .utility)) { dataResponse in
                 if let err = dataResponse.error {
                     if let error = err as? URLError {
                         if error.code == .notConnectedToInternet {
@@ -120,9 +122,9 @@ extension UnsplashNetworkClient: PhotosNetworkRequester {
             self.stubbing(for: self.stubbing,
                           data: api.stubData,
                           modelType: [UnsplashPhoto].self,
-                          onSuccess: { (model) in
+                          onSuccess: { model in
                             completion(UnsplashResult.success(payload: model, rateLimit: nil))
-            }) { (error) in
+            }) { _ in
                 completion(UnsplashResult.failure(.noData))
             }
         }
@@ -144,7 +146,7 @@ extension UnsplashNetworkClient: UserPublicProfileNetworkRequester {
 
         switch self.stubbing {
         case .never:
-            request.responseData(queue: DispatchQueue.global(qos: .utility)) { (dataResponse) in
+            request.responseData(queue: DispatchQueue.global(qos: .utility)) { dataResponse in
                 if let err = dataResponse.error {
                     if let error = err as? URLError {
                         if error.code == .notConnectedToInternet {
@@ -177,9 +179,9 @@ extension UnsplashNetworkClient: UserPublicProfileNetworkRequester {
             self.stubbing(for: self.stubbing,
                           data: api.stubData,
                           modelType: UnsplashUser.self,
-                          onSuccess: { (model) in
+                          onSuccess: { model in
                             completion(UnsplashResult.success(payload: model, rateLimit: nil))
-            }) { (error) in
+            }) { _ in
                 completion(UnsplashResult.failure(.noData))
             }
         }
@@ -209,7 +211,7 @@ extension UnsplashNetworkClient: UserPhotosNetworkRequester {
 
         switch self.stubbing {
         case .never:
-            request.responseData(queue: DispatchQueue.global(qos: .utility)) { (dataResponse) in
+            request.responseData(queue: DispatchQueue.global(qos: .utility)) { dataResponse in
                 if let err = dataResponse.error {
                     if let error = err as? URLError {
                         if error.code == .notConnectedToInternet {
@@ -242,9 +244,9 @@ extension UnsplashNetworkClient: UserPhotosNetworkRequester {
             self.stubbing(for: self.stubbing,
                           data: api.stubData,
                           modelType: [UnsplashPhoto].self,
-                          onSuccess: { (model) in
+                          onSuccess: { model in
                             completion(UnsplashResult.success(payload: model, rateLimit: nil))
-            }) { (error) in
+            }) { _ in
                 completion(UnsplashResult.failure(.noData))
             }
         }
@@ -272,7 +274,7 @@ extension UnsplashNetworkClient: UserLikedPhotosNetworkRequester {
 
         switch self.stubbing {
         case .never:
-            request.responseData(queue: DispatchQueue.global(qos: .utility)) { (dataResponse) in
+            request.responseData(queue: DispatchQueue.global(qos: .utility)) { dataResponse in
                 if let err = dataResponse.error {
                     if let error = err as? URLError {
                         if error.code == .notConnectedToInternet {
@@ -305,9 +307,9 @@ extension UnsplashNetworkClient: UserLikedPhotosNetworkRequester {
             self.stubbing(for: self.stubbing,
                           data: api.stubData,
                           modelType: [UnsplashPhoto].self,
-                          onSuccess: { (model) in
+                          onSuccess: { model in
                             completion(UnsplashResult.success(payload: model, rateLimit: nil))
-            }) { (error) in
+            }) { _ in
                 completion(UnsplashResult.failure(.noData))
             }
         }
@@ -333,7 +335,7 @@ extension UnsplashNetworkClient: SearchPhotosNetworkRequester {
 
         switch self.stubbing {
         case .never:
-            request.responseData(queue: DispatchQueue.global(qos: .utility)) { (dataResponse) in
+            request.responseData(queue: DispatchQueue.global(qos: .utility)) { dataResponse in
                 if let err = dataResponse.error {
                     if let error = err as? URLError {
                         if error.code == .notConnectedToInternet {
@@ -366,9 +368,9 @@ extension UnsplashNetworkClient: SearchPhotosNetworkRequester {
             self.stubbing(for: self.stubbing,
                           data: api.stubData,
                           modelType: UnsplashSearchResult<UnsplashPhoto>.self,
-                          onSuccess: { (model) in
+                          onSuccess: { model in
                             completion(UnsplashResult.success(payload: model, rateLimit: nil))
-            }) { (error) in
+            }) { _ in
                 completion(UnsplashResult.failure(.noData))
             }
         }
@@ -391,7 +393,7 @@ extension UnsplashNetworkClient: PhotoNetworkRequester {
 
         switch self.stubbing {
         case .never:
-            request.responseData(queue: DispatchQueue.global(qos: .utility)) { (dataResponse) in
+            request.responseData(queue: DispatchQueue.global(qos: .utility)) { dataResponse in
                 if let err = dataResponse.error {
                     if let error = err as? URLError {
                         if error.code == .notConnectedToInternet {
@@ -424,9 +426,9 @@ extension UnsplashNetworkClient: PhotoNetworkRequester {
             self.stubbing(for: self.stubbing,
                           data: api.stubData,
                           modelType: UnsplashPhoto.self,
-                          onSuccess: { (model) in
+                          onSuccess: { model in
                             completion(UnsplashResult.success(payload: model, rateLimit: nil))
-            }) { (error) in
+            }) { _ in
                 completion(UnsplashResult.failure(.noData))
             }
         }

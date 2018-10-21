@@ -9,13 +9,13 @@
 import CoreGraphics
 
 protocol PhotosCollectionModuleOutput: class {
-    
+
     func didSelectPhoto(_ photo: UnsplashPhoto)
-    
+
     func didSelectUser(_ user: UnsplashUser)
-    
+
     func didChangePhotosCollectionContentHeight(_ height: CGFloat)
-    
+
     func didSavePhoto(success: Bool, error: Error?)
-    
+
 }

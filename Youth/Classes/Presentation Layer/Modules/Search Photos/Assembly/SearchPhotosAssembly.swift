@@ -9,14 +9,14 @@
 import UIKit
 
 final class SearchPhotosAssembly {
-    
+
     func assemblySearchPhotosModule() -> UIViewController {
         let view = SearchPhotosViewController()
         let presenter = SearchPhotosPresenter()
         let router = SearchPhotosRouter()
         let state = SearchPhotosState()
         let interactor = SearchPhotosInteractor()
-        
+
         view.output = presenter
         presenter.view = view
         presenter.interactor = interactor
@@ -24,8 +24,8 @@ final class SearchPhotosAssembly {
         presenter.state = state
         interactor.output = presenter
         router.viewController = view
-        
+
         return view
     }
-    
+
 }

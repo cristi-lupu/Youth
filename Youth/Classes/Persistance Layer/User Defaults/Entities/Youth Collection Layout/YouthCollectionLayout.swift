@@ -6,18 +6,14 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
-import Foundation
-
 enum YouthCollectionLayout: Int {
-    case grid = 0
-    case list = 1
-    
+    case grid
+    case list
+
     var inversed: YouthCollectionLayout {
         switch self {
-        case .grid:
-            return .list
-        case .list:
-            return .grid
+        case .grid: return .list
+        case .list: return .grid
         }
     }
 }

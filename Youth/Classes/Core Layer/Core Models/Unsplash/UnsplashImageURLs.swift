@@ -12,19 +12,16 @@ import Foundation
  Struct which contains all urls to image sources
  */
 struct UnsplashImageURLs {
-    
     let raw: URL?
     let full: URL?
     let regular: URL?
     let small: URL?
     let thumb: URL?
-    
 }
 
 // MARK: Decodable
 
 extension UnsplashImageURLs: Decodable {
-    
     private enum CodingKeys: String, CodingKey {
         case raw
         case full
@@ -32,7 +29,7 @@ extension UnsplashImageURLs: Decodable {
         case small
         case thumb
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.raw = try container.decodeIfPresent(URL.self, forKey: .raw)
@@ -41,6 +38,4 @@ extension UnsplashImageURLs: Decodable {
         self.small = try container.decodeIfPresent(URL.self, forKey: .small)
         self.thumb = try container.decodeIfPresent(URL.self, forKey: .thumb)
     }
-    
 }
-

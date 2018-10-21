@@ -9,15 +9,15 @@
 import Foundation
 
 final class SearchPhotosInteractor {
-    
+
     // MARK: Output
-    
+
     weak var output: SearchPhotosInteractorOutput?
-    
+
 }
 
 // MARK: SearchPhotosInteractorInput 
 
 extension SearchPhotosInteractor: SearchPhotosInteractorInput {
-    
+
 }

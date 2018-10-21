@@ -8,11 +8,10 @@
 
 import Foundation
 
-typealias PhotosResponse = ((UnsplashResult<[UnsplashPhoto], NetworkError>) -> ())
+typealias PhotosResponse = ((UnsplashResult<[UnsplashPhoto], NetworkError>) -> Void)
 
 /// Responsible to obtain photos from network
 protocol PhotosNetworkRequester: class {
-    
     /**
      Get photos
      
@@ -28,7 +27,4 @@ protocol PhotosNetworkRequester: class {
                 perPage: Int,
                 orderBy: UnsplashPhotosOrderBy,
                 completion: @escaping PhotosResponse) -> NetworkRequestCancelable
-    
 }
-
-

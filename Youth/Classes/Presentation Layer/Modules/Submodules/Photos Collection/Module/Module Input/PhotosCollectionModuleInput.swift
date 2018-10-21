@@ -9,19 +9,19 @@
 import Foundation
 
 protocol PhotosCollectionModuleInput: class {
-    
+
     func configure(collectionLayout: YouthCollectionLayout, usage: PhotosCollectionUsage)
-    
+
     func set(moduleOutput: PhotosCollectionModuleOutput)
-    
+
     func parentModuleIsReady()
-    
+
     func change(layout: YouthCollectionLayout)
-    
+
     func change(usage: PhotosCollectionUsage)
-    
+
     func set(scrollEnabled: Bool)
-    
+
     func configure(scrollOwner: PhotosCollectionScrollOwner)
-    
+
 }

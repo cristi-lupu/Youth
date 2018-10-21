@@ -10,7 +10,6 @@ import Foundation
 
 /// Responsible to obtain user liked photos from network
 protocol UserLikedPhotosNetworkRequester: class {
-    
     /**
      Get user liked photos
      
@@ -28,5 +27,4 @@ protocol UserLikedPhotosNetworkRequester: class {
                          perPage: Int,
                          orderBy: UnsplashPhotosOrderBy,
                          completion: @escaping PhotosResponse) -> NetworkRequestCancelable
-    
 }
