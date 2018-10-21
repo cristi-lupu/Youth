@@ -17,8 +17,7 @@ extension UIImageView {
             return
         }
         sd_setImage(with: url,
-                    placeholderImage: placeholder)
-        { [weak self] (image, error, cacheType, _) in
+                    placeholderImage: placeholder) { [weak self] image, error, cacheType, _ in
             completion?(image, error)
             if image != nil && cacheType == .none {
                 self?.animateFadeInappearance()

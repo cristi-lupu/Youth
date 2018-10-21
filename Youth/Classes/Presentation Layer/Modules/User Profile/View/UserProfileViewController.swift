@@ -6,13 +6,14 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
-import UIKit
+// swiftlint:disable all
+
 import SnapKit
+import UIKit
 
 final class UserProfileViewController: UIViewController, PhotosCollectionScrollOwner {
-    
     // MARK: IBOutlets
-    
+
     @IBOutlet weak private var userInfoView: UIView!
     @IBOutlet weak private var userProfileImageView: UIImageView!
     @IBOutlet weak private var twitterButton: UIButton!
@@ -30,129 +31,126 @@ final class UserProfileViewController: UIViewController, PhotosCollectionScrollO
     @IBOutlet weak private var collectionsSectionInfoView: UIView!
     @IBOutlet weak private var photosCanvasViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak private var scrollView: UIScrollView!
-    
+
     // MARK: Output
-    
+
     var output: UserProfileViewOutput?
-    
+
     // MARK: Private properties
-    
+
+    // swiftlint:disable:next identifier_name
     var userProfileSectionsViewTopToUserProfileImageViewBottomConstraint: Constraint?
-    
+
     // MARK: PhotosCollectionScrollOwner
-    
+
     weak var photosCollectionScrollingUpdateReceiver: PhotosCollectionScrollingUpdateReceiver?
-    
+
     // MARK: View Controller Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         output?.viewIsReady()
     }
-    
+
     // MARK: IBActions
-    
+
     @IBAction private func didTouchUpInsideTwitterButton(_ sender: UIButton) {
         output?.didTouchUpInsideTwitterButton()
     }
-    
+
     @IBAction private func didTouchUpInsideInstagramButton(_ sender: UIButton) {
         output?.didTouchUpInsideInstagramButton()
     }
-    
+
     @IBAction private func didTapLikedSection(_ sender: UITapGestureRecognizer) {
         print(#function)
     }
-    
+
     @IBAction private func didTapPhotosSection(_ sender: UITapGestureRecognizer) {
         print(#function)
     }
-    
+
     @IBAction private func didTapCollectionsSection(_ sender: UITapGestureRecognizer) {
         print(#function)
     }
-    
 }
 
 extension UserProfileViewController: UserProfileViewInput {
-    
+
     func setUpInitialState(withViewModel viewModel: UserProfileViewModel) {
         scrollView.delegate = self
-        
+
         setTitle(withFullName: viewModel.userViewModel.userFullname,
                  username: viewModel.userViewModel.username)
-        
+
         updateUserProfileImage(withURL: viewModel.userViewModel.userAvatarImageURL)
-        
+
         if viewModel.locationIsVisible {
             updateLocation(viewModel.locationViewModel.location)
         } else {
             removeLocation()
         }
-        
+
         if viewModel.biographyIsVisible {
             updateBiography(viewModel.biography)
         } else {
             removeBiography()
         }
-        
+
         updateSection(.liked,
                       state: viewModel.likedSectionState)
-        
+
         updateSection(.photos,
                       state: viewModel.photosSectionState)
-        
+
         updateSection(.collections,
                       state: viewModel.collectionsSectionState)
-        
+
         showTwitterButton(viewModel.twitterButtonIsVisible)
         showInstagramButton(viewModel.instagramButtonIsVisible)
-        
+
         photosCanvasViewHeightConstraint.constant = 0
-        
+
         view.layoutIfNeeded()
     }
-    
+
     func photosCollectionCanvasView() -> UIView {
         return photosCanvasView
     }
-    
+
     func photosCollectionScrollOwner() -> PhotosCollectionScrollOwner? {
         return self
     }
-    
+
     func updatePhotosCollectionCanvasViewHeight(_ height: CGFloat) {
         photosCanvasViewHeightConstraint.constant = height
         view.layoutIfNeeded()
     }
-    
 }
 
 extension UserProfileViewController: UIScrollViewDelegate {
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // Avoid user info view
         guard scrollView.contentOffset.y >= userInfoView.frame.height else {
             return
         }
-        
+
         // Removing about user info view and remain only photos collection
         let contentOffset = scrollView.contentOffset.y - userInfoView.frame.height
         let maximumOffset = scrollView.contentSize.height - userInfoView.frame.height - scrollView.frame.size.height
-        
+
         let percentage = contentOffset / maximumOffset
-        
+
         guard percentage >= 0.99 else {
             return
         }
-        
+
         photosCollectionScrollingUpdateReceiver?.didScrollPhotosCollectionAtTheEndOfTheContent()
     }
-    
+
 }
 
 extension UserProfileViewController {
-    
     private func updateUserProfileImage(withURL url: URL?) {
         guard let url = url else {
             return
@@ -161,15 +159,15 @@ extension UserProfileViewController {
             self?.userProfileImageView.image = image?.af_imageRoundedIntoCircle()
         }
     }
-    
+
     private func updateLocation(_ location: String) {
         locationLabel.text = location
     }
-    
+
     private func updateBiography(_ bio: String) {
         biographyLabel.text = bio
     }
-    
+
     private func updateSection(_ section: UserProfileSectionInfo, state: UserProfileSectionInfoState) {
         switch section {
         case .liked:
@@ -219,7 +217,7 @@ extension UserProfileViewController {
             }
         }
     }
-    
+
     private func disableSection(_ section: UserProfileSectionInfo) {
         switch section {
         case .liked:
@@ -239,56 +237,55 @@ extension UserProfileViewController {
             }
         }
     }
-    
+
     private func removeLocation() {
         locationView.removeFromSuperview()
-        
-        if userInfoView.subviews.contains(where: { (subview) -> Bool in
+
+        if userInfoView.subviews.contains(where: { subview -> Bool in
             subview === biographyLabel
         }) {
-            biographyLabel.snp.makeConstraints { (maker) in
+            biographyLabel.snp.makeConstraints { maker in
                 maker.top.equalTo(userProfileImageView.snp.bottom).offset(14)
             }
         } else {
             if userProfileSectionsViewTopToUserProfileImageViewBottomConstraint == nil {
-                userProfileSectionsInfoView.snp.makeConstraints { (maker) in
+                userProfileSectionsInfoView.snp.makeConstraints { maker in
                     userProfileSectionsViewTopToUserProfileImageViewBottomConstraint = maker.top.equalTo(userProfileImageView.snp.bottom).offset(14).constraint
                 }
             }
         }
     }
-    
+
     private func removeBiography() {
         biographyLabel.removeFromSuperview()
-        
-        if userInfoView.subviews.contains(where: { (subview) -> Bool in
+
+        if userInfoView.subviews.contains(where: { subview -> Bool in
             subview === locationView
         }) {
-            userProfileSectionsInfoView.snp.makeConstraints { (maker) in
+            userProfileSectionsInfoView.snp.makeConstraints { maker in
                 maker.top.equalTo(locationView.snp.bottom).offset(14)
             }
         } else {
             if userProfileSectionsViewTopToUserProfileImageViewBottomConstraint == nil {
-                userProfileSectionsInfoView.snp.makeConstraints { (maker) in
+                userProfileSectionsInfoView.snp.makeConstraints { maker in
                     userProfileSectionsViewTopToUserProfileImageViewBottomConstraint = maker.top.equalTo(userProfileImageView.snp.bottom).offset(14).constraint
                 }
             }
         }
     }
-    
+
     private func showTwitterButton(_ flag: Bool) {
         twitterButton.isHidden = !flag
     }
-    
+
     private func showInstagramButton(_ flag: Bool) {
         instagramButton.isHidden = !flag
     }
-    
+
     private func setTitle(withFullName fullName: String, username: String) {
         let titleView = YouthNavigationTitleSubtitleView()
         titleView.set(title: fullName)
         titleView.set(subtitle: username)
         navigationItem.titleView = titleView
     }
-    
 }

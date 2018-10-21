@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PhotoViewerModuleInput: class {
-    
+
     func set(moduleOutput: PhotoViewerModuleOutput)
-    
+
 }

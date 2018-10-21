@@ -12,20 +12,18 @@ typealias Method = Alamofire.HTTPMethod
 
 /// Task to perform request
 struct Task {
-    
     /// Endpoint URL
     let endpoint: URL
-    
+
     /// Method to perform request
     let method: Method
-    
+
     /// Parameters
-    let parameters: [String : Any]?
-    
+    let parameters: [String: Any]?
+
     /// Encoding
     let encoding: URLEncoding
-    
+
     /// Headers
-    let headers: [String : String]?
-    
+    let headers: [String: String]?
 }

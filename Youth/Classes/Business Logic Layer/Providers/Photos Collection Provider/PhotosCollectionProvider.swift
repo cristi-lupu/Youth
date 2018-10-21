@@ -6,51 +6,49 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 
 /// Responsible to obtain photos
 final class PhotosCollectionProvider {
-    
-    typealias PhotosProviderNetworkClient = PhotosNetworkRequester & UserPhotosNetworkRequester & UserLikedPhotosNetworkRequester & SearchPhotosNetworkRequester
-    
+    typealias PhotosProviderNetworkClient = PhotosNetworkRequester
+        & UserPhotosNetworkRequester
+        & UserLikedPhotosNetworkRequester
+        & SearchPhotosNetworkRequester
+
     deinit {
         currentRequest?.cancelRequest()
     }
-    
+
     enum Error: Swift.Error {
         case noInternetConnection
         case noMorePhotos
         case `internal`
     }
-    
+
     enum PhotosResult<Model, ProviderError> where ProviderError: Swift.Error {
         case success(payload: Model)
         case failure(ProviderError)
     }
-    
+
     private let networkClient: PhotosProviderNetworkClient
-    
+
     private var currentRequest: NetworkRequestCancelable?
-    
+
     init(networkClient: PhotosProviderNetworkClient) {
         self.networkClient = networkClient
     }
-    
 }
 
 extension PhotosCollectionProvider {
-    
     func cancelNetworkRequest() {
         currentRequest?.cancelRequest()
     }
-    
 }
 
 extension PhotosCollectionProvider {
-    
-    typealias PhotosProviderCompletion = (PhotosResult<[UnsplashPhoto], Error>) -> ()
-    
+    typealias PhotosProviderCompletion = (PhotosResult<[UnsplashPhoto], Error>) -> Void
+
     func photos(page: Int,
                 perPage: Int,
                 orderBy: UnsplashPhotosOrderBy,
@@ -61,7 +59,7 @@ extension PhotosCollectionProvider {
             currentRequest = networkClient.photos(
                 page: page,
                 perPage: perPage,
-                orderBy: orderBy) { (result) in
+                orderBy: orderBy) { result in
                     switch result {
                     case let .success(payload, _):
                         if payload.isEmpty {
@@ -69,7 +67,6 @@ extension PhotosCollectionProvider {
                         } else {
                             completion(.success(payload: payload))
                         }
-                        break
                     case let .failure(error):
                         switch error {
                         case .noInternetConnection:
@@ -85,11 +82,9 @@ extension PhotosCollectionProvider {
             break
         }
     }
-    
 }
 
 extension PhotosCollectionProvider {
-    
     func userPhotos(username: String,
                     page: Int,
                     perPage: Int,
@@ -103,7 +98,7 @@ extension PhotosCollectionProvider {
                 page: page,
                 perPage: perPage,
                 orderBy: orderBy,
-                includeStats: true) { (result) in
+                includeStats: true) { result in
                     switch result {
                     case let .success(payload, _):
                         if payload.isEmpty {
@@ -111,7 +106,6 @@ extension PhotosCollectionProvider {
                         } else {
                             completion(.success(payload: payload))
                         }
-                        break
                     case let .failure(error):
                         switch error {
                         case .noInternetConnection:
@@ -127,11 +121,9 @@ extension PhotosCollectionProvider {
             break
         }
     }
-    
 }
 
 extension PhotosCollectionProvider {
-    
     func userLikedPhotos(username: String,
                          page: Int,
                          perPage: Int,
@@ -144,7 +136,7 @@ extension PhotosCollectionProvider {
                 username: username,
                 page: page,
                 perPage: perPage,
-                orderBy: orderBy) { (result) in
+                orderBy: orderBy) { result in
                     switch result {
                     case let .success(payload, _):
                         if payload.isEmpty {
@@ -152,7 +144,6 @@ extension PhotosCollectionProvider {
                         } else {
                             completion(.success(payload: payload))
                         }
-                        break
                     case let .failure(error):
                         switch error {
                         case .noInternetConnection:
@@ -168,11 +159,9 @@ extension PhotosCollectionProvider {
             break
         }
     }
-    
 }
 
 extension PhotosCollectionProvider {
-    
     func searchPhotos(query: String,
                       page: Int,
                       perPage: Int,
@@ -182,36 +171,29 @@ extension PhotosCollectionProvider {
             completion(.success(payload: []))
             return
         }
-        
         switch usage {
         case .network:
-            currentRequest = networkClient.searchPhotos(
-                query: query,
-                page: page,
-                perPage: perPage,
-                completion: { (result) in
-                    switch result {
-                    case let .success(payload, _):
-                        if payload.results.isEmpty {
-                            completion(.failure(.noMorePhotos))
-                        } else {
-                            completion(.success(payload: payload.results))
-                        }
-                        break
-                    case let .failure(error):
-                        switch error {
-                        case .noInternetConnection:
-                            completion(.failure(.noInternetConnection))
-                        case .decodingError, .noData, .another:
-                            completion(.failure(.`internal`))
-                        case .cancelled:
-                            break
-                        }
+            currentRequest = networkClient.searchPhotos( query: query, page: page, perPage: perPage) { result in
+                switch result {
+                case let .success(payload, _):
+                    if payload.results.isEmpty {
+                        completion(.failure(.noMorePhotos))
+                    } else {
+                        completion(.success(payload: payload.results))
                     }
-            })
+                case let .failure(error):
+                    switch error {
+                    case .noInternetConnection:
+                        completion(.failure(.noInternetConnection))
+                    case .decodingError, .noData, .another:
+                        completion(.failure(.`internal`))
+                    case .cancelled:
+                        break
+                    }
+                }
+            }
         case .persistance:
             break
         }
     }
-    
 }

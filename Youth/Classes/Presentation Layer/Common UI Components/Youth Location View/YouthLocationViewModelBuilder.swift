@@ -10,7 +10,6 @@ import Foundation
 
 /// Responsible to build Youth Location View Model.
 final class YouthLocationViewModelBuilder {
-    
     /**
      Build YouthLocationViewModel.
      
@@ -21,7 +20,7 @@ final class YouthLocationViewModelBuilder {
     func build(withLocation location: String?) -> YouthLocationViewModel {
         return YouthLocationViewModel(location: location ?? "")
     }
-    
+
     /**
      Build YouthLocationViewModel.
      
@@ -33,13 +32,13 @@ final class YouthLocationViewModelBuilder {
         guard let location = location else {
             return YouthLocationViewModel(location: "")
         }
-        
+
         var locationString = ""
-        
+
         if let city = location.city {
             locationString = city
         }
-        
+
         if let country = location.country {
             if locationString.isEmpty {
                 locationString = country
@@ -47,8 +46,7 @@ final class YouthLocationViewModelBuilder {
                 locationString += ", " + country
             }
         }
-        
+
         return YouthLocationViewModel(location: locationString)
     }
-    
 }

@@ -9,8 +9,8 @@
 import Foundation
 
 struct PhotoDetailsState {
-    
+
     /// Photo
     var photo: UnsplashPhoto?
-    
+
 }

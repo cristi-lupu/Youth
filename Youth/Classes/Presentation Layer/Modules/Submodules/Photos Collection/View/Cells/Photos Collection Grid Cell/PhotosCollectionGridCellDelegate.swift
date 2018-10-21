@@ -6,10 +6,5 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
-import Foundation
-
 // Maybe separate delegate, with inheritance from PhotosCollectionCellDelegate, will be usefull.
-
-protocol PhotosCollectionGridCellDelegate: PhotosCollectionCellDelegate {
-    
-}
+protocol PhotosCollectionGridCellDelegate: PhotosCollectionCellDelegate { }

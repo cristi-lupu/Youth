@@ -10,8 +10,8 @@ import Foundation
 
 /// Responsible to cancel request
 protocol NetworkRequestCancelable {
-    
+
     /// Cancel Request
     func cancelRequest()
-    
+
 }

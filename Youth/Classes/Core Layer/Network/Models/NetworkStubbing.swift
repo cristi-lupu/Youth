@@ -10,16 +10,15 @@ import Foundation
 
 /// Network Stubbing. Used only for testing purpose
 enum NetworkStubbing {
-    
     enum StubbingError: Error {
         case noData
         case decodingError
         case stubbingIsNever
     }
-    
+
     /// Stubbing Never
     case never
-    
+
     /// Stubbing immediately
     case immediately
 }

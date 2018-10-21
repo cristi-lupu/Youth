@@ -9,18 +9,19 @@
 import UIKit
 
 protocol UserProfileRouterInput: class {
-    
-    var photosCollectionSubModuleOnParentModuleReady: (() -> ())? { get }
-    
+
+    // swiftlint:disable:next identifier_name
+    var photosCollectionSubModuleOnParentModuleReady: (() -> Void)? { get }
+
     func closeModule()
-    
+
     func addPhotosCollectionSubmodule(on canvasView: UIView,
                                       layout: YouthCollectionLayout,
                                       usage: PhotosCollectionUsage,
                                       scrollEnabled: Bool,
                                       scrollOwner: PhotosCollectionScrollOwner?,
                                       subModuleOutput: PhotosCollectionModuleOutput)
-    
+
     func showPhotoDetails(withPhoto photo: UnsplashPhoto)
-    
+
 }

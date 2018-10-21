@@ -45,7 +45,7 @@ final class UnsplashBadgeTests: XCTestCase {
             
             XCTAssertNotNil(badge.slug,
                             "book-contributor")
-            
+
             XCTAssertEqual(badge.link?.absoluteString,
                            "https://book.unsplash.com")
         } catch {

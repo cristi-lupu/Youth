@@ -10,7 +10,6 @@ import Foundation
 
 /// Responsible to build YouthPhotoExifViewModel
 final class YouthPhotoExifViewModelBuilder {
-
     /**
      Build YouthPhotoExifViewModel.
 
@@ -20,6 +19,8 @@ final class YouthPhotoExifViewModelBuilder {
 
      - returns: Builded YouthPhotoExifViewModel
      */
+
+    // swiftlint:disable:next cyclomatic_complexity
     func build(fromExif exif: UnsplashExif?,
                photoWidth: Int?,
                photoHeight: Int?) -> YouthPhotoExifViewModel {
@@ -74,6 +75,7 @@ final class YouthPhotoExifViewModelBuilder {
 
         let aperture: String
 
+        // swiftlint:disable:next identifier_name
         if let _aperture = exif.aperture {
             aperture = "ʄ/" + _aperture
         } else {
@@ -90,6 +92,7 @@ final class YouthPhotoExifViewModelBuilder {
 
         let iso: String
 
+        // swiftlint:disable:next identifier_name
         if let _iso = exif.iso {
             iso = String(_iso)
         } else {
@@ -103,5 +106,4 @@ final class YouthPhotoExifViewModelBuilder {
                                        exposureTime: exposureTime,
                                        iso: iso)
     }
-
 }

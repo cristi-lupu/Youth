@@ -9,15 +9,15 @@
 import Foundation
 
 final class PhotosInteractor {
-    
+
     // MARK: Output
-    
+
     weak var output: PhotosInteractorOutput?
-    
+
 }
 
 // MARK: PhotosInteractorInput 
 
 extension PhotosInteractor: PhotosInteractorInput {
-    
+
 }

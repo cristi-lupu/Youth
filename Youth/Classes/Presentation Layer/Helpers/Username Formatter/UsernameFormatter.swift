@@ -6,11 +6,8 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
-import Foundation
-
 /// Responsible to modify username to conformance with Youth style
-class UsernameFormatter {
-    
+final class UsernameFormatter {
     /**
      Modify username in conformance with Youth style.
      
@@ -22,12 +19,11 @@ class UsernameFormatter {
         guard let username = text else {
             return ""
         }
-        
+
         if username.hasPrefix("@") {
             return username
         } else {
             return "@" + username
         }
     }
-    
 }

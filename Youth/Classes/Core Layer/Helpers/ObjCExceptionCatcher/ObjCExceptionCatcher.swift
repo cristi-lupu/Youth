@@ -9,14 +9,12 @@
 import Foundation
 
 /// Responsible to catch ObjC Exceptions
-final class ObjCExceptionCatcher {
-    
-    static func tryClosure(tryClosure: () -> (),
-                           catchClosure: @escaping (NSException) -> (),
-                           finallyClosure: @escaping () -> () = {}) {
+enum ObjCExceptionCatcher {
+    static func tryClosure(tryClosure: () -> Void,
+                           catchClosure: @escaping (NSException) -> Void,
+                           finallyClosure: @escaping () -> Void = { }) {
         Youth_ObjCExceptionCatcherHelper.`try`(tryClosure,
                                                catch: catchClosure,
                                                finally: finallyClosure)
     }
-    
 }

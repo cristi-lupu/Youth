@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PhotosCollectionRouterInput: class {
-    
+
     func closeModule()
-    
+
 }

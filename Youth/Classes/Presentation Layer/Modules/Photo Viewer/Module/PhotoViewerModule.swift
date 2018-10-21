@@ -9,18 +9,18 @@
 import UIKit
 
 final class PhotoViewerModule {
-    
+
     // MARK: View Controller
-    
+
     let viewController: UIViewController
-    
+
     // MARK: Module Input
-    
+
     let moduleInput: PhotoViewerModuleInput
-    
+
     required init(viewController: UIViewController, moduleInput: PhotoViewerModuleInput) {
         self.viewController = viewController
         self.moduleInput = moduleInput
     }
-    
+
 }

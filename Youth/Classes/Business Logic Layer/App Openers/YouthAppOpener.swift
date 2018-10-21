@@ -10,20 +10,18 @@ import Foundation
 
 /// App Opener Error
 enum YouthAppOpenerError: Error {
-    
     /// Application is not installed
     case appNotInstalled
-    
+
     /// Could not create app URL
     case couldNotCreateAppURL
 }
 
-typealias AppOpenerActionCompletion = (_ success: Bool, _ error: YouthAppOpenerError?) -> ()
+typealias AppOpenerActionCompletion = (_ success: Bool, _ error: YouthAppOpenerError?) -> Void
 
 protocol YouthAppOpener {
-    
     associatedtype DataType
-    
+
     /**
      Open app with some information
      
@@ -31,5 +29,4 @@ protocol YouthAppOpener {
      - parameter completion: Completion
      */
     func openApp(withData data: DataType, completion: AppOpenerActionCompletion)
-    
 }
