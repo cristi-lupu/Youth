@@ -8,11 +8,10 @@
 
 import Foundation
 
-typealias UserPublicProfileResponse = ((UnsplashResult<UnsplashUser, NetworkError>) -> ())
+typealias UserPublicProfileResponse = ((UnsplashResult<UnsplashUser, NetworkError>) -> Void)
 
 /// Responsible to obtain user information from network
 protocol UserPublicProfileNetworkRequester: class {
-    
     /**
      Get user
      
@@ -24,5 +23,4 @@ protocol UserPublicProfileNetworkRequester: class {
     @discardableResult
     func userPublicProfile(username: String,
                            completion: @escaping UserPublicProfileResponse) -> NetworkRequestCancelable
-    
 }

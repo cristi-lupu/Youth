@@ -8,46 +8,46 @@
 import UIKit
 
 final class PhotosCollectionGridCell: UICollectionViewCell, NibReusable {
-    
     // MARK: Deinitialization
-    
+
     deinit {
         imageTapGestureRecognizer?.removeTarget(nil, action: nil)
         imageTapGestureRecognizer = nil
     }
-    
+
     // MARK: IBOutlets
-    
+
     @IBOutlet private var photoImageView: UIImageView!
-    
+
     // MARK: Public properties
-    
-    var delegate: PhotosCollectionGridCellDelegate?
-    
+
+    weak var delegate: PhotosCollectionGridCellDelegate?
+
     // MARK: Private properties
-    
+
     private var imageTapGestureRecognizer: UITapGestureRecognizer?
-    
+
     // MARK: UICollectionViewCell Life Cycle
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = 6
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // https://github.com/jessesquires/JSQMessagesViewController/blob/develop/JSQMessagesViewController/Views/JSQMessagesCollectionViewCell.m
+
         let imageTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageTapGesture(_:)))
         photoImageView.addGestureRecognizer(imageTapGesture)
         imageTapGestureRecognizer = imageTapGesture
-        
+
         layer.masksToBounds = true
     }
-    
+
     // MARK: Private methods
-    
-    @objc func handleImageTapGesture(_ sender: UITapGestureRecognizer) {
+
+    @objc
+    func handleImageTapGesture(_ sender: UITapGestureRecognizer) {
         delegate?.didTapImage(on: self)
     }
 }

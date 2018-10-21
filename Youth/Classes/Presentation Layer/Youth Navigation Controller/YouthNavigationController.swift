@@ -12,7 +12,7 @@ import UIKit
 final class YouthNavigationController: UINavigationController {
     convenience init(initialViewController: UIViewController) {
         self.init(navigationBarClass: YouthNavigationBar.self, toolbarClass: nil)
-        
+
         viewControllers = [initialViewController]
     }
 }

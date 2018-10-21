@@ -9,14 +9,14 @@
 import UIKit
 
 final class PhotosAssembly {
-    
+
     func assemblyPhotosModule() -> UIViewController {
         let view = PhotosViewController()
         let presenter = PhotosPresenter()
         let router = PhotosRouter()
         let state = PhotosState()
         let interactor = PhotosInteractor()
-        
+
         view.output = presenter
         presenter.view = view
         presenter.interactor = interactor
@@ -24,8 +24,8 @@ final class PhotosAssembly {
         presenter.state = state
         interactor.output = presenter
         router.viewController = view
-        
+
         return YouthNavigationController(initialViewController: view)
     }
-    
+
 }

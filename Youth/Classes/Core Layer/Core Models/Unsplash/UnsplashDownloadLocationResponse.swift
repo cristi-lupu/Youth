@@ -13,22 +13,18 @@ import Foundation
 
 /// Dowload location response
 struct UnsplashDownloadLocationResponse {
-    
     let url: URL?
-    
 }
 
 // MARK: Decodable
 
 extension UnsplashDownloadLocationResponse: Decodable {
-    
     private enum CodingKeys: String, CodingKey {
         case url
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.url = try container.decodeIfPresent(URL.self, forKey: .url)
     }
-    
 }

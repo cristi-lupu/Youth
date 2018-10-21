@@ -9,9 +9,9 @@
 import Foundation
 
 protocol UserProfileInteractorInput: class {
-    
+
     func openInstagramUserProfile(username: String)
-    
+
     func openTwitterUserProfile(username: String)
-    
+
 }

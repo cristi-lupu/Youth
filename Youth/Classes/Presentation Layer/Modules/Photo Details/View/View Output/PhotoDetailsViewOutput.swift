@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PhotoDetailsViewOutput: class {
-    
+
 	func viewIsReady()
 
     func didTapUser()

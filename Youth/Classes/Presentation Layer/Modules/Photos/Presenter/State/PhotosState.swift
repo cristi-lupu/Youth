@@ -9,14 +9,14 @@
 import Foundation
 
 struct PhotosState {
-    
+
     /// Collection Layout. Default value .list
     var collectionLayout: YouthCollectionLayout = .list
-    
+
     /// Photos Category. Default value .latest
     var photosCategory: PhotosCategoryType = .latest
-    
+
     /// Photos Categories Current Index. Default value 0
     var photosCategoriesCurrentIndex = 0
-    
+
 }

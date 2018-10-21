@@ -18,13 +18,12 @@ import Foundation
  Image file requests (images.unsplash.com) do not count against your rate limit.
  */
 struct UnsplashRateLimit {
-    
     /// Total limit count
     let totalLimit: Int64
-    
+
     /// Total remaining count
     let remaining: Int64
-    
+
     /**
      Create rate limit
      
@@ -34,16 +33,15 @@ struct UnsplashRateLimit {
      */
     static func rateLimit(from response: HTTPURLResponse?) -> UnsplashRateLimit? {
         let headerFields = response?.allHeaderFields
-        
+
         guard let stringTotalLimit = headerFields?["x-ratelimit-limit"] as? String,
             let stringRemaining = headerFields?["x-ratelimit-remaining"] as? String,
             let integerTotalLimit = Int64(stringTotalLimit),
             let integerRemaining = Int64(stringRemaining) else {
                 return nil
         }
-        
+
         return UnsplashRateLimit(totalLimit: integerTotalLimit,
                                  remaining: integerRemaining)
     }
-    
 }

@@ -9,11 +9,11 @@
 import Foundation
 
 protocol UserProfileViewOutput: class {
-    
+
     func viewIsReady()
-    
+
     func didTouchUpInsideInstagramButton()
-    
+
     func didTouchUpInsideTwitterButton()
-    
+
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PhotoDetailsInteractorInput: class {
-    
+
     func obtainPhoto(withID id: String)
-    
+
 }

@@ -9,13 +9,12 @@
 import Foundation
 
 enum PhotosCategoryType: Int {
-    case latest = 0
-    case popular = 1
-    case oldest = 2
+    case latest
+    case popular
+    case oldest
 }
 
 extension PhotosCategoryType: CustomStringConvertible {
-    
     var description: String {
         switch self {
         case .latest: return "Latest"
@@ -23,9 +22,8 @@ extension PhotosCategoryType: CustomStringConvertible {
         case .oldest: return "Oldest"
         }
     }
-    
+
     static var allInOrder: [PhotosCategoryType] {
         return [.latest, .popular, .oldest]
     }
-    
 }

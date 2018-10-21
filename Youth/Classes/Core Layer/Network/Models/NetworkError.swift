@@ -14,16 +14,16 @@ import Foundation
 enum NetworkError: Error {
     /// No internet connection
     case noInternetConnection
-    
+
     /// Cancelled request
     case cancelled
-    
+
     /// Decoding Error
     case decodingError
-    
+
     /// Response does not contain data
     case noData
-    
+
     /// Another error
     case another(error: Error)
 }

@@ -13,7 +13,7 @@ enum YouthFonts {
     case avenirNextMedium(size: CGFloat)
     case avenirNextBold(size: CGFloat)
     case avenirNextDemiBold(size: CGFloat)
-    
+
     var font: UIFont {
         switch self {
         case let .avenirNextRegular(size):

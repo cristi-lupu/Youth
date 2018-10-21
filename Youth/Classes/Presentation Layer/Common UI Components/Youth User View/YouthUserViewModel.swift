@@ -10,14 +10,12 @@ import Foundation
 
 /// Youth User View Model
 struct YouthUserViewModel {
-    
     /// User avatar image URL
     let userAvatarImageURL: URL?
-    
+
     /// User fullname
     let userFullname: String
-    
+
     /// Username
     let username: String
-    
 }

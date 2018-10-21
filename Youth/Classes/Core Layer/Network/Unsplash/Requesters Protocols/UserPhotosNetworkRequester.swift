@@ -10,7 +10,6 @@ import Foundation
 
 /// Responsible to obtain user photos from network
 protocol UserPhotosNetworkRequester: class {
-    
     /**
      Get user photos
      
@@ -30,5 +29,4 @@ protocol UserPhotosNetworkRequester: class {
                     orderBy: UnsplashPhotosOrderBy,
                     includeStats: Bool,
                     completion: @escaping PhotosResponse) -> NetworkRequestCancelable
-    
 }

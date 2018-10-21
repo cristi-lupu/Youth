@@ -6,6 +6,8 @@
  *
  *********************************************/
 
+// swiftlint:disable all
+
 import UIKit
 
 // MARK: Reusable support for UICollectionView

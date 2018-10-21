@@ -9,20 +9,21 @@
 import UIKit
 
 protocol SearchPhotosRouterInput: class {
-    
-    var photosCollectionSubModuleOnParentModuleReady: (() -> ())? { get }
-    var photosCollectionSubModuleOnLayoutChange: ((YouthCollectionLayout) -> ())? { get }
-    var photosCollectionSubModuleOnUsageChange: ((PhotosCollectionUsage) -> ())? { get }
-    
+
+    // swiftlint:disable:next identifier_name
+    var photosCollectionSubModuleOnParentModuleReady: (() -> Void)? { get }
+    var photosCollectionSubModuleOnLayoutChange: ((YouthCollectionLayout) -> Void)? { get }
+    var photosCollectionSubModuleOnUsageChange: ((PhotosCollectionUsage) -> Void)? { get }
+
     func closeModule()
-    
+
     func addPhotosCollectionSubmodule(on canvasView: UIView,
                                       layout: YouthCollectionLayout,
                                       usage: PhotosCollectionUsage,
                                       subModuleOutput: PhotosCollectionModuleOutput)
-    
+
     func showUserProfile(withUser user: UnsplashUser)
-    
+
     func showPhotoDetails(withPhoto photo: UnsplashPhoto)
-    
+
 }

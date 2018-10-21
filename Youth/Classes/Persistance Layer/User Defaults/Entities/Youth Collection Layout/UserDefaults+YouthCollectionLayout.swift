@@ -9,11 +9,11 @@
 import Foundation
 
 extension UserDefaults {
-    
+
     private var photosCollectionLayoutKey: String {
         return "PhotosCollectionLayoutKey"
     }
-    
+
     var photosCollectionLayout: YouthCollectionLayout {
         get {
             return YouthCollectionLayout(rawValue: integer(forKey: photosCollectionLayoutKey)) ?? .list
@@ -22,5 +22,5 @@ extension UserDefaults {
             set(newValue.rawValue, forKey: photosCollectionLayoutKey)
         }
     }
-    
+
 }

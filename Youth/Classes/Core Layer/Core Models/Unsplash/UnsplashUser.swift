@@ -10,82 +10,79 @@ import Foundation
 
 /// User object
 struct UnsplashUser {
-    
     /// Identifier
     let id: String?
-    
+
     /// Updated at (date)
     let updatedAt: Date?
-    
+
     /// Username
     let username: String?
-    
+
     /// First name
     let firstName: String?
-    
+
     /// Last name
     let lastName: String?
-    
+
     /// Name
     let name: String?
-    
+
     /// Instagram username
     let instagramUsername: String?
-    
+
     /// Twitter username
     let twitterUsername: String?
-    
+
     /// Email
     let email: String?
-    
+
     /// Bio
     let bio: String?
-    
+
     /// Is followed by user
     let followedByUser: Bool?
-    
+
     /// Followers Count
     let followersCount: Int64?
-    
+
     /// Following Count
     let followingCount: Int64?
-    
+
     /// Downloads Count
     let downloads: Int64?
-    
+
     /// Uploads Remaining Count
     let uploadsRemaining: Int64?
-    
+
     /// Location
     let location: String?
-    
+
     /// Total likes count
     let totalLikes: Int64?
-    
+
     /// Total photos count
     let totalPhotos: Int64?
-    
+
     /// Total collections count
     let totalCollections: Int64?
-    
+
     /// Profile Image
     let profileImage: UnsplashProfileImage?
-    
+
     /// Links
     let links: UnsplashLinks?
-    
+
     /// Portfolio URL
     let portfolioURL: URL?
-    
+
     /// Badge
     let badge: UnsplashBadge?
-    
 }
 
 // MARK: Decodable
 
 extension UnsplashUser: Decodable {
-    
     private enum CodingKeys: String, CodingKey {
         case id
         case updatedAt = "updated_at"
@@ -111,14 +108,14 @@ extension UnsplashUser: Decodable {
         case portfolioURL = "portfolio_url"
         case badge
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decodeIfPresent(String.self, forKey: .id)
-        
+
         let updatedAtString = try container.decodeIfPresent(String.self, forKey: .updatedAt)
         self.updatedAt = UnsplashDateConverter.date(from: updatedAtString)
-        
+
         self.username = try container.decodeIfPresent(String.self, forKey: .username)
         self.firstName = try container.decodeIfPresent(String.self, forKey: .firstName)
         self.lastName = try container.decodeIfPresent(String.self, forKey: .lastName)
@@ -141,5 +138,4 @@ extension UnsplashUser: Decodable {
         self.portfolioURL = try container.decodeIfPresent(URL.self, forKey: .portfolioURL)
         self.badge = try container.decodeIfPresent(UnsplashBadge.self, forKey: .badge)
     }
-    
 }

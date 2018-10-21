@@ -9,7 +9,7 @@
 import Foundation
 
 protocol UserProfileModuleInput: class {
-    
+
     func configure(withUser user: UnsplashUser)
-    
+
 }

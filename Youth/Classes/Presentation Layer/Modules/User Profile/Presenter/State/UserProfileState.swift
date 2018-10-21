@@ -9,8 +9,8 @@
 import Foundation
 
 struct UserProfileState {
-    
+
     /// User
     var user: UnsplashUser?
-    
+
 }

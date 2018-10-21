@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PhotoDetailsModuleInput: class {
-    
+
     func configure(withPhoto photo: UnsplashPhoto)
-    
+
 }

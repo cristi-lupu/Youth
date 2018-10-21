@@ -6,13 +6,10 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
-import Foundation
-
-typealias PhotoResponse = ((UnsplashResult<UnsplashPhoto, NetworkError>) -> ())
+typealias PhotoResponse = ((UnsplashResult<UnsplashPhoto, NetworkError>) -> Void)
 
 /// Responsible to obtain photo from network
 protocol PhotoNetworkRequester: class {
-    
     /**
      Get photo
      
@@ -23,5 +20,4 @@ protocol PhotoNetworkRequester: class {
      */
     @discardableResult
     func photo(id: String, completion: @escaping PhotoResponse) -> NetworkRequestCancelable
-    
 }

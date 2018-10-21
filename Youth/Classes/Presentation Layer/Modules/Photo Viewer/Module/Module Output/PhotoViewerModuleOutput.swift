@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol PhotoViewerModuleOutput: class {	
-    
-    
+protocol PhotoViewerModuleOutput: class {
+
 }

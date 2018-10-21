@@ -10,8 +10,8 @@ import Foundation
 
 /// Responsible to handle scroll actions
 protocol PhotosCollectionScrollingUpdateReceiver: class {
-    
+
     //// Scroll did reach the end of the content
     func didScrollPhotosCollectionAtTheEndOfTheContent()
-    
+
 }

@@ -9,16 +9,15 @@
 import UIKit
 
 /// Responsible to open Twitter App
-class TwitterAppOpener: YouthAppOpener {
-    
+final class TwitterAppOpener: YouthAppOpener {
     typealias DataType = String
-    
+
     func openApp(withData data: String, completion: AppOpenerActionCompletion) {
         guard let url = URL(string: "twitter://user?screen_name=" + data) else {
             completion(false, .couldNotCreateAppURL)
             return
         }
-        
+
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.openURL(url)
             completion(true, nil)
@@ -26,5 +25,4 @@ class TwitterAppOpener: YouthAppOpener {
             completion(false, .appNotInstalled)
         }
     }
-    
 }

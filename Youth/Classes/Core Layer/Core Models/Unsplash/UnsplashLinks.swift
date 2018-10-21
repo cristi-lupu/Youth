@@ -12,7 +12,6 @@ import Foundation
  Struct which contains links
  */
 struct UnsplashLinks {
-    
     let `self`: URL?
     let html: URL?
     let download: URL?
@@ -22,13 +21,11 @@ struct UnsplashLinks {
     let portfolio: URL?
     let following: URL?
     let followers: URL?
-    
 }
 
 // MARK: Decodable
 
 extension UnsplashLinks: Decodable {
-    
     private enum CodingKeys: String, CodingKey {
         case `self` = "self"
         case html
@@ -40,7 +37,7 @@ extension UnsplashLinks: Decodable {
         case followers
         case following
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.`self` = try container.decodeIfPresent(URL.self, forKey: .`self`)
@@ -53,5 +50,4 @@ extension UnsplashLinks: Decodable {
         self.followers = try container.decodeIfPresent(URL.self, forKey: .followers)
         self.following = try container.decodeIfPresent(URL.self, forKey: .following)
     }
-    
 }

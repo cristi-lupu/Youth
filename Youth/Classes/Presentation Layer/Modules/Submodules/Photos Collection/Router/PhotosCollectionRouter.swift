@@ -9,15 +9,11 @@
 import UIKit
 
 final class PhotosCollectionRouter {
-    
     weak var view: UIView?
-    
 }
 
 extension PhotosCollectionRouter: PhotosCollectionRouterInput {
-    
     func closeModule() {
         view?.removeFromSuperview()
     }
-    
 }
