@@ -115,11 +115,6 @@
 		BB908D4120A8221900D45F3D /* PhotosCollectionGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB908D3F20A8221900D45F3D /* PhotosCollectionGridCell.xib */; };
 		BB908D4720A8226C00D45F3D /* PhotosCollectionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB908D4520A8226C00D45F3D /* PhotosCollectionListCell.swift */; };
 		BB908D4820A8226C00D45F3D /* PhotosCollectionListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB908D4620A8226C00D45F3D /* PhotosCollectionListCell.xib */; };
-		BB908D5020A8255600D45F3D /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB908D4B20A8255600D45F3D /* NibLoadable.swift */; };
-		BB908D5120A8255600D45F3D /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB908D4C20A8255600D45F3D /* UICollectionView+Reusable.swift */; };
-		BB908D5220A8255600D45F3D /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB908D4D20A8255600D45F3D /* NibOwnerLoadable.swift */; };
-		BB908D5320A8255600D45F3D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB908D4E20A8255600D45F3D /* Reusable.swift */; };
-		BB908D5420A8255600D45F3D /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB908D4F20A8255600D45F3D /* UITableView+Reusable.swift */; };
 		BB908D5820A826DD00D45F3D /* PhotosCollectionListDataDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB908D5720A826DD00D45F3D /* PhotosCollectionListDataDisplayManager.swift */; };
 		BB908D5A20A8272500D45F3D /* PhotosCollectionDataDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB908D5920A8272500D45F3D /* PhotosCollectionDataDisplayManager.swift */; };
 		BB96141521823CB400089CD5 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96141421823CB300089CD5 /* DataExtensions.swift */; };
@@ -348,11 +343,6 @@
 		BB908D3F20A8221900D45F3D /* PhotosCollectionGridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosCollectionGridCell.xib; sourceTree = "<group>"; };
 		BB908D4520A8226C00D45F3D /* PhotosCollectionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionListCell.swift; sourceTree = "<group>"; };
 		BB908D4620A8226C00D45F3D /* PhotosCollectionListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosCollectionListCell.xib; sourceTree = "<group>"; };
-		BB908D4B20A8255600D45F3D /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
-		BB908D4C20A8255600D45F3D /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
-		BB908D4D20A8255600D45F3D /* NibOwnerLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibOwnerLoadable.swift; sourceTree = "<group>"; };
-		BB908D4E20A8255600D45F3D /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		BB908D4F20A8255600D45F3D /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		BB908D5720A826DD00D45F3D /* PhotosCollectionListDataDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionListDataDisplayManager.swift; sourceTree = "<group>"; };
 		BB908D5920A8272500D45F3D /* PhotosCollectionDataDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionDataDisplayManager.swift; sourceTree = "<group>"; };
 		BB96141421823CB300089CD5 /* DataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
@@ -1486,21 +1476,8 @@
 				BB6287D720B4994800C57238 /* Username Formatter */,
 				BB3001F220B0A3D9009C3E1E /* Short Number Formatter */,
 				BBFF360820A762F1007A4D02 /* Full Name Formatter */,
-				BB908D4A20A8254900D45F3D /* Reusable */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		BB908D4A20A8254900D45F3D /* Reusable */ = {
-			isa = PBXGroup;
-			children = (
-				BB908D4B20A8255600D45F3D /* NibLoadable.swift */,
-				BB908D4D20A8255600D45F3D /* NibOwnerLoadable.swift */,
-				BB908D4E20A8255600D45F3D /* Reusable.swift */,
-				BB908D4C20A8255600D45F3D /* UICollectionView+Reusable.swift */,
-				BB908D4F20A8255600D45F3D /* UITableView+Reusable.swift */,
-			);
-			path = Reusable;
 			sourceTree = "<group>";
 		};
 		BB908D5520A8269B00D45F3D /* Data Display Managers */ = {
@@ -2353,6 +2330,7 @@
 				"${BUILT_PRODUCTS_DIR}/Permission/Permission.framework",
 				"${BUILT_PRODUCTS_DIR}/PinterestSegment/PinterestSegment.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -2368,6 +2346,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Permission.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinterestSegment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -2414,11 +2393,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB908D5120A8255600D45F3D /* UICollectionView+Reusable.swift in Sources */,
 				BBB557B520B172C300F2ED02 /* PhotosCollectionListCellDelegate.swift in Sources */,
-				BB908D5220A8255600D45F3D /* NibOwnerLoadable.swift in Sources */,
 				BBD54C5520D1AA1400B199EE /* YouthUserViewModelBuilder.swift in Sources */,
-				BB908D5420A8255600D45F3D /* UITableView+Reusable.swift in Sources */,
 				BB740AA920C3201800F556A9 /* Youth_ObjCExceptionCatcherHelper.m in Sources */,
 				BB908D4020A8221900D45F3D /* PhotosCollectionGridCell.swift in Sources */,
 				0025477520BD8D910002C229 /* YouthAppOpener.swift in Sources */,
@@ -2446,7 +2422,6 @@
 				BBA4247C20A34F6E009D3603 /* LaunchCoordinator.swift in Sources */,
 				BB9C56F7209738E40051FF53 /* UnsplashPhoto.swift in Sources */,
 				BBD54C4C20D1A8B000B199EE /* YouthLocationViewModel.swift in Sources */,
-				BB908D5020A8255600D45F3D /* NibLoadable.swift in Sources */,
 				BB6FED5221847BB80024515D /* UnsplashRxExtensions.swift in Sources */,
 				BB9C56F0209738E30051FF53 /* UnsplashProfileImage.swift in Sources */,
 				BBBA0D94208CC8BB00F236B5 /* UnsplashScope.swift in Sources */,
@@ -2478,7 +2453,6 @@
 				BBE62AB120C07FF2003DD11F /* PhotosCollectionScrollOwner.swift in Sources */,
 				BB3001F420B0A408009C3E1E /* ShortNumberFormatter.swift in Sources */,
 				BBD54C5720D1ADE600B199EE /* ViewModelReceiver.swift in Sources */,
-				BB908D5320A8255600D45F3D /* Reusable.swift in Sources */,
 				F52984A72171FA9C000AFF49 /* UnsplashUsersRequestComposer.swift in Sources */,
 				D53204A88A8AC769D9978F88 /* PhotosAssembly.swift in Sources */,
 				7DD213D64F623623A1FC002A /* PhotosViewInput.swift in Sources */,

@@ -9,6 +9,7 @@
 // swiftlint:disable all
 
 import UIKit
+import Reusable
 
 final class PhotosCollectionView: UICollectionView, PhotosCollectionScrollOwner {
     deinit {
