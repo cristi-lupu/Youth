@@ -27,6 +27,9 @@ target 'Youth' do
 
   # Permissions
   pod 'Permission/Photos', '~> 2.0.4'
+
+  # Reusable
+  pod 'Reusable', '~> 4.0'
  
   # Custom Notifications
   pod 'SwiftMessages', '~> 6.0'

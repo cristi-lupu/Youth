@@ -6,6 +6,7 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
+import Reusable
 import UIKit
 
 final class PhotosCollectionListCell: UICollectionViewCell, NibReusable {
