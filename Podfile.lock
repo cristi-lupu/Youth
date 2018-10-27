@@ -16,6 +16,11 @@ PODS:
     - Permission/Core
   - PinterestSegment (1.2.0)
   - Result (3.2.4)
+  - Reusable (4.0.3):
+    - Reusable/Storyboard (= 4.0.3)
+    - Reusable/View (= 4.0.3)
+  - Reusable/Storyboard (4.0.3)
+  - Reusable/View (4.0.3)
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
@@ -34,6 +39,7 @@ DEPENDENCIES:
   - Moya (~> 11.0.2)
   - Permission/Photos (~> 2.0.4)
   - PinterestSegment (~> 1.2)
+  - Reusable (~> 4.0)
   - RxCocoa (~> 4.3.1)
   - RxSwift (~> 4.3.1)
   - SDWebImage/Core (~> 4.4.2)
@@ -51,6 +57,7 @@ SPEC REPOS:
     - Permission
     - PinterestSegment
     - Result
+    - Reusable
     - RxCocoa
     - RxSwift
     - SDWebImage
@@ -67,12 +74,13 @@ SPEC CHECKSUMS:
   Permission: 6853b9694e66a6c9197468c66d1935c3629cbf9c
   PinterestSegment: d589fce6c62141466b9f36ea8ab0a16fde9ac8f4
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  Reusable: 12b67a60e1f3e8c523cc910795dab733f58fbc7e
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftMessages: da7c981256a65b3e58022d9027a36584cf4eccf5
 
-PODFILE CHECKSUM: d7b9d07043bdaf0c8bd89e828f6643c8c54b2372
+PODFILE CHECKSUM: fef4970961c1ec86c5ce97a2e038cfff27456a66
 
 COCOAPODS: 1.5.3

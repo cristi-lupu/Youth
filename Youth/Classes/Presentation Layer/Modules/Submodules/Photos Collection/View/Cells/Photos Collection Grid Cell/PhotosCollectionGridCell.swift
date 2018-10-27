@@ -5,6 +5,7 @@
 //  Created by Cristian Lupu on 5/13/18.
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 
+import Reusable
 import UIKit
 
 final class PhotosCollectionGridCell: UICollectionViewCell, NibReusable {
