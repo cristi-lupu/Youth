@@ -10,13 +10,13 @@ import Foundation
 
 protocol PhotosCollectionInteractorInput: class {
 
-    func obtainPhotos(atPage page: Int, perPage: Int, orderBy: UnsplashPhotosOrderBy)
+    func obtainPhotos(atPage page: Int, perPage: Int, orderBy: Unsplash.PhotosOrderBy)
 
-    func obtainUserPhotos(username: String, atPage page: Int, perPage: Int, orderBy: UnsplashPhotosOrderBy)
+    func obtainUserPhotos(username: String, atPage page: Int, perPage: Int, orderBy: Unsplash.PhotosOrderBy)
 
     func obtainPhotosOnSearch(query: String, atPage page: Int, perPage: Int)
 
-    func download(photo: UnsplashPhoto)
+    func download(photo: Unsplash.Photo)
 
     func cancelDownloadingPhoto(withID id: String)
 

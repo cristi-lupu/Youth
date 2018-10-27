@@ -32,7 +32,7 @@ final class PhotosCollectionCellViewModelBuilder {
      
      - returns: Builded PhotosCollectionCellViewModel
      */
-    func build(fromPhoto photo: UnsplashPhoto) -> PhotosCollectionCellViewModel {
+    func build(fromPhoto photo: Unsplash.Photo) -> PhotosCollectionCellViewModel {
         let userViewModel = userViewModelBuilder.build(withUser: photo.user)
 
         var imageSize = CGSize.zero

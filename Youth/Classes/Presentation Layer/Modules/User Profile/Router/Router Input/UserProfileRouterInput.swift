@@ -22,6 +22,6 @@ protocol UserProfileRouterInput: class {
                                       scrollOwner: PhotosCollectionScrollOwner?,
                                       subModuleOutput: PhotosCollectionModuleOutput)
 
-    func showPhotoDetails(withPhoto photo: UnsplashPhoto)
+    func showPhotoDetails(withPhoto photo: Unsplash.Photo)
 
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 enum PhotosCollectionUsage {
-    case photos(orderBy: UnsplashPhotosOrderBy)
-    case userPhotos(username: String, orderBy: UnsplashPhotosOrderBy)
+    case photos(orderBy: Unsplash.PhotosOrderBy)
+    case userPhotos(username: String, orderBy: Unsplash.PhotosOrderBy)
     case searchPhotos(query: String)
 }

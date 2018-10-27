@@ -21,7 +21,7 @@ final class YouthPhotoExifViewModelBuilder {
      */
 
     // swiftlint:disable:next cyclomatic_complexity
-    func build(fromExif exif: UnsplashExif?,
+    func build(fromExif exif: Unsplash.Exif?,
                photoWidth: Int?,
                photoHeight: Int?) -> YouthPhotoExifViewModel {
         guard let exif = exif else {

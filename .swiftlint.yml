@@ -29,7 +29,6 @@ opt_in_rules:
   - static_operator
   - strict_fileprivate
   - toggle_bool
-  - trailing_closure
   - unavailable_function
   - unneeded_parentheses_in_closure_argument
   - unused_import
@@ -39,6 +38,7 @@ disabled_rules:
   - file_length
   - function_body_length
   - function_parameter_count
+  - nesting
 force_cast: warning
 force_try:
   severity: warning
@@ -57,4 +57,3 @@ identifier_name:
     - i
 excluded:
   - Pods
-  - YouthTests

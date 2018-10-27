@@ -2,13 +2,15 @@ platform :ios, '9.0'
 
 target 'Youth' do
   use_frameworks!
-
   inhibit_all_warnings!
 
-  # Pods for Youth
+  # Reactive
+  pod 'RxSwift', '~> 4.3.1'
+  pod 'RxCocoa', '~> 4.3.1'
 
   # Networking
   pod 'Alamofire', '~> 4.7.3'
+  pod 'Moya', '~> 11.0.2'
 
   # Image Plugin
   pod 'AlamofireImage', '~> 3.4.1'
@@ -40,7 +42,6 @@ target 'Youth' do
   end
 end
 
-# Workaround for Cocoapods issue #7606  https://github.com/CocoaPods/CocoaPods/issues/7606
 post_install do |installer|
     installer.pods_project.build_configurations.each do |config|
         config.build_settings.delete('CODE_SIGNING_ALLOWED')

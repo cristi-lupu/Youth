@@ -49,7 +49,7 @@ final class UserProfileRouter: UserProfileRouterInput {
         }
     }
 
-    func showPhotoDetails(withPhoto photo: UnsplashPhoto) {
+    func showPhotoDetails(withPhoto photo: Unsplash.Photo) {
         guard let navigationController = viewController?.navigationController else {
             return
         }

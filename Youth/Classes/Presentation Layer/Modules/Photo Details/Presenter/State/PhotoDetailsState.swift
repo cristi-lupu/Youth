@@ -11,6 +11,6 @@ import Foundation
 struct PhotoDetailsState {
 
     /// Photo
-    var photo: UnsplashPhoto?
+    var photo: Unsplash.Photo?
 
 }

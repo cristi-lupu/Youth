@@ -13,8 +13,8 @@ import UIKit
 final class PhotosCollectionAssembly {
 
     func assemblyPhotosCollectionModule(scrollOwner: PhotosCollectionScrollOwner? = nil) -> PhotosCollectionModule {
-        let view = PhotosCollectionView(frame: CGRect.zero,
-                                        collectionViewLayout: UICollectionViewFlowLayout())
+        let view = PhotosCollectionView(frame: .zero,
+                                        collectionViewLayout: .init())
 
         let fullNameFormatter = FullNameFormatter()
         let usernameFormatter = UsernameFormatter()
@@ -36,14 +36,13 @@ final class PhotosCollectionAssembly {
 
         let reachability = NetworkReachabilityManager()
 
-        let networkClient = UnsplashNetworkClient()
-        let photosProvider = PhotosCollectionProvider(networkClient: networkClient)
+        let unsplash = Unsplash()
 
         let downloader = YouthPhotoDownloader.default
         let photoSaver = YouthPhotoSaver()
 
         let interactor = PhotosCollectionInteractor(networkReachability: reachability,
-                                                    photosProvider: photosProvider,
+                                                    unsplash: unsplash,
                                                     photoDownloader: downloader,
                                                     photoSaver: photoSaver)
 
