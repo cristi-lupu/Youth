@@ -36,7 +36,7 @@ final class PhotoDetailsViewModelBuilder {
      
      - returns: Builded PhotoDetailsViewModel
      */
-    func build(withPhoto photo: UnsplashPhoto) -> PhotoDetailsViewModel {
+    func build(withPhoto photo: Unsplash.Photo) -> PhotoDetailsViewModel {
         let photoURL: URL?
 
         if let url = photo.imageURLs?.regular {

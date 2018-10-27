@@ -28,7 +28,7 @@ final class YouthLocationViewModelBuilder {
      
      - returns: Builded YouthLocationViewModel
      */
-    func build(withLocation location: UnsplashLocation?) -> YouthLocationViewModel {
+    func build(withLocation location: Unsplash.Location?) -> YouthLocationViewModel {
         guard let location = location else {
             return YouthLocationViewModel(location: "")
         }

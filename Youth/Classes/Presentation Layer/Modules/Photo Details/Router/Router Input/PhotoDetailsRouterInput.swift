@@ -12,6 +12,6 @@ protocol PhotoDetailsRouterInput: class {
 
     func closeModule()
 
-    func showUserProfile(withUser user: UnsplashUser)
+    func showUserProfile(withUser user: Unsplash.User)
 
 }

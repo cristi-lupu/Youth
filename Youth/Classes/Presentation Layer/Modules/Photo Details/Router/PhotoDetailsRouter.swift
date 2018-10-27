@@ -20,7 +20,7 @@ extension PhotoDetailsRouter: PhotoDetailsRouterInput {
         viewController?.dismiss(animated: true)
     }
 
-    func showUserProfile(withUser user: UnsplashUser) {
+    func showUserProfile(withUser user: Unsplash.User) {
         guard let navigationController = viewController?.navigationController else {
             return
         }

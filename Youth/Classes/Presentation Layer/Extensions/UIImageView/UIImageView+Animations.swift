@@ -6,8 +6,6 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
-// swiftlint:disable all
-
 import UIKit
 
 extension UIImageView {

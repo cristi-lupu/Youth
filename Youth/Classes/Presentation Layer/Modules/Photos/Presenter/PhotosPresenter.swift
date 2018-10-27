@@ -89,11 +89,11 @@ extension PhotosPresenter: PhotosInteractorOutput { }
 // MARK: PhotosCollectionModuleOutput
 
 extension PhotosPresenter: PhotosCollectionModuleOutput {
-    func didSelectPhoto(_ photo: UnsplashPhoto) {
+    func didSelectPhoto(_ photo: Unsplash.Photo) {
         router?.showPhotoDetails(withPhoto: photo)
     }
 
-    func didSelectUser(_ user: UnsplashUser) {
+    func didSelectUser(_ user: Unsplash.User) {
         router?.showUserProfile(withUser: user)
     }
 
@@ -109,8 +109,8 @@ extension PhotosPresenter: PhotosCollectionModuleOutput {
 }
 
 extension PhotosPresenter {
-    private func photosOrderBy(from photosCategory: PhotosCategoryType) -> UnsplashPhotosOrderBy {
-        let orderBy: UnsplashPhotosOrderBy
+    private func photosOrderBy(from photosCategory: PhotosCategoryType) -> Unsplash.PhotosOrderBy {
+        let orderBy: Unsplash.PhotosOrderBy
 
         switch photosCategory {
         case .latest:

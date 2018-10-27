@@ -72,11 +72,11 @@ extension SearchPhotosPresenter: SearchPhotosViewOutput {
 
 extension SearchPhotosPresenter: PhotosCollectionModuleOutput {
 
-    func didSelectPhoto(_ photo: UnsplashPhoto) {
+    func didSelectPhoto(_ photo: Unsplash.Photo) {
         router?.showPhotoDetails(withPhoto: photo)
     }
 
-    func didSelectUser(_ user: UnsplashUser) {
+    func didSelectUser(_ user: Unsplash.User) {
         router?.showUserProfile(withUser: user)
     }
 

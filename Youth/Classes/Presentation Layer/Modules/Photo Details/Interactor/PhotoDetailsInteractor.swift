@@ -6,17 +6,18 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
 final class PhotoDetailsInteractor {
     // MARK: Output
 
     weak var output: PhotoDetailsInteractorOutput?
 
-    private let photoProvider: PhotoProvider
+    private let unsplash: UnsplashType
+    private let disposeBag = DisposeBag()
 
-    init(photoProvider: PhotoProvider) {
-        self.photoProvider = photoProvider
+    init(unsplash: UnsplashType) {
+        self.unsplash = unsplash
     }
 }
 
@@ -24,21 +25,9 @@ final class PhotoDetailsInteractor {
 
 extension PhotoDetailsInteractor: PhotoDetailsInteractorInput {
     func obtainPhoto(withID id: String) {
-        photoProvider.cancelNetworkRequest()
-
-        photoProvider.photo(id: id, usage: .network) { [weak self] result in
-            DispatchQueue.main.async {
-                guard let strongSelf = self else {
-                    return
-                }
-
-                switch result {
-                case let .success(payload):
-                    strongSelf.output?.didObtain(photo: payload, withError: nil)
-                case let .failure(error):
-                    strongSelf.output?.didObtain(photo: nil, withError: error)
-                }
-            }
-        }
+        unsplash.photo(with: id)
+            .onSuccess { [weak self] in self?.output?.didObtain(photo: $0.model, withError: nil) }
+            .unsplashOnFailure { [weak self] in self?.output?.didObtain(photo: nil, withError: $0) }
+            .run().disposed(by: disposeBag)
     }
 }
