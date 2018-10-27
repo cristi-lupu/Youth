@@ -130,29 +130,19 @@ extension PhotosCollectionPresenter: PhotosCollectionScrollingUpdateReceiver {
 // MARK: PhotosCollectionInteractorOutput
 
 extension PhotosCollectionPresenter: PhotosCollectionInteractorOutput {
-
-    func didObtain(photos: [UnsplashPhoto],
+    func didObtain(photos: [Unsplash .Photo],
                    atPage page: Int,
-                   withError error: PhotosCollectionProvider.Error?) {
+                   withError error: Error?) {
         state.isRequesting = false
+        state.hasMorePhotos = !photos.isEmpty
 
-        guard error == nil else {
-            switch error! {
-            case .noInternetConnection:
-                break
-            case .noMorePhotos:
-                state.hasMorePhotos = false
-            case .internal:
-                break
-            }
+        if let _ = error {
             view?.hideBottomLoading()
             return
         }
 
         state.pagination.currentPage = page
-
         state.photos.append(contentsOf: photos)
-
         updateView(with: photos)
     }
 
@@ -303,7 +293,7 @@ extension PhotosCollectionPresenter: PhotosCollectionModuleInput {
 
 extension PhotosCollectionPresenter {
 
-    private func updateView(with photos: [UnsplashPhoto]) {
+    private func updateView(with photos: [Unsplash.Photo]) {
         view?.hideBottomLoading()
 
         let models = viewModels(from: photos)
@@ -315,7 +305,7 @@ extension PhotosCollectionPresenter {
         }
     }
 
-    private func viewModels(from photos: [UnsplashPhoto]) -> [PhotosCollectionCellViewModel] {
+    private func viewModels(from photos: [Unsplash.Photo]) -> [PhotosCollectionCellViewModel] {
         var viewModels: [PhotosCollectionCellViewModel] = []
 
         for photo in photos {

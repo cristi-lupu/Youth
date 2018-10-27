@@ -6,9 +6,8 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
-// swiftlint:disable all
-
 import Alamofire
+import RxSwift
 
 final class PhotosCollectionInteractor {
     deinit {
@@ -24,9 +23,9 @@ final class PhotosCollectionInteractor {
 
     private let networkReachability: NetworkReachabilityManager?
 
-    // MARK: Photos Provider
+    // MARK: Unsplash
 
-    private let photosProvider: PhotosCollectionProvider
+    private let unsplash: UnsplashType
 
     // MARK: Photo Downloader
 
@@ -36,12 +35,14 @@ final class PhotosCollectionInteractor {
 
     private let photoSaver: YouthPhotoSaver
 
+    private let disposeBag = DisposeBag()
+
     init(networkReachability: NetworkReachabilityManager?,
-         photosProvider: PhotosCollectionProvider,
+         unsplash: UnsplashType,
          photoDownloader: YouthPhotoDownloader,
          photoSaver: YouthPhotoSaver) {
         self.networkReachability = networkReachability
-        self.photosProvider = photosProvider
+        self.unsplash = unsplash
         self.photoDownloader = photoDownloader
         self.photoSaver = photoSaver
 
@@ -56,92 +57,30 @@ final class PhotosCollectionInteractor {
 // MARK: PhotosCollectionInteractorInput 
 
 extension PhotosCollectionInteractor: PhotosCollectionInteractorInput {
-    func obtainPhotos(atPage page: Int, perPage: Int, orderBy: UnsplashPhotosOrderBy) {
-        photosProvider.cancelNetworkRequest()
-
-        photosProvider.photos(
-            page: page,
-            perPage: perPage,
-            orderBy: orderBy,
-            usage: .network,
-            completion: { [weak self] photosResult in
-                DispatchQueue.main.async {
-                    guard let strongSelf = self else {
-                        return
-                    }
-
-                    switch photosResult {
-                    case .success(let payload):
-                        strongSelf.output?.didObtain(photos: payload,
-                                                     atPage: page,
-                                                     withError: nil)
-                    case let .failure(photosError):
-                        strongSelf.output?.didObtain(photos: [],
-                                                     atPage: page,
-                                                     withError: photosError)
-                    }
-                }
-            })
+    func obtainPhotos(atPage page: Int, perPage: Int, orderBy: Unsplash.PhotosOrderBy) {
+        unsplash.photos(with: .init(page: page, perPage: perPage, orderBy: orderBy))
+            .onSuccess { [weak self] in self?.output?.didObtain(photos: $0.model, atPage: page, withError: nil) }
+            .unsplashOnFailure { [weak self] in self?.output?.didObtain(photos: [], atPage: page, withError: $0) }
+            .run().disposed(by: disposeBag)
     }
 
-    func obtainUserPhotos(username: String, atPage page: Int, perPage: Int, orderBy: UnsplashPhotosOrderBy) {
-        photosProvider.cancelNetworkRequest()
-
-        photosProvider.userPhotos(
-            username: username,
-            page: page,
-            perPage: perPage,
-            orderBy: orderBy,
-            usage: .network,
-            completion: {  [weak self] photosResult in
-                DispatchQueue.main.async {
-                    guard let strongSelf = self else {
-                        return
-                    }
-
-                    switch photosResult {
-                    case .success(let payload):
-                        strongSelf.output?.didObtain(photos: payload,
-                                                     atPage: page,
-                                                     withError: nil)
-                    case let .failure(photosError):
-                        strongSelf.output?.didObtain(photos: [],
-                                                     atPage: page,
-                                                     withError: photosError)
-                    }
-                }
-            })
+    func obtainUserPhotos(username: String, atPage page: Int, perPage: Int, orderBy: Unsplash.PhotosOrderBy) {
+        unsplash.userPhotos(for: username, pagination: .init(page: page, perPage: perPage, orderBy: orderBy))
+            .onSuccess { [weak self] in self?.output?.didObtain(photos: $0.model, atPage: page, withError: nil) }
+            .unsplashOnFailure { [weak self] in self?.output?.didObtain(photos: [], atPage: page, withError: $0) }
+            .run().disposed(by: disposeBag)
     }
 
     func obtainPhotosOnSearch(query: String, atPage page: Int, perPage: Int) {
-        photosProvider.cancelNetworkRequest()
-
-        photosProvider.searchPhotos(
-            query: query,
-            page: page,
-            perPage: perPage,
-            usage: .network,
-            completion: { [weak self] photosResult in
-                DispatchQueue.main.async {
-                    guard let strongSelf = self else {
-                        return
-                    }
-
-                    switch photosResult {
-                    case .success(let payload):
-                        strongSelf.output?.didObtain(photos: payload,
-                                                     atPage: page,
-                                                     withError: nil)
-                    case let .failure(photosError):
-                        strongSelf.output?.didObtain(photos: [],
-                                                     atPage: page,
-                                                     withError: photosError)
-                    }
-                }
-            })
+        unsplash.search(by: query, pagination: .init(page: page, perPage: perPage))
+            .onSuccess {
+                [weak self] in self?.output?.didObtain(photos: $0.model.results, atPage: page, withError: nil)
+            }
+            .unsplashOnFailure { [weak self] in self?.output?.didObtain(photos: [], atPage: page, withError: $0) }
+            .run().disposed(by: disposeBag)
     }
 
-    func download(photo: UnsplashPhoto) {
+    func download(photo: Unsplash.Photo) {
         photoDownloader?.download(photo: photo)
     }
 

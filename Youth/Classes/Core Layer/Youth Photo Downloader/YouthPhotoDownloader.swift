@@ -148,7 +148,7 @@ final class YouthPhotoDownloader {
      
      - parameter photo: Photo to download
      */
-    func download(photo: UnsplashPhoto) {
+    func download(photo: Unsplash.Photo) {
         guard let id = photo.id else { return }
         guard let downloadLocation = photo.links?.downloadLocation else {
             weakObservers.forEach {
@@ -270,7 +270,7 @@ final class YouthPhotoDownloader {
         var headers: HTTPHeaders = [:]
 
         headers["Accept-Version"] = "v1"
-        headers["Authorization"] = "Client-ID \(UnsplashConstants.clientID)"
+        headers["Authorization"] = "Client-ID \(Unsplash.Constants.clientID)"
 
         for (key, value) in headers {
             downloadRequest.setValue(value, forHTTPHeaderField: key)
@@ -279,8 +279,8 @@ final class YouthPhotoDownloader {
         Alamofire.request(downloadRequest).responseData { dataResponse in
             guard dataResponse.error == nil,
                 let data = dataResponse.value,
-                let response = try? JSONDecoder().decode(UnsplashDownloadLocationResponse.self, from: data),
-                let downloadURL = response.url else {
+                let dict = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any],
+                let downloadURL = dict?["url"] as? URL else {
                     completion(false, nil)
                     return
             }

@@ -6,8 +6,6 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
-// swiftlint:disable all
-
 import SnapKit
 import UIKit
 
@@ -250,7 +248,8 @@ extension UserProfileViewController {
         } else {
             if userProfileSectionsViewTopToUserProfileImageViewBottomConstraint == nil {
                 userProfileSectionsInfoView.snp.makeConstraints { maker in
-                    userProfileSectionsViewTopToUserProfileImageViewBottomConstraint = maker.top.equalTo(userProfileImageView.snp.bottom).offset(14).constraint
+                    userProfileSectionsViewTopToUserProfileImageViewBottomConstraint =
+                        maker.top.equalTo(userProfileImageView.snp.bottom).offset(14).constraint
                 }
             }
         }
@@ -268,7 +267,8 @@ extension UserProfileViewController {
         } else {
             if userProfileSectionsViewTopToUserProfileImageViewBottomConstraint == nil {
                 userProfileSectionsInfoView.snp.makeConstraints { maker in
-                    userProfileSectionsViewTopToUserProfileImageViewBottomConstraint = maker.top.equalTo(userProfileImageView.snp.bottom).offset(14).constraint
+                    userProfileSectionsViewTopToUserProfileImageViewBottomConstraint =
+                        maker.top.equalTo(userProfileImageView.snp.bottom).offset(14).constraint
                 }
             }
         }

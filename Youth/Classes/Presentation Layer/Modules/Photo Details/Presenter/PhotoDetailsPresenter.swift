@@ -61,7 +61,7 @@ extension PhotoDetailsPresenter: PhotoDetailsViewOutput {
 // MARK: PhotoDetailsInteractorOutput
 
 extension PhotoDetailsPresenter: PhotoDetailsInteractorOutput {
-    func didObtain(photo: UnsplashPhoto?, withError error: PhotoProvider.Error?) {
+    func didObtain(photo: Unsplash.Photo?, withError error: Error?) {
         view?.hideTopLoading()
 
         guard let photo = photo else {
@@ -77,7 +77,7 @@ extension PhotoDetailsPresenter: PhotoDetailsInteractorOutput {
 // MARK: PhotoDetailsModuleInput
 
 extension PhotoDetailsPresenter: PhotoDetailsModuleInput {
-    func configure(withPhoto photo: UnsplashPhoto) {
+    func configure(withPhoto photo: Unsplash.Photo) {
         state.photo = photo
     }
 }

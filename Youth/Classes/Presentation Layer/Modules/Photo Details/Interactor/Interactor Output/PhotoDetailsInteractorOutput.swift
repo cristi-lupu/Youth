@@ -9,7 +9,5 @@
 import Foundation
 
 protocol PhotoDetailsInteractorOutput: class {
-
-    func didObtain(photo: UnsplashPhoto?, withError error: PhotoProvider.Error?)
-
+    func didObtain(photo: Unsplash.Photo?, withError error: Error?)
 }

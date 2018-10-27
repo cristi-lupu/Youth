@@ -11,6 +11,6 @@ import Foundation
 struct UserProfileState {
 
     /// User
-    var user: UnsplashUser?
+    var user: Unsplash.User?
 
 }

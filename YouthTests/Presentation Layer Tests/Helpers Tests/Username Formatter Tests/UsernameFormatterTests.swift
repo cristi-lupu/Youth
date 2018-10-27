@@ -10,19 +10,13 @@ import XCTest
 @testable import Youth
 
 final class UsernameFormatterTests: XCTestCase {
-    
     func testReturningWithAmpersandSuffix() {
         let formatter = UsernameFormatter()
-        
-        XCTAssertEqual(formatter.formattedUsername("someUsername"),
-                       "@someUsername")
+        XCTAssertEqual(formatter.formattedUsername("someUsername"), "@someUsername")
     }
-    
+
     func testReturningTheSameUsername() {
         let formatter = UsernameFormatter()
-        
-        XCTAssertEqual(formatter.formattedUsername("@usernameWithAmpersandSuffix"),
-                       "@usernameWithAmpersandSuffix")
+        XCTAssertEqual(formatter.formattedUsername("@usernameWithAmpersandSuffix"), "@usernameWithAmpersandSuffix")
     }
-    
 }

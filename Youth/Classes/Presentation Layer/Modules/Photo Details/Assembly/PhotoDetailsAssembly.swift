@@ -31,10 +31,9 @@ final class PhotoDetailsAssembly {
         let router = PhotoDetailsRouter()
         let state = PhotoDetailsState()
 
-        let networkClient = UnsplashNetworkClient()
-        let photoProvider = PhotoProvider(networkClient: networkClient)
+        let unsplash = Unsplash()
 
-        let interactor = PhotoDetailsInteractor(photoProvider: photoProvider)
+        let interactor = PhotoDetailsInteractor(unsplash: unsplash)
 
         view.output = presenter
         presenter.view = view

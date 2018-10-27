@@ -34,7 +34,7 @@ final class YouthUserViewModelBuider {
      
      - returns: Builded YouthUserViewModel
      */
-    func build(withUser user: UnsplashUser?) -> YouthUserViewModel {
+    func build(withUser user: Unsplash.User?) -> YouthUserViewModel {
         guard let user = user else {
             return YouthUserViewModel(userAvatarImageURL: nil,
                                       userFullname: "",

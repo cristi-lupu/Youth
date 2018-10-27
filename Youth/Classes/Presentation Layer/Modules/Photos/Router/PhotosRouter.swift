@@ -64,7 +64,7 @@ final class PhotosRouter: PhotosRouterInput {
         }
     }
 
-    func showUserProfile(withUser user: UnsplashUser) {
+    func showUserProfile(withUser user: Unsplash.User) {
         guard let navigationController = viewController?.navigationController else {
             return
         }
@@ -88,7 +88,7 @@ final class PhotosRouter: PhotosRouterInput {
         navigationController.pushViewController(searchPhotosViewController, animated: true)
     }
 
-    func showPhotoDetails(withPhoto photo: UnsplashPhoto) {
+    func showPhotoDetails(withPhoto photo: Unsplash.Photo) {
         guard let navigationController = viewController?.navigationController else { return }
         let photoDetailsAssembly = PhotoDetailsAssembly()
         let photoDetailsModule = photoDetailsAssembly.assemblyPhotoDetailsModule()

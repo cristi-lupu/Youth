@@ -31,7 +31,7 @@ struct PhotosCollectionState {
     var hasMorePhotos = true
 
     /// Photos models
-    var photos: [UnsplashPhoto] = []
+    var photos: [Unsplash.Photo] = []
 
     /// Is requesting state. Default value: false
     var isRequesting = false

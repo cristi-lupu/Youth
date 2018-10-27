@@ -21,9 +21,9 @@ protocol PhotosRouterInput: class {
                                       usage: PhotosCollectionUsage,
                                       subModuleOutput: PhotosCollectionModuleOutput)
 
-    func showUserProfile(withUser user: UnsplashUser)
+    func showUserProfile(withUser user: Unsplash.User)
 
-    func showPhotoDetails(withPhoto photo: UnsplashPhoto)
+    func showPhotoDetails(withPhoto photo: Unsplash.Photo)
 
     func showSearchPhotos()
 }

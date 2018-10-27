@@ -37,7 +37,7 @@ class UserProfileViewModelBuilder {
      
      - returns: Builded UserProfileViewModel
      */
-    func build(withUser user: UnsplashUser) -> UserProfileViewModel {
+    func build(withUser user: Unsplash.User) -> UserProfileViewModel {
         let userViewModel = userViewModelBuider.build(withUser: user)
         let locationViewModel = locationViewModelBuilder.build(withLocation: user.location)
 

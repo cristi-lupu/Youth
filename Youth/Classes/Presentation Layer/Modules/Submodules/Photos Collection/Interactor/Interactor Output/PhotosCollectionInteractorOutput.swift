@@ -9,11 +9,7 @@
 import Foundation
 
 protocol PhotosCollectionInteractorOutput: class {
-
-    func didObtain(photos: [UnsplashPhoto], atPage page: Int, withError error: PhotosCollectionProvider.Error?)
-
+    func didObtain(photos: [Unsplash.Photo], atPage page: Int, withError error: Error?)
     func didUpdateProgress(photoID: String, progress: Double)
-
     func didDownload(photoID: String, image: UIImage?, withError error: Error?)
-
 }

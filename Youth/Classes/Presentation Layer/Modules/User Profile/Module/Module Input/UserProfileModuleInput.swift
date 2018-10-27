@@ -10,6 +10,6 @@ import Foundation
 
 protocol UserProfileModuleInput: class {
 
-    func configure(withUser user: UnsplashUser)
+    func configure(withUser user: Unsplash.User)
 
 }
