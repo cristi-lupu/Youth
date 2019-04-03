@@ -57,9 +57,7 @@ extension UserProfilePresenter: UserProfileViewOutput {
                                              scrollOwner: view.photosCollectionScrollOwner(),
                                              subModuleOutput: self)
 
-        defer {
-            router?.photosCollectionSubModuleOnParentModuleReady?()
-        }
+        router?.photosCollectionSubModuleOnParentModuleReady?()
     }
 
     func didTouchUpInsideInstagramButton() {

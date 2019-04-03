@@ -119,12 +119,9 @@ final class YouthPhotoDownloader {
      - returns: Progress if photo is downloading, otherwise `nil`.
      */
     func progressForPhoto(withID id: String) -> Double? {
-        guard let index = currentDownloadingRequests.index(where: {
-            $0.requestReceipt.receiptID == id
-        }) else {
+        guard let index = currentDownloadingRequests.firstIndex(where: { $0.requestReceipt.receiptID == id }) else {
             return nil
         }
-
         return currentDownloadingRequests[index].progress
     }
 
@@ -134,12 +131,9 @@ final class YouthPhotoDownloader {
      - parameter id: Photo ID
      */
     func cancelDownloadingPhoto(withID id: String) {
-        guard let index = currentDownloadingRequests.index(where: {
-            $0.requestReceipt.receiptID == id
-        }) else {
+        guard let index = currentDownloadingRequests.firstIndex(where: { $0.requestReceipt.receiptID == id }) else {
             return
         }
-
         downloader.cancelRequest(with: currentDownloadingRequests[index].requestReceipt)
     }
 
@@ -173,7 +167,7 @@ final class YouthPhotoDownloader {
                             return
                         }
 
-                        guard let index = strongSelf.currentDownloadingRequests.index(where: {
+                        guard let index = strongSelf.currentDownloadingRequests.firstIndex(where: {
                             $0.requestReceipt.receiptID == id
                         }) else {
                             return
@@ -280,7 +274,7 @@ final class YouthPhotoDownloader {
             guard dataResponse.error == nil,
                 let data = dataResponse.value,
                 let dict = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any],
-                let downloadURL = dict?["url"] as? URL else {
+                let downloadURL = dict["url"] as? URL else {
                     completion(false, nil)
                     return
             }
@@ -289,9 +283,7 @@ final class YouthPhotoDownloader {
     }
 
     private func safelyRemoveRequest(withID id: String) {
-        guard let index = currentDownloadingRequests.index(where: {
-            $0.requestReceipt.receiptID == id
-        }) else {
+        guard let index = currentDownloadingRequests.firstIndex(where: { $0.requestReceipt.receiptID == id }) else {
             return
         }
         currentDownloadingRequests.remove(at: index)

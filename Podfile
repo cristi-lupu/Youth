@@ -5,38 +5,38 @@ target 'Youth' do
   inhibit_all_warnings!
 
   # Reactive
-  pod 'RxSwift', '~> 4.3.1'
-  pod 'RxCocoa', '~> 4.3.1'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   # Networking
-  pod 'Alamofire', '~> 4.7.3'
-  pod 'Moya', '~> 11.0.2'
+  pod 'Alamofire'
+  pod 'Moya'
 
   # Image Plugin
-  pod 'AlamofireImage', '~> 3.4.1'
-  pod 'SDWebImage/Core', '~> 4.4.2'
+  pod 'AlamofireImage'
+  pod 'SDWebImage/Core'
 
   # Layout
-  pod 'SnapKit', '~> 4.0.1'
+  pod 'SnapKit'
 
   # Custom Segmented Control
-  pod 'PinterestSegment', '~> 1.2'
+  pod 'PinterestSegment'
 
   # Custom Downloading Button
-  pod 'DownloadButton', '~> 0.1'
+  pod 'DownloadButton'
 
   # Permissions
-  pod 'Permission/Photos', '~> 2.0.4'
+  pod 'Permission/Photos'
 
   # Reusable
-  pod 'Reusable', '~> 4.0'
+  pod 'Reusable'
  
   # Custom Notifications
-  pod 'SwiftMessages', '~> 6.0'
+  pod 'SwiftMessages'
 
   # Crash Logs
-  pod 'Fabric', '~> 1.7.11'
-  pod 'Crashlytics', '~> 3.10.7' 
+  pod 'Fabric'
+  pod 'Crashlytics'
 
   target 'YouthTests' do
     inherit! :search_paths
@@ -52,7 +52,7 @@ post_install do |installer|
     end
 
     installer.pods_project.targets.each do |target|
-        if target.name == 'Permission' || target.name == 'PinterestSegment' 
+        if target.name == 'Permission'
             target.build_configurations.each do |config|
                 config.build_settings['SWIFT_VERSION'] = '4.1'
             end

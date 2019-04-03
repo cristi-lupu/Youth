@@ -25,7 +25,11 @@ extension MoyaProvider {
     private func unsplashProcess<D: Decodable>(_ result: (Result<Response, MoyaError>),
                                                with observer: AnyObserver<Unsplash.Response<D>>) {
         DispatchQueue.global(qos: .utility).async {
-            let response = Result(result)
+            let response = result
+                .bimap(
+                    success: { Unsplash.Response(moyaResponse: $0) },
+                    failure: { Unsplash.Error(moyaError: $0) }
+            )
             let unsplashResult = response.decode(D.self)
             switch unsplashResult {
             case let .success(response):
