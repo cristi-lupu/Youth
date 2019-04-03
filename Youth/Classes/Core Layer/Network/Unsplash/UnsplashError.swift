@@ -138,6 +138,8 @@ extension DecodingError: CustomDebugStringConvertible {
             return "Key \(key) not found, context: \(context.debugDescription)"
         case .dataCorrupted(let context):
             return "Data corrupted, context: \(context.debugDescription)"
+        @unknown default:
+            return "Unknown"
         }
     }
 }

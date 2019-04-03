@@ -147,11 +147,7 @@ extension PhotosCollectionPresenter: PhotosCollectionInteractorOutput {
     }
 
     func didUpdateProgress(photoID: String, progress: Double) {
-        guard let index = state.photos.index(where: {
-            $0.id == photoID
-        }) else {
-            return
-        }
+        guard let index = state.photos.firstIndex(where: { $0.id == photoID }) else { return }
 
         if progress == 1.0 {
             view?.setDownloadState(atIndex: index)
@@ -161,11 +157,7 @@ extension PhotosCollectionPresenter: PhotosCollectionInteractorOutput {
     }
 
     func didDownload(photoID: String, image: UIImage?, withError error: Error?) {
-        guard let index = state.photos.index(where: {
-            $0.id == photoID
-        }) else {
-            return
-        }
+        guard let index = state.photos.firstIndex(where: { $0.id == photoID }) else { return }
 
         if let image = image {
             save(image: image)

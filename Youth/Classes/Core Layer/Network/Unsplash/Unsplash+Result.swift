@@ -9,7 +9,7 @@
 import Moya
 import Result
 
-extension Result where T == Unsplash.Response<Data>, Error == Unsplash.Error {
+extension Result where Value == Unsplash.Response<Data>, Error == Unsplash.Error {
     func decode<D: Decodable>(_ type: D.Type) -> Result<Unsplash.Response<D>, Unsplash.Error> {
         return flatMap { response in
             do {
@@ -29,7 +29,7 @@ extension Result where T == Unsplash.Response<Data>, Error == Unsplash.Error {
     }
 }
 
-extension Result where T == Unsplash.Response<Data>, Error == Unsplash.Error {
+extension Result where Value == Unsplash.Response<Data>, Error == Unsplash.Error {
     init(_ result: Result<Moya.Response, Moya.MoyaError>) {
         switch result {
         case .success(let response):
