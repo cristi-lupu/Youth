@@ -6,8 +6,6 @@
 //  Copyright © 2018 Cristian Lupu. All rights reserved.
 //
 
-import Crashlytics
-import Fabric
 import UIKit
 
 @UIApplicationMain
@@ -17,9 +15,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Initialize Fabric with Crashlytics
-        Fabric.with([Crashlytics.self])
-
         // Handle application launch
         window = UIWindow(frame: UIScreen.main.bounds)
         let launchCoordinator = LaunchCoordinator()
