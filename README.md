@@ -6,9 +6,9 @@
 
 <p align="center">
 <a href="https://developer.apple.com/swift/">
-  <img src="https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat" alt="Swift"/>
+  <img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat" alt="Swift"/>
 </a>
-<img src="https://img.shields.io/badge/Platform-iOS%2012.0+-black.svg" alt="Platform: iOS">
+<img src="https://img.shields.io/badge/Platform-iOS%2013.0+-black.svg" alt="Platform: iOS">
 <img src="https://travis-ci.org/cristi-lupu/Youth.svg?branch=master" alt="CI Build State">
 </p>
 
@@ -56,7 +56,7 @@ It's developed in free time.
 ## 👨🏻‍💻 To Do
 - [x] Add CI
 - [ ] Change icons (i think, can be better 😊)
-- [ ] Apply for production Unsplash Developers. Will increase number of requests to 5000 per hour. Now is 50 per hour.  
+- [x] Apply for production Unsplash Developers. Will increase number of requests to 5000 per hour. Now is 50 per hour. (They rejected me, because this app reproduce most of core functionality of their app 😬)
 - [ ] Add persistance layer
 - [ ] Add collections, see [Collections](https://unsplash.com/explore/collections)
 - [ ] Add user login / logout + like / unlike + Me Profile
