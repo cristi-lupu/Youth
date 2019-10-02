@@ -34,10 +34,6 @@ target 'Youth' do
   # Custom Notifications
   pod 'SwiftMessages'
 
-  # Crash Logs
-  pod 'Fabric'
-  pod 'Crashlytics'
-
   target 'YouthTests' do
     inherit! :search_paths
     # Pods for testing
