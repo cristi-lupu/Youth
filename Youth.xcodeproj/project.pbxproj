@@ -71,6 +71,7 @@
 		AE3D6A83435C965AF7A90385 /* PhotosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7379820DC66EEF2D1645E13B /* PhotosPresenter.swift */; };
 		B0038AFCA74A27BF5D578E5F /* PhotosCollectionRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6376D09D15A0E3C2C9080701 /* PhotosCollectionRouterInput.swift */; };
 		B0FC07793B66DFFCC56085E1 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA37C4AF7D0FCCEF543E125 /* PhotoViewerViewController.swift */; };
+		B50FB707CC62BCDDF4B933AB /* Pods_YouthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D5B62FDE63133D11668155 /* Pods_YouthTests.framework */; };
 		B7DD419B549F9294D2610216 /* UserProfileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02FE6F5B5BAA8D3C3FD6903 /* UserProfileState.swift */; };
 		BB0A0E732180F0AF00D4E3DC /* NetworkRxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0A0E722180F0AF00D4E3DC /* NetworkRxExtensions.swift */; };
 		BB1BDBBD20A4BA26009097D5 /* YouthTabBarControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1BDBBC20A4BA26009097D5 /* YouthTabBarControllerAssembly.swift */; };
@@ -190,7 +191,6 @@
 		E731B4EA7ABED137CC3E5F65 /* PhotosCollectionViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580C199326F47975DD93599 /* PhotosCollectionViewOutput.swift */; };
 		E9F5DF6A7FE47725799051AF /* PhotoViewerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B5AF84CAA630A446D4165 /* PhotoViewerInteractor.swift */; };
 		F1716E32F891988CAC9365A3 /* PhotoDetailsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD464625FCE53625612012D0 /* PhotoDetailsInteractorOutput.swift */; };
-		F3F36AAD0681349A59849E64 /* Pods_YouthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC1421018CD0C2AC9BAD140 /* Pods_YouthTests.framework */; };
 		F52984992171ED8A000AFF49 /* RequestComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52984982171ED8A000AFF49 /* RequestComposer.swift */; };
 		F529849B2171EFBF000AFF49 /* UnsplashPhotosRequestComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529849A2171EFBF000AFF49 /* UnsplashPhotosRequestComposer.swift */; };
 		F529849F2171F1DA000AFF49 /* UnsplashPhotosRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529849E2171F1DA000AFF49 /* UnsplashPhotosRequest.swift */; };
@@ -251,12 +251,12 @@
 		25597E4404E2D21810EBACFF /* PhotosViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotosViewOutput.swift; sourceTree = "<group>"; };
 		332C382B52679C6CC7A01A69 /* Pods-YouthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouthUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YouthUITests/Pods-YouthUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35E4BE99515AEEED2FBF4725 /* UserProfileInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProfileInteractorOutput.swift; sourceTree = "<group>"; };
+		37D5B62FDE63133D11668155 /* Pods_YouthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A0B5AF84CAA630A446D4165 /* PhotoViewerInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoViewerInteractor.swift; sourceTree = "<group>"; };
 		3CAC363C4E11B3AA4C384C1F /* PhotosInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotosInteractorOutput.swift; sourceTree = "<group>"; };
 		3E319BB96BFD62AF70D12E42 /* PhotosAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotosAssembly.swift; sourceTree = "<group>"; };
 		3FF60C56108448E08D0BA5D1 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		4A50315592C8934563737B4F /* PhotoViewerModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoViewerModule.swift; sourceTree = "<group>"; };
-		4AC1421018CD0C2AC9BAD140 /* Pods_YouthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50278DD4F2AE9194D0B2F565 /* UserProfileInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProfileInteractor.swift; sourceTree = "<group>"; };
 		5413F3EF81DF946DECB0084D /* PhotoDetailsModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoDetailsModule.swift; sourceTree = "<group>"; };
 		544FBFC78990EF4C6677F243 /* PhotosCollectionModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotosCollectionModuleInput.swift; sourceTree = "<group>"; };
@@ -470,7 +470,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F36AAD0681349A59849E64 /* Pods_YouthTests.framework in Frameworks */,
+				B50FB707CC62BCDDF4B933AB /* Pods_YouthTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1028,8 +1028,8 @@
 			isa = PBXGroup;
 			children = (
 				138EBC3999952322D7293457 /* Pods_Youth.framework */,
-				4AC1421018CD0C2AC9BAD140 /* Pods_YouthTests.framework */,
 				0098674A821C37D8C24F745D /* Pods_YouthUITests.framework */,
+				37D5B62FDE63133D11668155 /* Pods_YouthTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2332,6 +2332,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -2348,6 +2349,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",

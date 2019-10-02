@@ -10,28 +10,29 @@ import RxSwift
 
 extension ObservableType {
     @discardableResult
-    func onSuccess(_ block: @escaping (E) -> Void) -> Observable<E> {
+    func onSuccess(_ block: @escaping (Element) -> Void) -> Observable<Element> {
         return self.do(onNext: block)
     }
 
     @discardableResult
-    func onFailure(_ block: @escaping (Error) -> Void) -> Observable<E> {
+    func onFailure(_ block: @escaping (Error) -> Void) -> Observable<Element> {
         return self.do(onError: block)
     }
 
     @discardableResult
-    func always(_ block: @escaping () -> Void) -> Observable<E> {
+    func always(_ block: @escaping () -> Void) -> Observable<Element> {
         return self.do(onDispose: block)
     }
 
     @discardableResult
-    func then<O>(_ block: @escaping (Self.E) throws -> O) -> Observable<O.E> where O: ObservableConvertibleType {
+    func then<O>(_ block: @escaping (Self.Element) throws -> O) -> Observable<O.Element>
+        where O: ObservableConvertibleType {
         return flatMapLatest(block)
     }
 
     @discardableResult
     func run(
-        onNext: ((Self.E) -> Swift.Void)? = nil,
+        onNext: ((Self.Element) -> Swift.Void)? = nil,
         onError: ((Error) -> Swift.Void)? = nil,
         onCompleted: (() -> Swift.Void)? = nil,
         onDisposed: (() -> Swift.Void)? = nil

@@ -41,7 +41,6 @@ target 'Youth' do
   target 'YouthTests' do
     inherit! :search_paths
     # Pods for testing
-
   end
 end
 
@@ -52,10 +51,10 @@ post_install do |installer|
     end
 
     installer.pods_project.targets.each do |target|
-        if target.name == 'Permission'
-            target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '4.1'
-            end
+        target.build_configurations.each do |config|
+          if target.name == 'Permission'
+            config.build_settings['SWIFT_VERSION'] = '4.1'
+          end
         end
     end
 end
