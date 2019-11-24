@@ -18,6 +18,13 @@ final class LaunchCoordinator {
     func launch(on window: UIWindow?) {
         let tabBarControllerAssembly = YouthTabControllerAssembly()
         window?.rootViewController = tabBarControllerAssembly.assemblyTabBarController()
+        window.map(changeAppearanceOfWindowIfNeeded)
         window?.makeKeyAndVisible()
+    }
+
+    private func changeAppearanceOfWindowIfNeeded(_ window: UIWindow) {
+        if #available(iOS 13, *) {
+            window.overrideUserInterfaceStyle = .light
+        }
     }
 }
