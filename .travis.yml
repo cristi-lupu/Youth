@@ -6,7 +6,8 @@ before_install:
   - brew install swiftlint
 
 language: swift
-xcode_workspace: Youth.xcworkspace
-xcode_scheme: Youth
 osx_image: xcode11
-xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone 11
+script:
+  - xcodebuild -scheme Youth -workspace Youth.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.2' build test
+after_success:
+  - bash <(curl -s https://codecov.io/bash) || echo 'Codecov failed to upload'
