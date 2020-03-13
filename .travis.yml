@@ -7,6 +7,6 @@ before_install:
 language: swift
 osx_image: xcode11
 script:
-  - xcodebuild -scheme Youth -workspace Youth.xcworkspace -destination 'platform=iOS Simulator,OS=13.0,name=iPhone 11' build test
+  - xcodebuild -scheme Youth -workspace Youth.xcworkspace -destination 'platform=iOS Simulator,OS=13.0,name=iPhone 11' build test | xcpretty
 after_success:
   - bash <(curl -s https://codecov.io/bash) || echo 'Codecov failed to upload'
