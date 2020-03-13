@@ -1,12 +1,12 @@
 before_install:
   - gem install xcpretty
   - gem install cocoapods -v 1.7.5
-  - pod repo update
   - pod install
   - brew install swiftlint
 
 language: swift
-xcode_workspace: Youth.xcworkspace
-xcode_scheme: Youth
 osx_image: xcode11
-xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone 11
+script:
+  - xcodebuild -scheme Youth -workspace Youth.xcworkspace -destination 'platform=iOS Simulator,OS=13.0,name=iPhone 11' build test | xcpretty
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -J '^Youth$' || echo 'Codecov failed to upload'
