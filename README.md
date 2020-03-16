@@ -10,6 +10,9 @@
 </a>
 <img src="https://img.shields.io/badge/Platform-iOS%2013.0+-black.svg" alt="Platform: iOS">
 <img src="https://travis-ci.org/cristi-lupu/Youth.svg?branch=master" alt="CI Build State">
+<a href="https://codecov.io/gh/cristi-lupu/Youth">
+  <img src="https://codecov.io/gh/cristi-lupu/Youth/branch/master/graph/badge.svg" />
+</a>
 </p>
 
 ## About
